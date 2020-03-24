@@ -20,7 +20,7 @@ or alternatively using `brew cask install fastlane`
 ```
 fastlane android beta
 ```
-Submit a new Beta Build to firebase
+Submit a new beta build to firebase
 
 ----
 

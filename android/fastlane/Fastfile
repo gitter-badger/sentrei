@@ -2,20 +2,14 @@ fastlane_version "2.28.3"
 
 default_platform :android
 
-APP_ID = ENV['FIREBASE_ANDROID_APPID']
-BUILD_NUMBER = ENV['GITHUB_RUN_NUMBER']
-FIREBASE_TOKEN = ENV['FIREBASE_CI_TOKEN']
-GITHUB_BRANCH = ENV['GITHUB_REF']
-
 platform :android do
   desc "Submit a new beta build to firebase"
   lane :beta do
     firebase_app_distribution(
           debug: true,
-          app: APP_ID,
+          app: ENV['FIREBASE_APP_ID_BETA_ANDROID'],
           groups: "beta",
-          release_notes: BUILD_NUMBER,
-          firebase_cli_token: FIREBASE_TOKEN,
+          release_notes: ENV['GITHUB_RUN_NUMBER'],
           apk_path: "../build/app/outputs/apk/release/app-release.apk"
       )
   end

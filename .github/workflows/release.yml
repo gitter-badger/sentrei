@@ -45,8 +45,8 @@ jobs:
         uses: peter-evans/create-pull-request@v2
         with:
           branch-suffix: short-commit-hash
-          commit-message: "[ci skip] auto-pr-update"
           token: ${{ secrets.ACCESS_TOKEN }}
+          title: "[ci skip] auto-pr-update"
         env:
           HUSKY_SKIP_HOOKS: 1
   deploy:

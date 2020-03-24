@@ -7,7 +7,7 @@ platform :android do
   lane :beta do
       firebase_app_distribution(
             groups: "beta",
-            app: "1:244894698045:android:653fa60982fdc9127fb854",
+            app: "1:258612152633:android:0344f8ed2ff95c50ff40e8",
             firebase_cli_token: ENV['FIREBASE_TOKEN'],
             release_notes: ENV['GITHUB_RUN_NUMBER'],
             apk_path: "../build/app/outputs/apk/beta/release/app-beta-release.apk"
@@ -17,7 +17,7 @@ platform :android do
   lane :master do
       firebase_app_distribution(
             groups: "master",
-            app: "1:244894698045:android:6c75642cad65daab7fb854",
+            app: "1:721847679884:android:1935b57831163cda5bb4a9",
             firebase_cli_token: ENV['FIREBASE_TOKEN'],
             release_notes: ENV['GITHUB_RUN_NUMBER'],
             apk_path: "../build/app/outputs/apk/master/release/app-master-release.apk"

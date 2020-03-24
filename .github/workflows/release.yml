@@ -1,0 +1,40 @@
+name: Deploy
+on: push
+  # push:
+  #   branches:
+  #     - master
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: "2.x"
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '12.x'
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '1.12.13+hotfix.8'
+      - name: Install bundler
+        run: |
+          gem install bundler
+      - name: Cache bundler
+        id: cache
+        uses: actions/cache@v1
+        with:
+          path: android/vendor/bundle
+          key: gem-android-${{ hashFiles('android/Gemfile.lock') }}
+          restore-keys: |
+            gem-android-
+      - name: Install dependencies with bundler
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          cd android
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3 --deployment
+      - run: flutter pub get
+      - run: flutter test
+      - run: flutter build apk

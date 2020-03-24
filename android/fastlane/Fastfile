@@ -12,6 +12,7 @@ platform :android do
   desc "Submit a new beta build to firebase"
   lane :beta do
     firebase_app_distribution(
+          debug: true,
           app: APP_ID,
           groups: "beta",
           release_notes: BUILD_NUMBER,

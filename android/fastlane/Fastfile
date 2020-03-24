@@ -15,7 +15,7 @@ platform :android do
             glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
       )
       Dir.chdir ".." do
-        sh("flutter", "build", "apk", "-flavor", "beta")
+      sh("flutter", "build", "apk", "-flavor", "beta")
       end
       firebase_app_distribution(
             groups: "beta",

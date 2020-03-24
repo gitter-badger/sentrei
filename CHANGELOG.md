@@ -1,3 +1,9 @@
+# [1.2.0-beta.9](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.8...v1.2.0-beta.9) (2020-03-24)
+
+### Bug Fixes
+
+- 🐛 add fastlane release ([4c9594c](https://github.com/sentrei/sentrei/commit/4c9594c6a23d538e59f5fc61cbbc6946e279d091))
+
 # [1.2.0-beta.8](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.7...v1.2.0-beta.8) (2020-03-24)
 
 ### Bug Fixes

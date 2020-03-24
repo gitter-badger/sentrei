@@ -35,7 +35,7 @@ jobs:
         id: cache
         uses: actions/cache@v1
         with:
-          path: android/vendor/bundle
+          path: ${{ matrix.platform }}/vendor/bundle
           key: gem-${{ matrix.platform }}-${{ hashFiles('android/Gemfile.lock') }}
           restore-keys: |
             gem-${{ matrix.platform }}

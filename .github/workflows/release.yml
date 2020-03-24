@@ -57,4 +57,5 @@ jobs:
           cd ${{ matrix.platform }}
           bundle exec fastlane beta
         env:
+          FIREBASE_APP_ID_BETA_ANDROID: ${{ secrets.FIREBASE_APP_ID_BETA_ANDROID }}
           GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER

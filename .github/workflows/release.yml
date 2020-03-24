@@ -5,7 +5,11 @@ on: push
   #     - master
 jobs:
   release:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        platform: [android]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -15,26 +19,35 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: '12.x'
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
       - uses: subosito/flutter-action@v1
         with:
           flutter-version: '1.12.13+hotfix.8'
       - name: Install bundler
         run: |
           gem install bundler
+      - name: Install firebase
+        run: |
+          npm install -g firebase-tools
       - name: Cache bundler
         id: cache
         uses: actions/cache@v1
         with:
           path: android/vendor/bundle
-          key: gem-android-${{ hashFiles('android/Gemfile.lock') }}
+          key: gem-${{ matrix.platform }}-${{ hashFiles('android/Gemfile.lock') }}
           restore-keys: |
-            gem-android-
-      - name: Install dependencies with bundler
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: |
-          cd android
-          bundle config path vendor/bundle
-          bundle install --jobs 4 --retry 3 --deployment
+            gem-${{ matrix.platform }}
       - run: flutter pub get
       - run: flutter test
       - run: flutter build apk
+      - name: Install dependencies with bundler
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          cd ${{ matrix.platform }}
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3 --deployment
+      - run: |
+          cd ${{ matrix.platform }}
+          bundle exec fastlane beta

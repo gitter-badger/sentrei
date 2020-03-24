@@ -1,3 +1,9 @@
+## [1.1.3](https://github.com/sentrei/sentrei/compare/v1.1.2...v1.1.3) (2020-03-24)
+
+### Bug Fixes
+
+- 🐛 add release branch ([77dd05e](https://github.com/sentrei/sentrei/commit/77dd05edd37e7b35ec00e3e64c20b9138dc93c46))
+
 ## [1.1.2](https://github.com/sentrei/sentrei/compare/v1.1.1...v1.1.2) (2020-03-24)
 
 ### Bug Fixes

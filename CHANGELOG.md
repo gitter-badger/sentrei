@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/sentrei/sentrei/compare/v1.0.3...v1.0.4) (2020-03-24)
+
+### Bug Fixes
+
+- 🐛 add release base ref ([4923f69](https://github.com/sentrei/sentrei/commit/4923f694d4df34ee261f1aca691d716e2183d533))
+- 🐛 remove if cache ([80aa1f6](https://github.com/sentrei/sentrei/commit/80aa1f68f759ec46f0d3bd2af7a60691d6a2d3b7))
+
 ## [1.0.3](https://github.com/sentrei/sentrei/compare/v1.0.2...v1.0.3) (2020-03-24)
 
 ### Bug Fixes

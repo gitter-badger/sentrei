@@ -46,7 +46,7 @@ jobs:
         with:
           branch-suffix: short-commit-hash
           token: ${{ secrets.ACCESS_TOKEN }}
-          title: "[ci skip] auto-pr-update"
+          title: "[ci skip]"
         env:
           HUSKY_SKIP_HOOKS: 1
   deploy:

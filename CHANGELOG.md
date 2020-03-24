@@ -1,3 +1,13 @@
+# [1.2.0-beta.1](https://github.com/sentrei/sentrei/compare/v1.1.4...v1.2.0-beta.1) (2020-03-24)
+
+### Bug Fixes
+
+- 🐛 add [ci skip] to release ([d27e86c](https://github.com/sentrei/sentrei/commit/d27e86cfd278e7441583af4132f8dda5fe81cd89))
+
+### Features
+
+- 🎸 add beta build for fastlane ([a7f97a8](https://github.com/sentrei/sentrei/commit/a7f97a8e12fb7060691296a9b3d4ae96076002ae))
+
 ## [1.1.4](https://github.com/sentrei/sentrei/compare/v1.1.3...v1.1.4) (2020-03-24)
 
 ### Bug Fixes

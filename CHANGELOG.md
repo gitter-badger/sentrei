@@ -1,3 +1,9 @@
+# [1.2.0-beta.11](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.10...v1.2.0-beta.11) (2020-03-24)
+
+### Bug Fixes
+
+- 🐛 fastlane flutter build ([c95cefc](https://github.com/sentrei/sentrei/commit/c95cefc40035774370d7c2070538491157f5a424))
+
 # [1.2.0-beta.10](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.9...v1.2.0-beta.10) (2020-03-24)
 
 ### Bug Fixes

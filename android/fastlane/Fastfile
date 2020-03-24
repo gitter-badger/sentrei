@@ -5,6 +5,15 @@ default_platform :android
 platform :android do
   desc "Submit a new beta build to firebase"
   lane :beta do
+      value = get_version_name(
+        gradle_file_path:"app/build.gradle",
+        ext_constant_name:"versionName"
+      )
+      add_badge(
+            shield: "#{value}-#{ENV['GITHUB_RUN_NUMBER']}-blue",
+            dark: true,
+            glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
+      )
       firebase_app_distribution(
             groups: "beta",
             app: "1:258612152633:android:0344f8ed2ff95c50ff40e8",

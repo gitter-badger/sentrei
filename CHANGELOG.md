@@ -1,3 +1,9 @@
+## [1.0.5](https://github.com/sentrei/sentrei/compare/v1.0.4...v1.0.5) (2020-03-24)
+
+### Bug Fixes
+
+- 🐛 add auto pr update ([6d1d456](https://github.com/sentrei/sentrei/commit/6d1d45613f920453eaba97787169ebd83bb66192))
+
 ## [1.0.4](https://github.com/sentrei/sentrei/compare/v1.0.3...v1.0.4) (2020-03-24)
 
 ### Bug Fixes

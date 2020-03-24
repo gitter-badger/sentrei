@@ -1,3 +1,13 @@
+# [1.1.0](https://github.com/sentrei/sentrei/compare/v1.0.5...v1.1.0) (2020-03-24)
+
+### Bug Fixes
+
+- 🐛 add release flavor ([1be367b](https://github.com/sentrei/sentrei/commit/1be367b7d2fb75c4f4d031143d19799ab38106a0))
+
+### Features
+
+- 🎸 add release force ([2909364](https://github.com/sentrei/sentrei/commit/29093646305665ac00a816f20df52c7ba6655251))
+
 ## [1.0.5](https://github.com/sentrei/sentrei/compare/v1.0.4...v1.0.5) (2020-03-24)
 
 ### Bug Fixes

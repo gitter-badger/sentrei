@@ -1,3 +1,9 @@
+# [1.2.0-beta.12](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.11...v1.2.0-beta.12) (2020-03-24)
+
+### Bug Fixes
+
+- 🐛 correct shell command ([88483eb](https://github.com/sentrei/sentrei/commit/88483eba361b55df7f5896905933a05c90681774))
+
 # [1.2.0-beta.11](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.10...v1.2.0-beta.11) (2020-03-24)
 
 ### Bug Fixes

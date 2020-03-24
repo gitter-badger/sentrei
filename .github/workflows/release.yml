@@ -38,6 +38,9 @@ jobs:
         run: |
           version=$(node -pe "require('./package.json').version")
           sed -i -e "s/^version: .*/version: $version/" pubspec.yaml
+      - name: Run yarn fix
+        run: |
+          yarn run fix
       - name: Create a pull request if updated
         uses: peter-evans/create-pull-request@v2
         with:

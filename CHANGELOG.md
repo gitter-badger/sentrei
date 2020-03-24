@@ -1,3 +1,9 @@
+# [1.2.0-beta.6](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.5...v1.2.0-beta.6) (2020-03-24)
+
+### Bug Fixes
+
+- 🐛 release beta v6 ([1fc5a6a](https://github.com/sentrei/sentrei/commit/1fc5a6ae121be8f0c86e8e066aad595441e9d13f))
+
 # [1.2.0-beta.5](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.4...v1.2.0-beta.5) (2020-03-24)
 
 ### Bug Fixes

@@ -78,6 +78,9 @@ jobs:
       - name: Install firebase
         run: |
           npm install -g firebase-tools
+      - name: Install imagemagick
+        run: |
+          brew install imagemagick
       - name: Cache bundler
         id: bundler
         uses: actions/cache@v1
@@ -92,10 +95,10 @@ jobs:
         id: branch
       - run: flutter pub get
       - run: flutter test
-      - name: Run android apk
-        if: matrix.platform == 'android'
-        run: |
-          flutter build apk --flavor ${{ steps.branch.outputs.branch }}
+      # - name: Run android apk
+      #   if: matrix.platform == 'android'
+      #   run: |
+      #     flutter build apk --flavor ${{ steps.branch.outputs.branch }}
       - name: Run ios ipa
         if: matrix.platform == 'ios'
         run: |

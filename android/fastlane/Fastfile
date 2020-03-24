@@ -6,7 +6,7 @@ platform :android do
   desc "Submit a new beta build to firebase"
   lane :beta do
       android_get_version_code(
-        gradle_file: "app/build.gradle"
+      gradle_file: "app/build.gradle"
       )
       add_badge(
             dark: true,

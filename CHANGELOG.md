@@ -1,3 +1,10 @@
+# [1.2.0-beta.10](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.9...v1.2.0-beta.10) (2020-03-24)
+
+### Bug Fixes
+
+- 🐛 add android fastfile ([69814ad](https://github.com/sentrei/sentrei/commit/69814adf3bb72fa11b1dbb041ef4d190a446877e))
+- 🐛 android beta github ([d2ed583](https://github.com/sentrei/sentrei/commit/d2ed58348141dce7c97cfbd6686a7c6976f8e59f))
+
 # [1.2.0-beta.9](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.8...v1.2.0-beta.9) (2020-03-24)
 
 ### Bug Fixes

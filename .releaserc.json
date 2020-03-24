@@ -9,13 +9,6 @@
         "npmPublish": false,
         "tarballDir": "dist"
       }
-    ],
-    "@semantic-release/github",
-    [
-      "@semantic-release/exec",
-      {
-        "successCmd": "export GITHUB_RELEASE_URL=${releases[0].url}"
-      }
     ]
   ]
 }

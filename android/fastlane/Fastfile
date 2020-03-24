@@ -12,9 +12,7 @@ platform :android do
             dark: true,
             glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
       )
-      Dir.chdir ".." do
-      sh("cd .. && pwd && flutter build apk --flavor beta")
-      end
+      sh("cd ../.. && pwd && flutter build apk --flavor beta")
       firebase_app_distribution(
             groups: "beta",
             app: "1:258612152633:android:0344f8ed2ff95c50ff40e8",

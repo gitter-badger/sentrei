@@ -1,3 +1,9 @@
+# [1.2.0-beta.3](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.2...v1.2.0-beta.3) (2020-03-24)
+
+### Bug Fixes
+
+- 🐛 add export url ([5a19883](https://github.com/sentrei/sentrei/commit/5a19883668b1131442528fdfd7826c6c49340e66))
+
 # [1.2.0-beta.2](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.1...v1.2.0-beta.2) (2020-03-24)
 
 ### Bug Fixes

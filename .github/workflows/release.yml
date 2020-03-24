@@ -43,7 +43,7 @@ jobs:
       - run: flutter test
       - run: flutter build apk
       - name: Install dependencies with bundler
-        if: steps.cache.outputs.cache-hit != 'true'
+        # if: steps.cache.outputs.cache-hit != 'true'
         run: |
           cd ${{ matrix.platform }}
           bundle update --bundler

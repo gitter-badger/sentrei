@@ -10,7 +10,7 @@ platform :android do
             app: "1:244894698045:android:653fa60982fdc9127fb854",
             firebase_cli_token: ENV['FIREBASE_TOKEN'],
             release_notes: ENV['GITHUB_RUN_NUMBER'],
-            apk_path: "../build/app/outputs/apk/beta/debug/app-beta-debug.apk"
+            apk_path: "../build/app/outputs/apk/beta/release/app-beta-release.apk"
       )
   end
 

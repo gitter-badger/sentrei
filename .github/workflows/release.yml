@@ -50,6 +50,7 @@ jobs:
           title: "[ci skip]"
         env:
           HUSKY_SKIP_HOOKS: 1
+      - name:
   deploy:
     runs-on: macos-latest
     needs: [release]

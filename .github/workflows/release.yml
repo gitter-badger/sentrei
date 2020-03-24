@@ -59,3 +59,4 @@ jobs:
         env:
           FIREBASE_ANDROID_APPID: ${{ secrets.FIREBASE_ANDROID_APPID }}
           FIREBASE_CI_TOKEN: ${{ secrets.FIREBASE_CI_TOKEN }}
+          GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER

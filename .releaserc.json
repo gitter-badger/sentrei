@@ -10,6 +10,12 @@
         "tarballDir": "dist"
       }
     ],
-    "@semantic-release/github"
+    "@semantic-release/github",
+    [
+      "@semantic-release/exec",
+      {
+        "successCmd": "echo GITHUB_RELEASE_URL=${releases.url}"
+      }
+    ]
   ]
 }

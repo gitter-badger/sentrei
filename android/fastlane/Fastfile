@@ -3,6 +3,7 @@ fastlane_version "2.28.3"
 default_platform :android
 
 APP_ID = ENV['FIREBASE_ANDROID_APPID']
+FIREBASE_PATH = ENV['FIREBASE_PATH']
 FIREBASE_TOKEN = ENV['FIREBASE_CI_TOKEN']
 BUILD_NUMBER = ENV["GITHUB_RUN_NUMBER"]
 
@@ -13,7 +14,7 @@ platform :android do
           app: APP_ID,
           groups: "shunkakinoki",
           release_notes: BUILD_NUMBER,
-          firebase_cli_path: "/usr/local/bin/firebase",
+          firebase_cli_path: FIREBASE_PATH,
           firebase_cli_token: FIREBASE_TOKEN,
           apk_path: "../build/app/outputs/apk/release/app-release.apk"
       )

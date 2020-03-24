@@ -33,17 +33,18 @@ jobs:
           npm install -g firebase-tools
           echo ::set-env name=FIREBASE_PATH::$(which firebase)
       - name: Cache bundler
-        id: cache
+        id: bundler
         uses: actions/cache@v1
         with:
           path: ${{ matrix.platform }}/vendor/bundle
-          key: gem-${{ matrix.platform }}-${{ hashFiles('android/Gemfile.lock') }}
+          key: gem-v1-${{ matrix.platform }}-${{ hashFiles('android/Gemfile.lock') }}
           restore-keys: |
-            gem-${{ matrix.platform }}
+            gem-v1-${{ matrix.platform }}-
       - run: flutter pub get
       - run: flutter test
       - run: flutter build apk
       - name: Install dependencies with bundler
+        if: steps.bundler.outputs.cache-hit != 'true'
         run: |
           cd ${{ matrix.platform }}
           bundle update --bundler

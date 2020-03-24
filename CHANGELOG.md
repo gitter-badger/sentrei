@@ -1,3 +1,9 @@
+# [1.2.0-beta.7](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.6...v1.2.0-beta.7) (2020-03-24)
+
+### Bug Fixes
+
+- 🐛 add ios build ([2b8a9c0](https://github.com/sentrei/sentrei/commit/2b8a9c0061d0d68cc57813ea630c7eeff697dfd8))
+
 # [1.2.0-beta.6](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.5...v1.2.0-beta.6) (2020-03-24)
 
 ### Bug Fixes

@@ -1,3 +1,9 @@
+# [1.2.0-beta.5](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.4...v1.2.0-beta.5) (2020-03-24)
+
+### Bug Fixes
+
+- 🐛 add reword rebase ([64e9ea8](https://github.com/sentrei/sentrei/commit/64e9ea8c6e10ab095681161837f36ab35642cc65))
+
 # [1.2.0-beta.3](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.2...v1.2.0-beta.3) (2020-03-24)
 
 ### Bug Fixes

@@ -90,7 +90,7 @@ jobs:
       - name: Run android apk
         if: matrix.platform == 'android'
         run: |
-          flutter build apk
+          flutter build apk --flavor ${{ github.base_ref }}
       - name: Install dependencies with bundler
         # if: steps.bundler.outputs.cache-hit != 'true'
         run: |

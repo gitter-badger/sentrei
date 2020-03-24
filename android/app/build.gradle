@@ -53,6 +53,26 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    flavorDimensions "app"
+
+    productFlavors {
+        alpha {
+            dimension "app"
+            resValue "string", "app_name", "sentrei alpha"
+            versionNameSuffix "-alpha"
+        }
+        beta {
+            dimension "app"
+            resValue "string", "app_name", "sentrei beta"
+            versionNameSuffix "-beta"
+        }
+        master {
+            dimension "app"
+            resValue "string", "app_name", "sentrei master"
+            applicationId "com.sentrei.sentrei"
+        }
+    }
 }
 
 flutter {

@@ -85,6 +85,10 @@ jobs:
           key: gem-v1-${{ matrix.platform }}-${{ hashFiles('android/Gemfile.lock') }}
           restore-keys: |
             gem-v1-${{ matrix.platform }}-
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: branch
       - run: flutter pub get
       - run: flutter test
       - name: Run android apk
@@ -101,7 +105,7 @@ jobs:
       - name: Run fastlane
         run: |
           cd ${{ matrix.platform }}
-          bundle exec fastlane ${{ github.base_ref }}
+          bundle exec fastlane ${{ steps.branch.outputs.branch }}
         env:
           FIREBASE_APP_ID_BETA_ANDROID: ${{ secrets.FIREBASE_APP_ID_BETA_ANDROID }}
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

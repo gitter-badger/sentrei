@@ -3,13 +3,21 @@ fastlane_version "2.28.3"
 default_platform :android
 
 platform :android do
+  desc "Generate android appicons"
+  lane :appicon do
+    android_appicon(appicon_image_file: 'spec/fixtures/Themoji.png',
+    appicon_devices: [:phone, :tablet],
+    appicon_path: 'app/res/mipmap')
+  end
+
   desc "Submit a new beta build to firebase"
   lane :beta do
-      android_get_version_code(
+      version = android_get_version_code(
       gradle_file: "app/build.gradle"
       )
       add_badge(
             dark: true,
+            shield: "Version-#{version}-blue",
             glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
       )
       sh("cd ../.. && pwd && flutter build apk --flavor beta")
@@ -22,7 +30,9 @@ platform :android do
       )
   end
 
+  desc "Submit a new master build to firebase"
   lane :master do
+      sh("cd ../.. && pwd && flutter build apk --flavor master")
       firebase_app_distribution(
             groups: "master",
             app: "1:721847679884:android:1935b57831163cda5bb4a9",

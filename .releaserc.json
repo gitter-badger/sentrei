@@ -14,7 +14,7 @@
     [
       "@semantic-release/exec",
       {
-        "successCmd": "export GITHUB_RELEASE_URL=${releases.url}"
+        "successCmd": "export GITHUB_RELEASE_URL=${releases}"
       }
     ]
   ]

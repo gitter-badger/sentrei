@@ -1,3 +1,9 @@
+# [1.2.0-beta.13](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.12...v1.2.0-beta.13) (2020-03-24)
+
+### Bug Fixes
+
+- 🐛 add appicon ([3e4e866](https://github.com/sentrei/sentrei/commit/3e4e866a27f24b8415292e4ca9178cefcd91bb0b))
+
 # [1.2.0-beta.12](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.11...v1.2.0-beta.12) (2020-03-24)
 
 ### Bug Fixes

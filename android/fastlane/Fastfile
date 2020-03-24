@@ -5,9 +5,9 @@ default_platform :android
 platform :android do
   desc "Generate android appicons"
   lane :appicon do
-    android_appicon(appicon_image_file: 'spec/fixtures/Themoji.png',
-    appicon_devices: [:phone, :tablet],
-    appicon_path: 'app/res/mipmap')
+      android_appicon(appicon_image_file: 'spec/fixtures/Themoji.png',
+      appicon_devices: [:phone, :tablet],
+      appicon_path: 'app/res/mipmap')
   end
 
   desc "Submit a new beta build to firebase"

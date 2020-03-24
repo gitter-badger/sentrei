@@ -1,4 +1,4 @@
-package com.example.sentrei
+package com.sentrei.sentrei
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

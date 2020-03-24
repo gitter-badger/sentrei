@@ -58,4 +58,5 @@ jobs:
           bundle exec fastlane beta
         env:
           FIREBASE_APP_ID_BETA_ANDROID: ${{ secrets.FIREBASE_APP_ID_BETA_ANDROID }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER

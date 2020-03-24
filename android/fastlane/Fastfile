@@ -9,6 +9,7 @@ platform :android do
           debug: true,
           app: ENV['FIREBASE_APP_ID_BETA_ANDROID'],
           groups: "beta",
+          firebase_cli_token: ENV['FIREBASE_TOKEN'],
           release_notes: ENV['GITHUB_RUN_NUMBER'],
           apk_path: "../build/app/outputs/apk/release/app-release.apk"
       )

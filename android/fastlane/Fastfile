@@ -13,7 +13,7 @@ platform :android do
   lane :beta do
     firebase_app_distribution(
           app: APP_ID,
-          groups: "shunkakinoki", #CHANGE TO GITHUB BRANCH
+          groups: "beta",
           release_notes: BUILD_NUMBER,
           firebase_cli_path: FIREBASE_PATH,
           firebase_cli_token: FIREBASE_TOKEN,

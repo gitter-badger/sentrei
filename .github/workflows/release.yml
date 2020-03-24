@@ -50,7 +50,14 @@ jobs:
           title: "[ci skip]"
         env:
           HUSKY_SKIP_HOOKS: 1
-      - name:
+      - name: Export url txt
+        run: |
+          echo $GITHUB_RELEASE_URL > github_release_url.txt
+      - name: Upload math result for job 1
+        uses: actions/upload-artifact@v1
+        with:
+          name: $GITHUB_RUN_NUMBER
+          path: github_release_url.txt
   deploy:
     runs-on: macos-latest
     needs: [release]

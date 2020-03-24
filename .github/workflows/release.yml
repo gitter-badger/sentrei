@@ -37,7 +37,7 @@ jobs:
       - name: Refactor pubspec.yaml
         run: |
           version=$(node -pe "require('./package.json').version")
-          sed -i 's/\(^version:\).*/\1$version/' pubspec.yaml
+          sed -i -e "s/^version: .*/version = $version/" pubspec.yaml
       - name: Create a pull request if updated
         uses: peter-evans/create-pull-request@v2
         with:

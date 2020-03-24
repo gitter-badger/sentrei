@@ -28,6 +28,7 @@ jobs:
       - name: Install bundler
         run: |
           gem install bundler
+          bundle update --bundler
       - name: Install firebase
         run: |
           npm install -g firebase-tools

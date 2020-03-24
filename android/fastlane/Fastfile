@@ -5,13 +5,12 @@ default_platform :android
 platform :android do
   desc "Submit a new beta build to firebase"
   lane :beta do
-    firebase_app_distribution(
-          debug: true,
-          app: ENV['FIREBASE_APP_ID_BETA_ANDROID'],
-          groups: "beta",
-          firebase_cli_token: ENV['FIREBASE_TOKEN'],
-          release_notes: ENV['GITHUB_RUN_NUMBER'],
-          apk_path: "../build/app/outputs/apk/release/app-release.apk"
+      firebase_app_distribution(
+            groups: "beta",
+            app: "1:244894698045:android:6c75642cad65daab7fb854",
+            firebase_cli_token: ENV['FIREBASE_TOKEN'],
+            release_notes: ENV['GITHUB_RUN_NUMBER'],
+            apk_path: "../build/app/outputs/apk/release/app-release.apk"
       )
   end
 end

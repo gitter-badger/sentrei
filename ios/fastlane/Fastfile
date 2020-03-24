@@ -1,7 +1,7 @@
 default_platform(:ios)
 
 # Default temporary keychain password and name, if not included from environment
-TEMP_KEYCHAIN_NAME_DEFAULT = "fastlane_flutter" || ENV['TEMP_KEYCHAIN_NAME'] 
+TEMP_KEYCHAIN_NAME_DEFAULT = "fastlane_flutter" || ENV['TEMP_KEYCHAIN_NAME']
 TEMP_KEYCHAN_PASSWORD_DEFAULT = "temppassword" || ENV['TEMP_KEYCHAIN_PASSWORD']
 APP_ID = ENV['FIREBASE_IOS_APPID']
 BUILD_NUMBER = ENV['GITHUB_RUN_NUMBER']

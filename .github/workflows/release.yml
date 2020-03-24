@@ -41,7 +41,10 @@ jobs:
             gem-v1-${{ matrix.platform }}-
       - run: flutter pub get
       - run: flutter test
-      - run: flutter build apk
+      - name: Run android apk
+        if: matrix.platform == 'android'
+        run: |
+          flutter build apk
       - name: Install dependencies with bundler
         if: steps.bundler.outputs.cache-hit != 'true'
         run: |
@@ -49,7 +52,8 @@ jobs:
           bundle update --bundler
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3 --deployment
-      - run: |
+      - name: Run fastlane
+        run: |
           cd ${{ matrix.platform }}
           bundle exec fastlane beta
         env:

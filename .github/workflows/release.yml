@@ -101,7 +101,7 @@ jobs:
       - name: Run fastlane
         run: |
           cd ${{ matrix.platform }}
-          bundle exec fastlane beta
+          bundle exec fastlane ${{ github.base_ref }}
         env:
           FIREBASE_APP_ID_BETA_ANDROID: ${{ secrets.FIREBASE_APP_ID_BETA_ANDROID }}
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

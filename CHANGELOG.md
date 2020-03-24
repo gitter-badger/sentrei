@@ -1,3 +1,22 @@
+# [1.2.0-beta.9](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.8...v1.2.0-beta.9) (2020-03-24)
+
+### Bug Fixes
+
+- 🐛 add fastlane release ([4c9594c](https://github.com/sentrei/sentrei/commit/4c9594c6a23d538e59f5fc61cbbc6946e279d091))
+
+# [1.2.0-beta.8](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.7...v1.2.0-beta.8) (2020-03-24)
+
+### Bug Fixes
+
+- 🐛 add badge to android ([09d0175](https://github.com/sentrei/sentrei/commit/09d0175aaa50a2a0dd8d33bcfc0c9c1d1898851a))
+- 🐛 add fastlane ios ([f12ea81](https://github.com/sentrei/sentrei/commit/f12ea81e2db822cc526d75eaac43d848740c6077))
+
+# [1.2.0-beta.7](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.6...v1.2.0-beta.7) (2020-03-24)
+
+### Bug Fixes
+
+- 🐛 add ios build ([2b8a9c0](https://github.com/sentrei/sentrei/commit/2b8a9c0061d0d68cc57813ea630c7eeff697dfd8))
+
 # [1.2.0-beta.6](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.5...v1.2.0-beta.6) (2020-03-24)
 
 ### Bug Fixes

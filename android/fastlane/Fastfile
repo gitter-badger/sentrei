@@ -6,8 +6,8 @@ platform :android do
   desc "Submit a new beta build to firebase"
   lane :beta do
       value = get_version_name(
-        gradle_file_path:"app/build.gradle",
-        ext_constant_name:"versionName"
+      gradle_file_path:"app/build.gradle",
+      ext_constant_name:"versionName"
       )
       add_badge(
             shield: "1-3-blue",
@@ -15,7 +15,7 @@ platform :android do
             glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
       )
       Dir.chdir ".." do
-        sh("flutter", "build", "apk", "--flavor", "beta")
+      sh("flutter", "build", "apk", "--flavor", "beta")
       end
       firebase_app_distribution(
             groups: "beta",

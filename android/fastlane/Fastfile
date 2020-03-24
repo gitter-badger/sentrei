@@ -9,7 +9,7 @@ FIREBASE_TOKEN = ENV['FIREBASE_CI_TOKEN']
 GITHUB_BRANCH = ENV['GITHUB_REF']
 
 platform :android do
-  desc "Submit a new Beta Build to firebase"
+  desc "Submit a new beta build to firebase"
   lane :beta do
     firebase_app_distribution(
           app: APP_ID,

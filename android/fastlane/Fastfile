@@ -6,8 +6,8 @@ platform :android do
   desc "Submit a new beta build to firebase"
   lane :beta do
       value = get_version_name(
-        gradle_file_path:"app/build.gradle",
-        ext_constant_name:"versionName"
+      gradle_file_path:"app/build.gradle",
+      ext_constant_name:"versionName"
       )
       add_badge(
             shield: "#{value}-#{ENV['GITHUB_RUN_NUMBER']}-blue",

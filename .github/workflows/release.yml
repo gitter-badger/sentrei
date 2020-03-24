@@ -17,9 +17,9 @@ jobs:
         uses: actions/cache@v1
         with:
           path: node_modules
-          key: node-${{ hashFiles('**/yarn.lock') }}
+          key: node-v1-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            node-
+            node-v1-
       - name: Install dependencies with yarn
         if: steps.yarn.outputs.cache-hit != 'true'
         run: |
@@ -35,7 +35,7 @@ jobs:
       - name: Refactor Cargo.toml
         run: |
           version=$(node -pe "require('./package.json').version")
-          sed -i -e "s/^version = .*/version = \"$version\"/" .toml
+          sed -i -e "s/^version = .*/version = \"$version\"/" pubspec.toml
       - name: Create a pull request if updated
         uses: peter-evans/create-pull-request@v2
         with:

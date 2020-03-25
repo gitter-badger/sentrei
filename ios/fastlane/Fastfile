@@ -72,4 +72,25 @@ platform :ios do
     )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
+
+  desc "Submit a new master build to firebase"
+  lane :master do
+    setup_match()
+    build_ios_app(
+      scheme: "master",
+      export_options: {
+          method: "ad-hoc"
+      },
+      output_directory: "./build/Runner",
+      output_name: "master.ipa",
+    )
+    firebase_app_distribution(
+          groups: "master",
+          app: "1:721847679884:ios:ef9040472124b4715bb4a9",
+          firebase_cli_token: ENV['FIREBASE_TOKEN'],
+          release_notes: ENV['GITHUB_RUN_NUMBER'],
+          ipa_path: "./build/Runner/master.ipa"
+    )
+    delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
+  end
 end

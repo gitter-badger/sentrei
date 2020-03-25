@@ -33,7 +33,7 @@ end
 
 platform :ios do
   desc "Build & sign iOS app"
-  lane :build_app do |options|
+  lane :setup_match do |options|
     disable_automatic_code_signing(
       path: "./Runner.xcodeproj",
       team_id: CredentialsManager::AppfileConfig.try_fetch_value(:team_id),
@@ -49,7 +49,8 @@ platform :ios do
       readonly: is_ci,
       keychain_name: keychain_name,
       keychain_password: keychain_password,
-      git_url: "https://github.com/shunkakinoki/ios-certificates.git"
+      git_url: "https://github.com/shunkakinoki/ios-certificates.git",
+      git_basic_authorization: 
     )
     build_ios_app(
       export_options: {
@@ -57,12 +58,11 @@ platform :ios do
       },
       output_directory: "./build/Runner"
     )
-    delete_temp_keychain(keychain_name)
   end
 
   desc "Submit a new beta build to firebase"
   lane :beta do
-    build_app()
+    setup_match()
     firebase_app_distribution(
           app: APP_ID,
           groups: "beta",
@@ -71,5 +71,6 @@ platform :ios do
           firebase_cli_token: FIREBASE_TOKEN,
           apk_path: "./build/Runner/Runner.ipa"
       )
+    delete_temp_keychain(keychain_name)
   end
 end

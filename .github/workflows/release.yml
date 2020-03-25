@@ -126,8 +126,8 @@ jobs:
           cd ${{ matrix.platform }}
           bundle exec fastlane ${{ steps.branch.outputs.branch }}
         env:
-          CI: "true"
+          CI: true
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER
-          MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.ACCESS_TOKEN }}
+          MATCH_GIT_BASIC_AUTHORIZATION: "shunkakinoki:${{ secrets.ACCESS_TOKEN }}"
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}

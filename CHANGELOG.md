@@ -1,3 +1,10 @@
+# [1.2.0-beta.23](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.22...v1.2.0-beta.23) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add plugin ios ([9b14698](https://github.com/sentrei/sentrei/commit/9b14698f65211a77fa1d0fcbce94feaed34dab86))
+- 🐛 fix release fastfile ([18845a1](https://github.com/sentrei/sentrei/commit/18845a1ef4f7da2b17572b460f6bbb0a05eb10da))
+
 # [1.2.0-beta.22](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.21...v1.2.0-beta.22) (2020-03-25)
 
 ### Bug Fixes

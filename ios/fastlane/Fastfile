@@ -64,12 +64,13 @@ platform :ios do
       output_name: "beta.ipa",
     )
     firebase_app_distribution(
-          groups: "beta",
-          app: "1:258612152633:ios:8cca4783fefba001ff40e8",
-          firebase_cli_token: ENV['FIREBASE_TOKEN'],
-          release_notes: ENV['GITHUB_RUN_NUMBER'],
-          ipa_path: "./build/Runner/beta.ipa"
+      groups: "beta",
+      app: "1:258612152633:ios:8cca4783fefba001ff40e8",
+      firebase_cli_token: ENV['FIREBASE_TOKEN'],
+      release_notes: ENV['GITHUB_RUN_NUMBER'],
+      ipa_path: "./build/Runner/beta.ipa"
     )
+    upload_to_testflight
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
 
@@ -85,12 +86,13 @@ platform :ios do
       output_name: "master.ipa",
     )
     firebase_app_distribution(
-          groups: "master",
-          app: "1:721847679884:ios:ef9040472124b4715bb4a9",
-          firebase_cli_token: ENV['FIREBASE_TOKEN'],
-          release_notes: ENV['GITHUB_RUN_NUMBER'],
-          ipa_path: "./build/Runner/master.ipa"
+      groups: "master",
+      app: "1:721847679884:ios:ef9040472124b4715bb4a9",
+      firebase_cli_token: ENV['FIREBASE_TOKEN'],
+      release_notes: ENV['GITHUB_RUN_NUMBER'],
+      ipa_path: "./build/Runner/master.ipa"
     )
+    upload_to_testflight
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
 end

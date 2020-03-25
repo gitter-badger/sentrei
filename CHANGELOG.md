@@ -1,3 +1,9 @@
+## [1.3.2](https://github.com/sentrei/sentrei/compare/v1.3.1...v1.3.2) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add conventional changelog for notes ([33506b4](https://github.com/sentrei/sentrei/commit/33506b46f431bbf7dd83fdb5ef6830db87180c34))
+
 ## [1.3.1](https://github.com/sentrei/sentrei/compare/v1.3.0...v1.3.1) (2020-03-25)
 
 ### Bug Fixes

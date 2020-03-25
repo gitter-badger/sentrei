@@ -1,3 +1,9 @@
+# [1.2.0-beta.22](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.21...v1.2.0-beta.22) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add ios bundle ([b288938](https://github.com/sentrei/sentrei/commit/b288938fd45661b7e64d26f4b2b9022bb8a0a46f))
+
 # [1.2.0-beta.21](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.20...v1.2.0-beta.21) (2020-03-25)
 
 ### Bug Fixes

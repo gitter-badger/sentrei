@@ -104,12 +104,15 @@ jobs:
         env:
           LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
       - run: flutter pub get
-      - run: flutter test
       - name: Run android apk
         if: matrix.platform == 'android'
         run: |
           flutter build apk --flavor ${{ steps.branch.outputs.branch }}
           flutter build appbundle --flavor ${{ steps.branch.outputs.branch }}
+        env:
+          FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}
+          FCI_KEY_PASSWORD: ${{ secrets.FCI_KEY_PASSWORD }}
+          FCI_KEYSTORE_PASSWORD: ${{ secrets.FCI_KEYSTORE_PASSWORD }}
       - name: Run ios ipa
         if: matrix.platform == 'ios'
         run: |
@@ -129,5 +132,5 @@ jobs:
           CI: true
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER
-          MATCH_GIT_BASIC_AUTHORIZATION: "shunkakinoki:${{ secrets.ACCESS_TOKEN }}"
+          GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}

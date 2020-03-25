@@ -8,7 +8,7 @@ platform :android do
     android_appicon(
       appicon_image_file: '../assets/sentrei.png',
       appicon_icon_types: [:launcher],
-      appicon_path: 'app/src/main/res',
+      appicon_path: 'app/src/main/res/mipmap',
       appicon_filename: 'ic_launcher',
   )
   end

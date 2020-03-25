@@ -20,6 +20,14 @@ or alternatively using `brew cask install fastlane`
 
 ## Android
 
+### android appicon
+
+```
+fastlane android appicon
+```
+
+Generate android appicons
+
 ### android beta
 
 ```
@@ -33,6 +41,8 @@ Submit a new beta build to firebase
 ```
 fastlane android master
 ```
+
+Submit a new master build to firebase
 
 ---
 

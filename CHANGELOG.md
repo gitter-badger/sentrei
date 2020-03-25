@@ -1,3 +1,9 @@
+## [1.3.7-beta.1](https://github.com/sentrei/sentrei/compare/v1.3.6...v1.3.7-beta.1) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 release analyze_commits beta ([41b49cc](https://github.com/sentrei/sentrei/commit/41b49ccf133a7ba44bbe410a3ad1bbc2b1d7c852))
+
 ## [1.3.6](https://github.com/sentrei/sentrei/compare/v1.3.5...v1.3.6) (2020-03-25)
 
 ### Bug Fixes

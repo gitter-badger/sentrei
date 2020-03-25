@@ -50,6 +50,7 @@ platform :ios do
       keychain_name: keychain_name,
       keychain_password: keychain_password,
       git_url: "https://github.com/shunkakinoki/ios-certificates.git",
+      git_basic_authorization: Base64.strict_encode64("shunkakinoki:#{ENV['GITHUB_ACCESS_TOKEN']}")
     )
     build_ios_app(
       export_options: {

@@ -117,6 +117,7 @@ jobs:
           cd ${{ matrix.platform }}
           bundle exec fastlane ${{ steps.branch.outputs.branch }}
         env:
+          CI: "true"
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER
           MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.ACCESS_TOKEN }}

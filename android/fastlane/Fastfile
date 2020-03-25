@@ -10,34 +10,46 @@ platform :android do
       appicon_icon_types: [:launcher],
       appicon_path: 'app/src/main/res/mipmap',
       appicon_filename: 'ic_launcher',
-  )
+    )
   end
 
   desc "Submit a new beta build to firebase"
   lane :beta do
-      add_badge(
-            dark: true,
-            glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
-      )
-      sh("cd ../.. && flutter build apk --flavor beta")
-      firebase_app_distribution(
-            groups: "beta",
-            app: "1:258612152633:android:0344f8ed2ff95c50ff40e8",
-            firebase_cli_token: ENV['FIREBASE_TOKEN'],
-            release_notes: ENV['GITHUB_RUN_NUMBER'],
-            apk_path: "../build/app/outputs/apk/beta/release/app-beta-release.apk"
-      )
+    build = ENV['GITHUB_RUN_NUMBER']
+    version = lane_context[SharedValues::RELEASE_NEXT_VERSION]
+    add_badge(
+      dark: true,
+      shield: "#{version}-#{build}-blue",
+      no_badge: true,
+      glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
+    )
+    sh("cd ../.. && flutter build apk --flavor beta")
+    notes = conventional_changelog(
+      format: "plain",
+      title: "sentrei master",
+    )
+    firebase_app_distribution(
+      groups: "beta",
+      app: "1:258612152633:android:0344f8ed2ff95c50ff40e8",
+      firebase_cli_token: ENV['FIREBASE_TOKEN'],
+      release_notes: notes,
+      apk_path: "../build/app/outputs/apk/beta/release/app-beta-release.apk"
+    )
   end
 
   desc "Submit a new master build to firebase"
   lane :master do
-      sh("cd ../.. && flutter build apk --flavor master")
-      firebase_app_distribution(
-            groups: "master",
-            app: "1:721847679884:android:1935b57831163cda5bb4a9",
-            firebase_cli_token: ENV['FIREBASE_TOKEN'],
-            release_notes: ENV['GITHUB_RUN_NUMBER'],
-            apk_path: "../build/app/outputs/apk/master/release/app-master-release.apk"
-      )
+    sh("cd ../.. && flutter build apk --flavor master")
+    notes = conventional_changelog(
+      format: "plain",
+      title: "sentrei master",
+    )
+    firebase_app_distribution(
+      groups: "master",
+      app: "1:721847679884:android:1935b57831163cda5bb4a9",
+      firebase_cli_token: ENV['FIREBASE_TOKEN'],
+      release_notes: notes,
+      apk_path: "../build/app/outputs/apk/master/release/app-master-release.apk"
+    )
   end
 end

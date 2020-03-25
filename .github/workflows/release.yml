@@ -113,7 +113,7 @@ jobs:
       - name: Run ios ipa
         if: matrix.platform == 'ios'
         run: |
-          flutter build ios --flavor ${{ steps.branch.outputs.branch }}
+          flutter build ios --no-codesign --flavor ${{ steps.branch.outputs.branch }}
       - name: Install dependencies with bundler
         if: steps.bundler.outputs.cache-hit != 'true'
         run: |

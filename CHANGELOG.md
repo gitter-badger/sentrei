@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/sentrei/sentrei/compare/v1.2.1...v1.3.0) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add android app icons ([487a00d](https://github.com/sentrei/sentrei/commit/487a00d44683aa2eda1696b20efdaf7788466fed))
+- 🐛 add android icon ([f9e80e8](https://github.com/sentrei/sentrei/commit/f9e80e87f0f390622b1a08a5837d7bc60c92fa98))
+- 🐛 proper android icon path ([4bc3897](https://github.com/sentrei/sentrei/commit/4bc38970f70d0b772e5044a71ac2a70ba727e4be))
+
+### Features
+
+- 🎸 add sentrei appicon ([06769e1](https://github.com/sentrei/sentrei/commit/06769e1081b192a5537a061d799620a557ecf44d))
+
 ## [1.2.1](https://github.com/sentrei/sentrei/compare/v1.2.0...v1.2.1) (2020-03-25)
 
 ### Bug Fixes

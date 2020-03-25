@@ -105,6 +105,15 @@ jobs:
           LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
       - run: flutter pub get
       - run: flutter test
+      - name: Run android apk
+        if: matrix.platform == 'android'
+        run: |
+          flutter build apk --flavor ${{ steps.branch.outputs.branch }}
+          flutter build appbundle --flavor ${{ steps.branch.outputs.branch }}
+      - name: Run ios ipa
+        if: matrix.platform == 'ios'
+        run: |
+          flutter build ios --flavor ${{ steps.branch.outputs.branch }}
       - name: Install dependencies with bundler
         if: steps.bundler.outputs.cache-hit != 'true'
         run: |
@@ -117,8 +126,8 @@ jobs:
           cd ${{ matrix.platform }}
           bundle exec fastlane ${{ steps.branch.outputs.branch }}
         env:
-          CI: "true"
+          CI: true
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER
-          MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.ACCESS_TOKEN }}
+          MATCH_GIT_BASIC_AUTHORIZATION: "shunkakinoki:${{ secrets.ACCESS_TOKEN }}"
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}

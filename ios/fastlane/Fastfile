@@ -39,11 +39,8 @@ platform :ios do
 
   desc "Submit a new beta build to firebase"
   lane :beta do
-    analyze_commits(
-      match: "*beta*"
-    )
     build = ENV['GITHUB_RUN_NUMBER']
-    version = lane_context[SharedValues::RELEASE_NEXT_VERSION]
+    version = last_git_tag(pattern: "v*-beta*")
     add_badge(
       dark: true,
       shield: "#{version}-#{build}-blue",
@@ -73,9 +70,13 @@ platform :ios do
       output_directory: "./build/Runner",
       output_name: "beta.ipa",
     )
+    analyze_commits(
+      match: "v*"
+    )
     notes = conventional_changelog(
       format: "plain",
       title: "sentrei beta",
+      display_title: false,
     )
     firebase_app_distribution(
       groups: "beta",
@@ -89,9 +90,6 @@ platform :ios do
 
   desc "Submit a new master build to firebase"
   lane :master do
-    analyze_commits(
-      match: "v*"
-    )
     disable_automatic_code_signing(
       path: "./Runner.xcodeproj",
       team_id: "8CW7HSL79U",
@@ -116,9 +114,13 @@ platform :ios do
       output_directory: "./build/Runner",
       output_name: "master.ipa",
     )
+    analyze_commits(
+      match: "v*"
+    )
     notes = conventional_changelog(
       format: "plain",
       title: "sentrei master",
+      display_title: false,
     )
     firebase_app_distribution(
       groups: "master",

@@ -15,11 +15,8 @@ platform :android do
 
   desc "Submit a new beta build to firebase"
   lane :beta do
-    analyze_commits(
-      match: "*beta*"
-    )
     build = ENV['GITHUB_RUN_NUMBER']
-    version = lane_context[SharedValues::RELEASE_NEXT_VERSION]
+    version = last_git_tag(pattern: "v*-beta*")
     add_badge(
       dark: true,
       shield: "#{version}-#{build}-blue",
@@ -27,9 +24,13 @@ platform :android do
       glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
     )
     sh("cd ../.. && flutter build apk --flavor beta")
+    analyze_commits(
+      match: "v*-beta*",
+    )
     notes = conventional_changelog(
       format: "plain",
       title: "sentrei master",
+      display_title: false,
     )
     firebase_app_distribution(
       groups: "beta",
@@ -42,13 +43,14 @@ platform :android do
 
   desc "Submit a new master build to firebase"
   lane :master do
+    sh("cd ../.. && flutter build apk --flavor master")
     analyze_commits(
       match: "v*"
     )
-    sh("cd ../.. && flutter build apk --flavor master")
     notes = conventional_changelog(
       format: "plain",
       title: "sentrei master",
+      display_title: false,
     )
     firebase_app_distribution(
       groups: "master",

@@ -105,6 +105,15 @@ jobs:
           LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
       - run: flutter pub get
       - run: flutter test
+      - name: Run android apk
+        if: matrix.platform == 'android'
+        run: |
+          flutter build apk --flavor ${{ steps.branch.outputs.branch }}
+          flutter build appbundle --flavor ${{ steps.branch.outputs.branch }}
+      - name: Run ios ipa
+        if: matrix.platform == 'ios'
+        run: |
+          flutter build ios --flavor ${{ steps.branch.outputs.branch }}
       - name: Install dependencies with bundler
         if: steps.bundler.outputs.cache-hit != 'true'
         run: |

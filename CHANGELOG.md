@@ -1,3 +1,10 @@
+# [1.2.0-beta.21](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.20...v1.2.0-beta.21) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add correct ci ([e05a73c](https://github.com/sentrei/sentrei/commit/e05a73c54fd5dca4aa5340a393f19d68a7eadd70))
+- 🐛 add scheme beta ([6c0b893](https://github.com/sentrei/sentrei/commit/6c0b8935fd7afd60897bf1388407e6664edb6a34))
+
 # [1.2.0-beta.20](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.19...v1.2.0-beta.20) (2020-03-25)
 
 ### Bug Fixes

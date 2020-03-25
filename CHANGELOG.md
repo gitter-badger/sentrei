@@ -1,3 +1,10 @@
+# [1.2.0-beta.19](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.18...v1.2.0-beta.19) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add key bundle ([54a310a](https://github.com/sentrei/sentrei/commit/54a310a2497b7b2a1c914b0291a6987b05f7c283))
+- 🐛 remove git_basic_authorization: ([966456d](https://github.com/sentrei/sentrei/commit/966456dc21ffefdf0300e23646c2a5b320276d12))
+
 # [1.2.0-beta.18](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.17...v1.2.0-beta.18) (2020-03-25)
 
 ### Bug Fixes

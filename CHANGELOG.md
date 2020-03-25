@@ -1,3 +1,9 @@
+# [1.2.0-beta.20](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.19...v1.2.0-beta.20) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add github access token ([52b4d1a](https://github.com/sentrei/sentrei/commit/52b4d1a674a76285e4a70575427c798d98e0b2b5))
+
 # [1.2.0-beta.19](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.18...v1.2.0-beta.19) (2020-03-25)
 
 ### Bug Fixes

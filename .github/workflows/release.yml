@@ -131,6 +131,7 @@ jobs:
           bundle exec fastlane ${{ steps.branch.outputs.branch }}
         env:
           CI: true
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
           FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}
           FCI_KEY_PASSWORD: ${{ secrets.FCI_KEY_PASSWORD }}
           FCI_KEYSTORE_PASSWORD: ${{ secrets.FCI_KEYSTORE_PASSWORD }}

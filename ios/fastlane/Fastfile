@@ -1,22 +1,19 @@
 default_platform(:ios)
 
-# Default temporary keychain password and name, if not included from environment
-TEMP_KEYCHAIN_NAME_DEFAULT = "fastlane_flutter" || ENV['TEMP_KEYCHAIN_NAME']
-TEMP_KEYCHAN_PASSWORD_DEFAULT = "temppassword" || ENV['TEMP_KEYCHAIN_PASSWORD']
+TMP_KEYCHAIN_NAME_DEFAULT = "fastlane_flutter"
+TMP_KEYCHAN_PASSWORD_DEFAULT = "tmppassword"
 APP_ID = ENV['FIREBASE_IOS_APPID']
 BUILD_NUMBER = ENV['GITHUB_RUN_NUMBER']
 FIREBASE_TOKEN = ENV['FIREBASE_CI_TOKEN']
 GITHUB_BRANCH = ENV['GITHUB_REF']
 
-# Remove the temporary keychain, if it exists
-def delete_temp_keychain(name)
+def delete_tmp_keychain(name)
   delete_keychain(
     name: name
   ) if File.exist? File.expand_path("~/Library/Keychains/#{name}-db")
 end
 
-# Create the temporary keychain with name and password
-def create_temp_keychain(name, password)
+def create_tmp_keychain(name, password)
   create_keychain(
     name: name,
     password: password,
@@ -25,10 +22,9 @@ def create_temp_keychain(name, password)
   )
 end
 
-# Ensure we have a fresh, empty temporary keychain
-def ensure_temp_keychain(name, password)
-  delete_temp_keychain(name)
-  create_temp_keychain(name, password)
+def ensure_tmp_keychain(name, password)
+  delete_tmp_keychain(name)
+  create_tmp_keychain(name, password)
 end
 
 platform :ios do
@@ -40,24 +36,15 @@ platform :ios do
       profile_name: "match AdHoc com.sentrei.sentrei.beta",
       code_sign_identity: "iPhone Distribution"
     )
-    keychain_name = TEMP_KEYCHAIN_NAME_DEFAULT
-    keychain_password = TEMP_KEYCHAN_PASSWORD_DEFAULT
-    ensure_temp_keychain(keychain_name, keychain_password)
+    ensure_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT, TMP_KEYCHAN_PASSWORD_DEFAULT)
     match(
       app_identifier: "com.sentrei.sentrei.beta",
       type: "adhoc",
       readonly: is_ci,
-      keychain_name: keychain_name,
-      keychain_password: keychain_password,
+      keychain_name: TMP_KEYCHAIN_NAME_DEFAULT,
+      keychain_password: TMP_KEYCHAN_PASSWORD_DEFAULT,
       git_url: "https://github.com/shunkakinoki/ios-certificates.git",
       git_basic_authorization: Base64.strict_encode64("shunkakinoki:#{ENV['GITHUB_ACCESS_TOKEN']}")
-    )
-    build_ios_app(
-      scheme: "beta",
-      export_options: {
-          method: "ad-hoc"
-      },
-      output_directory: "./build/Runner"
     )
   end
 
@@ -68,14 +55,44 @@ platform :ios do
           shield: "Version-3-blue",
       )
     setup_match()
+    build_ios_app(
+      scheme: "beta",
+      export_options: {
+          method: "ad-hoc"
+      },
+      output_directory: "./build/Runner",
+      output_name: "beta.ipa",
+    )
     firebase_app_distribution(
-          app: APP_ID,
-          groups: "beta",
-          release_notes: BUILD_NUMBER,
-          firebase_cli_path: FIREBASE_PATH,
-          firebase_cli_token: FIREBASE_TOKEN,
-          apk_path: "./build/Runner/sentrei master.ipa"
-      )
-    delete_temp_keychain(keychain_name)
+      groups: "beta",
+      app: "1:258612152633:ios:8cca4783fefba001ff40e8",
+      firebase_cli_token: ENV['FIREBASE_TOKEN'],
+      release_notes: ENV['GITHUB_RUN_NUMBER'],
+      ipa_path: "./build/Runner/beta.ipa"
+    )
+    upload_to_testflight
+    delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
+  end
+
+  desc "Submit a new master build to firebase"
+  lane :master do
+    setup_match()
+    build_ios_app(
+      scheme: "master",
+      export_options: {
+          method: "ad-hoc"
+      },
+      output_directory: "./build/Runner",
+      output_name: "master.ipa",
+    )
+    firebase_app_distribution(
+      groups: "master",
+      app: "1:721847679884:ios:ef9040472124b4715bb4a9",
+      firebase_cli_token: ENV['FIREBASE_TOKEN'],
+      release_notes: ENV['GITHUB_RUN_NUMBER'],
+      ipa_path: "./build/Runner/master.ipa"
+    )
+    upload_to_testflight
+    delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
 end

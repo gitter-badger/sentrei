@@ -1,3 +1,10 @@
+## [1.3.5](https://github.com/sentrei/sentrei/compare/v1.3.4...v1.3.5) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add change android ([88fd882](https://github.com/sentrei/sentrei/commit/88fd882241514395928394e4c5a9a626c1103c75))
+- 🐛 gemfile lock ([b2f3164](https://github.com/sentrei/sentrei/commit/b2f31641a6a3889caa1c06fc116e3a434a21a868))
+
 ## [1.3.3](https://github.com/sentrei/sentrei/compare/v1.3.2...v1.3.3) (2020-03-25)
 
 ### Bug Fixes

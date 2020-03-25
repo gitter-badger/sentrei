@@ -28,8 +28,11 @@ def ensure_tmp_keychain(name, password)
 end
 
 platform :ios do
-  desc "Build & sign iOS app"
-  lane :setup_match do |options|
+  desc "Submit a new beta build to firebase"
+  lane :beta do
+    add_badge(
+          dark: true,
+    )
     disable_automatic_code_signing(
       path: "./Runner.xcodeproj",
       team_id: "8CW7HSL79U",
@@ -46,14 +49,6 @@ platform :ios do
       git_url: "https://github.com/shunkakinoki/ios-certificates.git",
       git_basic_authorization: Base64.strict_encode64("shunkakinoki:#{ENV['GITHUB_ACCESS_TOKEN']}")
     )
-  end
-
-  desc "Submit a new beta build to firebase"
-  lane :beta do
-    add_badge(
-          dark: true,
-    )
-    setup_match()
     build_ios_app(
       scheme: "beta",
       export_options: {
@@ -74,7 +69,22 @@ platform :ios do
 
   desc "Submit a new master build to firebase"
   lane :master do
-    setup_match()
+    disable_automatic_code_signing(
+      path: "./Runner.xcodeproj",
+      team_id: "8CW7HSL79U",
+      profile_name: "match AdHoc com.sentrei.sentrei",
+      code_sign_identity: "iPhone Distribution"
+    )
+    ensure_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT, TMP_KEYCHAN_PASSWORD_DEFAULT)
+    match(
+      app_identifier: "com.sentrei.sentrei",
+      type: "adhoc",
+      readonly: is_ci,
+      keychain_name: TMP_KEYCHAIN_NAME_DEFAULT,
+      keychain_password: TMP_KEYCHAN_PASSWORD_DEFAULT,
+      git_url: "https://github.com/shunkakinoki/ios-certificates.git",
+      git_basic_authorization: Base64.strict_encode64("shunkakinoki:#{ENV['GITHUB_ACCESS_TOKEN']}")
+    )
     build_ios_app(
       scheme: "master",
       export_options: {

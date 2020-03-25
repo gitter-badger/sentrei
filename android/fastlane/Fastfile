@@ -3,11 +3,14 @@ fastlane_version "2.28.3"
 default_platform :android
 
 platform :android do
-  desc "Generate android appicons"
-  lane :appicon do
-      android_appicon(appicon_image_file: 'spec/fixtures/Themoji.png',
-      appicon_devices: [:phone, :tablet],
-      appicon_path: 'app/res/mipmap')
+  desc "Set appicons"
+  lane :icon do
+    android_appicon(
+      appicon_image_file: '../assets/sentrei.png',
+      appicon_icon_types: [:launcher],
+      appicon_path: 'app/src/main/res/mipmap',
+      appicon_filename: 'ic_launcher',
+  )
   end
 
   desc "Submit a new beta build to firebase"

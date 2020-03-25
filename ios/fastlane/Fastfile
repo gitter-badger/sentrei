@@ -28,10 +28,19 @@ def ensure_tmp_keychain(name, password)
 end
 
 platform :ios do
+  desc "Set appicons"
+  lane :icon do
+    appicon(
+      appicon_image_file: '../assets/sentrei.png',
+      appicon_devices: [:iphone, :ios_marketing],
+      appicon_path: "Runner/Assets.xcassets"
+  )
+  end
+
   desc "Submit a new beta build to firebase"
   lane :beta do
     add_badge(
-          dark: true,
+      dark: true,
     )
     disable_automatic_code_signing(
       path: "./Runner.xcodeproj",

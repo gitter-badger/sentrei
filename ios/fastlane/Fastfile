@@ -36,15 +36,15 @@ platform :ios do
   lane :setup_match do |options|
     disable_automatic_code_signing(
       path: "./Runner.xcodeproj",
-      team_id: CredentialsManager::AppfileConfig.try_fetch_value(:team_id),
-      profile_name: "match AdHoc #{CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)}",
+      team_id: "8CW7HSL79U",
+      profile_name: "match AdHoc com.sentrei.sentrei.beta",
       code_sign_identity: "iPhone Distribution"
     )
     keychain_name = TEMP_KEYCHAIN_NAME_DEFAULT
     keychain_password = TEMP_KEYCHAN_PASSWORD_DEFAULT
     ensure_temp_keychain(keychain_name, keychain_password)
     match(
-      app_identifier: CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier),
+      app_identifier: "com.sentrei.sentrei.beta",
       type: "adhoc",
       readonly: is_ci,
       keychain_name: keychain_name,
@@ -53,7 +53,7 @@ platform :ios do
       git_basic_authorization: Base64.strict_encode64("shunkakinoki:#{ENV['GITHUB_ACCESS_TOKEN']}")
     )
     build_ios_app(
-      scheme: "beta"
+      scheme: "beta",
       export_options: {
           method: "ad-hoc"
       },
@@ -63,6 +63,10 @@ platform :ios do
 
   desc "Submit a new beta build to firebase"
   lane :beta do
+      add_badge(
+          dark: true,
+          shield: "Version-3-blue",
+      )
     setup_match()
     firebase_app_distribution(
           app: APP_ID,
@@ -70,7 +74,7 @@ platform :ios do
           release_notes: BUILD_NUMBER,
           firebase_cli_path: FIREBASE_PATH,
           firebase_cli_token: FIREBASE_TOKEN,
-          apk_path: "./build/Runner/Runner.ipa"
+          apk_path: "./build/Runner/sentrei master.ipa"
       )
     delete_temp_keychain(keychain_name)
   end

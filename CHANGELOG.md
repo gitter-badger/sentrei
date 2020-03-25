@@ -1,3 +1,9 @@
+## [1.2.1](https://github.com/sentrei/sentrei/compare/v1.2.0...v1.2.1) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 fixed final master ([d92eea1](https://github.com/sentrei/sentrei/commit/d92eea1bbaa3d2f963a9c631b6ec9143195c10c5))
+
 # [1.2.0](https://github.com/sentrei/sentrei/compare/v1.1.4...v1.2.0) (2020-03-25)
 
 ### Bug Fixes

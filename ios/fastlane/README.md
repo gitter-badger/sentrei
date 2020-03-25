@@ -18,28 +18,28 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 
-## Android
+## iOS
 
-### android appicon
-
-```
-fastlane android appicon
-```
-
-Generate android appicons
-
-### android beta
+### ios setup_match
 
 ```
-fastlane android beta
+fastlane ios setup_match
+```
+
+Build & sign iOS app
+
+### ios beta
+
+```
+fastlane ios beta
 ```
 
 Submit a new beta build to firebase
 
-### android master
+### ios master
 
 ```
-fastlane android master
+fastlane ios master
 ```
 
 Submit a new master build to firebase

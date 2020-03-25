@@ -78,6 +78,9 @@ jobs:
       - name: Install firebase
         run: |
           npm install -g firebase-tools
+      - name: Install imagemagick
+        run: |
+          brew install imagemagick
       - name: Cache bundler
         id: bundler
         uses: actions/cache@v1
@@ -90,12 +93,31 @@ jobs:
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: branch
+      - name: Decrypt secrets
+        if: matrix.platform == 'android'
+        run: |
+          cd ${{ matrix.platform }}
+          gpg --quiet --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" \
+          --output api-4997473042007130719-469020-7539250087b0.json api-4997473042007130719-469020-7539250087b0.json.gpg
+          gpg --quiet --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" \
+          --output key.jks key.jks.gpg
+        env:
+          LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
       - run: flutter pub get
-      - run: flutter test
       - name: Run android apk
         if: matrix.platform == 'android'
         run: |
           flutter build apk --flavor ${{ steps.branch.outputs.branch }}
+          flutter build appbundle --flavor ${{ steps.branch.outputs.branch }}
+        env:
+          CI: true
+          FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}
+          FCI_KEY_PASSWORD: ${{ secrets.FCI_KEY_PASSWORD }}
+          FCI_KEYSTORE_PASSWORD: ${{ secrets.FCI_KEYSTORE_PASSWORD }}
+      - name: Run ios ipa
+        if: matrix.platform == 'ios'
+        run: |
+          flutter build ios --no-codesign --release --flavor ${{ steps.branch.outputs.branch }}
       - name: Install dependencies with bundler
         # if: steps.bundler.outputs.cache-hit != 'true'
         run: |
@@ -108,6 +130,11 @@ jobs:
           cd ${{ matrix.platform }}
           bundle exec fastlane ${{ steps.branch.outputs.branch }}
         env:
-          FIREBASE_APP_ID_BETA_ANDROID: ${{ secrets.FIREBASE_APP_ID_BETA_ANDROID }}
+          CI: true
+          FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}
+          FCI_KEY_PASSWORD: ${{ secrets.FCI_KEY_PASSWORD }}
+          FCI_KEYSTORE_PASSWORD: ${{ secrets.FCI_KEYSTORE_PASSWORD }}
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER
+          GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}

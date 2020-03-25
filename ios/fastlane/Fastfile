@@ -52,8 +52,7 @@ platform :ios do
   lane :beta do
     add_badge(
           dark: true,
-          shield: "Version-3-blue",
-      )
+    )
     setup_match()
     build_ios_app(
       scheme: "beta",
@@ -70,7 +69,6 @@ platform :ios do
       release_notes: ENV['GITHUB_RUN_NUMBER'],
       ipa_path: "./build/Runner/beta.ipa"
     )
-    upload_to_testflight
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
 
@@ -92,7 +90,6 @@ platform :ios do
       release_notes: ENV['GITHUB_RUN_NUMBER'],
       ipa_path: "./build/Runner/master.ipa"
     )
-    upload_to_testflight
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
 end

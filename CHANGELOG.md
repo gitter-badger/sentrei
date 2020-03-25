@@ -1,3 +1,9 @@
+# [1.2.0-beta.25](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.24...v1.2.0-beta.25) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD ([a39e3c7](https://github.com/sentrei/sentrei/commit/a39e3c7b70676d0d008ad6cd383c3e2786d27070))
+
 # [1.2.0-beta.24](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.23...v1.2.0-beta.24) (2020-03-25)
 
 ### Bug Fixes

@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/sentrei/sentrei/compare/v1.3.0...v1.3.1) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add contributors img app ([6021446](https://github.com/sentrei/sentrei/commit/60214462e0c275ee6803286927175e94e85e751b))
+- 🐛 style ([f197c49](https://github.com/sentrei/sentrei/commit/f197c497f08a2f888658833a9c11ab50bc75973a))
+
 # [1.3.0](https://github.com/sentrei/sentrei/compare/v1.2.1...v1.3.0) (2020-03-25)
 
 ### Bug Fixes

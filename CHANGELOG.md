@@ -1,3 +1,10 @@
+# [1.2.0-beta.17](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.16...v1.2.0-beta.17) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add ios no-codesign ([a6c4a11](https://github.com/sentrei/sentrei/commit/a6c4a111165a710ad3f93bcd23f7f2131e659c58))
+- 🐛 add sentrei codecov ([0db64d0](https://github.com/sentrei/sentrei/commit/0db64d01f54bbfdb35ff370c7edf749caff8fcf3))
+
 # [1.2.0-beta.16](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.15...v1.2.0-beta.16) (2020-03-25)
 
 ### Bug Fixes

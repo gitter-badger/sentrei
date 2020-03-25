@@ -1,3 +1,9 @@
+# [1.2.0-beta.18](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.17...v1.2.0-beta.18) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add ios release ([93bb998](https://github.com/sentrei/sentrei/commit/93bb998f13b9f43251114a87938d96aea33a3feb))
+
 # [1.2.0-beta.17](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.16...v1.2.0-beta.17) (2020-03-25)
 
 ### Bug Fixes

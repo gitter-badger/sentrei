@@ -63,7 +63,7 @@ platform :ios do
 
   desc "Submit a new beta build to firebase"
   lane :beta do
-      add_badge(
+    add_badge(
           dark: true,
           shield: "Version-3-blue",
       )

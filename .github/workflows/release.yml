@@ -119,7 +119,7 @@ jobs:
         run: |
           flutter build ios --no-codesign --release --flavor ${{ steps.branch.outputs.branch }}
       - name: Install dependencies with bundler
-        if: steps.bundler.outputs.cache-hit != 'true'
+        # if: steps.bundler.outputs.cache-hit != 'true'
         run: |
           cd ${{ matrix.platform }}
           bundle update --bundler

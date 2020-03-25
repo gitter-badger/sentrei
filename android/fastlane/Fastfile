@@ -15,6 +15,9 @@ platform :android do
 
   desc "Submit a new beta build to firebase"
   lane :beta do
+    analyze_commits(
+      match: "v*-beta*"
+    )
     build = ENV['GITHUB_RUN_NUMBER']
     version = lane_context[SharedValues::RELEASE_NEXT_VERSION]
     add_badge(
@@ -39,6 +42,9 @@ platform :android do
 
   desc "Submit a new master build to firebase"
   lane :master do
+    analyze_commits(
+      match: "v*"
+    )
     sh("cd ../.. && flutter build apk --flavor master")
     notes = conventional_changelog(
       format: "plain",

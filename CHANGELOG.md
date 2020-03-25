@@ -1,3 +1,9 @@
+# [1.2.0-beta.27](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.26...v1.2.0-beta.27) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add FASTLANE_PASSWORD ([2f5580d](https://github.com/sentrei/sentrei/commit/2f5580d9d80269c7117e13a60a52b3e298aaa505))
+
 # [1.2.0-beta.26](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.25...v1.2.0-beta.26) (2020-03-25)
 
 ### Bug Fixes

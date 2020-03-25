@@ -39,6 +39,9 @@ platform :ios do
 
   desc "Submit a new beta build to firebase"
   lane :beta do
+    analyze_commits(
+      match: "v*-beta*"
+    )
     build = ENV['GITHUB_RUN_NUMBER']
     version = lane_context[SharedValues::RELEASE_NEXT_VERSION]
     add_badge(
@@ -86,6 +89,9 @@ platform :ios do
 
   desc "Submit a new master build to firebase"
   lane :master do
+    analyze_commits(
+      match: "v*"
+    )
     disable_automatic_code_signing(
       path: "./Runner.xcodeproj",
       team_id: "8CW7HSL79U",

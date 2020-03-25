@@ -62,12 +62,7 @@ platform :ios do
 
   desc "Submit a new beta build to firebase"
   lane :beta do
-    build_app(
-            scheme: "Runner",
-            archive_path: "./build/Runner.xcarchive",
-            export_method: "development",
-            output_directory: "./build/Runner"
-      )
+    build_app()
     firebase_app_distribution(
           app: APP_ID,
           groups: "beta",

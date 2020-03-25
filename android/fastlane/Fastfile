@@ -5,10 +5,11 @@ default_platform :android
 platform :android do
   desc "Set appicons"
   lane :icon do
-    appicon(
+    android_appicon(
       appicon_image_file: '../assets/sentrei.png',
-      appicon_devices: [:iphone, :ios_marketing],
-      appicon_path: 'app/res/mipmap',
+      appicon_icon_types: [:launcher],
+      appicon_path: 'app/src/main/res',
+      appicon_filename: 'ic_launcher',
   )
   end
 

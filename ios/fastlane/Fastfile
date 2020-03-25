@@ -39,6 +39,8 @@ platform :ios do
 
   desc "Submit a new beta build to firebase"
   lane :beta do
+    build = ENV['GITHUB_RUN_NUMBER']
+    version = lane_context[SharedValues::RELEASE_NEXT_VERSION]
     add_badge(
       dark: true,
     )
@@ -66,11 +68,12 @@ platform :ios do
       output_directory: "./build/Runner",
       output_name: "beta.ipa",
     )
+    notes = conventional_changelog()
     firebase_app_distribution(
       groups: "beta",
       app: "1:258612152633:ios:8cca4783fefba001ff40e8",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
-      release_notes: ENV['GITHUB_RUN_NUMBER'],
+      release_notes: notes,
       ipa_path: "./build/Runner/beta.ipa"
     )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
@@ -102,11 +105,12 @@ platform :ios do
       output_directory: "./build/Runner",
       output_name: "master.ipa",
     )
+    notes = conventional_changelog()
     firebase_app_distribution(
       groups: "master",
       app: "1:721847679884:ios:ef9040472124b4715bb4a9",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
-      release_notes: ENV['GITHUB_RUN_NUMBER'],
+      release_notes: notes,
       ipa_path: "./build/Runner/master.ipa"
     )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)

@@ -1,3 +1,9 @@
+## [1.3.3](https://github.com/sentrei/sentrei/compare/v1.3.2...v1.3.3) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add release notes ([197546c](https://github.com/sentrei/sentrei/commit/197546cb2c7f50300b60750ad73e5dd3e4f4244f))
+
 ## [1.3.2](https://github.com/sentrei/sentrei/compare/v1.3.1...v1.3.2) (2020-03-25)
 
 ### Bug Fixes

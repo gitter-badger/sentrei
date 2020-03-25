@@ -1,3 +1,14 @@
+# [1.2.0-beta.24](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.23...v1.2.0-beta.24) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add fastlane bundle ([33e424f](https://github.com/sentrei/sentrei/commit/33e424fc0b2fc606d6e598f1c8c9fe3a3f476bd8))
+- 🐛 add firebase diist ([c760492](https://github.com/sentrei/sentrei/commit/c7604920e550f416731bb783a13e132ad01fc417))
+- 🐛 add style ([9de0bef](https://github.com/sentrei/sentrei/commit/9de0bef1f1dea23f202d5879b45ac4cc867d5176))
+- 🐛 add testflight ([a8caad5](https://github.com/sentrei/sentrei/commit/a8caad5ea238f73303d6c98d22530ef651ef7ab7))
+- 🐛 fastfile ios deoc ([5fa1b9a](https://github.com/sentrei/sentrei/commit/5fa1b9ae65c4bf8520ca1b5224cdd2775125e63f))
+- 🐛 readme ([7a3eb84](https://github.com/sentrei/sentrei/commit/7a3eb84f697e20c9563eefc0bf097a63c2aa75cb))
+
 # [1.2.0-beta.23](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.22...v1.2.0-beta.23) (2020-03-25)
 
 ### Bug Fixes

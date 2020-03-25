@@ -1,3 +1,11 @@
+# [1.2.0-beta.15](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.14...v1.2.0-beta.15) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add ios build fastlane ([6d36e45](https://github.com/sentrei/sentrei/commit/6d36e45630155254be4f71ff59b032c3ee6d75c2))
+- 🐛 add match password ([8f8e8f2](https://github.com/sentrei/sentrei/commit/8f8e8f274f3df8626eb50ed0ab4de86c139d32d6))
+- 🐛 build gradle CI ([9499cff](https://github.com/sentrei/sentrei/commit/9499cffd40895e4150f999033fdd7a623ab3a1ce))
+
 # [1.2.0-beta.14](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.13...v1.2.0-beta.14) (2020-03-25)
 
 ### Bug Fixes

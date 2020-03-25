@@ -1,3 +1,10 @@
+## [1.3.6](https://github.com/sentrei/sentrei/compare/v1.3.5...v1.3.6) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add changelog fastlane ([f2f60e2](https://github.com/sentrei/sentrei/commit/f2f60e20e68fb42f81b95412b01cf6cc4b82155b))
+- 🐛 style ([e0ecf82](https://github.com/sentrei/sentrei/commit/e0ecf82cdb3d46b6d004a231002a1996f15f3a9a))
+
 ## [1.3.5](https://github.com/sentrei/sentrei/compare/v1.3.4...v1.3.5) (2020-03-25)
 
 ### Bug Fixes

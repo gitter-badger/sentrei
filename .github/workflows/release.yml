@@ -110,6 +110,7 @@ jobs:
           flutter build apk --flavor ${{ steps.branch.outputs.branch }}
           flutter build appbundle --flavor ${{ steps.branch.outputs.branch }}
         env:
+          CI: true
           FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}
           FCI_KEY_PASSWORD: ${{ secrets.FCI_KEY_PASSWORD }}
           FCI_KEYSTORE_PASSWORD: ${{ secrets.FCI_KEYSTORE_PASSWORD }}
@@ -130,6 +131,9 @@ jobs:
           bundle exec fastlane ${{ steps.branch.outputs.branch }}
         env:
           CI: true
+          FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}
+          FCI_KEY_PASSWORD: ${{ secrets.FCI_KEY_PASSWORD }}
+          FCI_KEYSTORE_PASSWORD: ${{ secrets.FCI_KEYSTORE_PASSWORD }}
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER
           GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}

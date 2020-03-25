@@ -1,3 +1,9 @@
+# [1.2.0-beta.28](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.27...v1.2.0-beta.28) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 finish ([6127fee](https://github.com/sentrei/sentrei/commit/6127fee65a79f13c4881ba9d50c8be6f06d33325))
+
 # [1.2.0-beta.27](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.26...v1.2.0-beta.27) (2020-03-25)
 
 ### Bug Fixes

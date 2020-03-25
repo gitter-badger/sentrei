@@ -1,3 +1,10 @@
+# [1.2.0-beta.16](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.15...v1.2.0-beta.16) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add correct fastfile ([7453ea2](https://github.com/sentrei/sentrei/commit/7453ea271c1d7e2178dd60f5d5a57485f581514a))
+- 🐛 add ios appbundle ([abc9dd2](https://github.com/sentrei/sentrei/commit/abc9dd25f440c217ec8ad07a84e881fe777019d6))
+
 # [1.2.0-beta.15](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.14...v1.2.0-beta.15) (2020-03-25)
 
 ### Bug Fixes

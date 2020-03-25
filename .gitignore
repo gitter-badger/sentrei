@@ -225,3 +225,10 @@ dist
 .yarn/unplugged
 .yarn/build-state.yml
 .pnp.*
+
+
+secring.*
+
+api-4997473042007130719-469020-7539250087b0.json
+key.jks
+key.properties

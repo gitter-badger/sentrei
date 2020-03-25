@@ -13,5 +13,11 @@ indent_size = 2
 [*.yml]
 indent_size = 2
 
+[Fastfile]
+indent_size = 2
+
 [*.pbxproj]
 indent_style = unset
+
+[Makefile]
+indent_style = tab

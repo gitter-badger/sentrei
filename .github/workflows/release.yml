@@ -93,6 +93,16 @@ jobs:
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: branch
+      - name: Decrypt secrets
+        if: matrix.platform == 'android'
+        run: |
+          cd ${{ matrix.platform }}
+          gpg --quiet --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" \
+          --output api-4997473042007130719-469020-7539250087b0.json api-4997473042007130719-469020-7539250087b0.json.gpg
+          gpg --quiet --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" \
+          --output key.jks key.jks.gpg
+        env:
+          LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
       - run: flutter pub get
       - run: flutter test
       - name: Install dependencies with bundler

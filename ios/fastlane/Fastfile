@@ -43,6 +43,8 @@ platform :ios do
     version = lane_context[SharedValues::RELEASE_NEXT_VERSION]
     add_badge(
       dark: true,
+      shield: "#{version}-#{build}-blue",
+      no_badge: true,
     )
     disable_automatic_code_signing(
       path: "./Runner.xcodeproj",
@@ -68,7 +70,10 @@ platform :ios do
       output_directory: "./build/Runner",
       output_name: "beta.ipa",
     )
-    notes = conventional_changelog()
+    notes = conventional_changelog(
+      format: "plain",
+      title: "sentrei beta",
+    )
     firebase_app_distribution(
       groups: "beta",
       app: "1:258612152633:ios:8cca4783fefba001ff40e8",
@@ -105,7 +110,10 @@ platform :ios do
       output_directory: "./build/Runner",
       output_name: "master.ipa",
     )
-    notes = conventional_changelog()
+    notes = conventional_changelog(
+      format: "plain",
+      title: "sentrei master",
+    )
     firebase_app_distribution(
       groups: "master",
       app: "1:721847679884:ios:ef9040472124b4715bb4a9",

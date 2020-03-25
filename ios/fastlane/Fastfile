@@ -50,7 +50,7 @@ platform :ios do
       keychain_name: keychain_name,
       keychain_password: keychain_password,
       git_url: "https://github.com/shunkakinoki/ios-certificates.git",
-      git_basic_authorization: 
+      git_basic_authorization:
     )
     build_ios_app(
       export_options: {

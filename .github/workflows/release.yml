@@ -120,3 +120,4 @@ jobs:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER
           MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.ACCESS_TOKEN }}
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}

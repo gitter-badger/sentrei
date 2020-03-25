@@ -53,6 +53,7 @@ platform :ios do
       git_basic_authorization: Base64.strict_encode64("shunkakinoki:#{ENV['GITHUB_ACCESS_TOKEN']}")
     )
     build_ios_app(
+      scheme: "beta"
       export_options: {
           method: "ad-hoc"
       },

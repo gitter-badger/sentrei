@@ -1,3 +1,9 @@
+## [1.3.7-beta.2](https://github.com/sentrei/sentrei/compare/v1.3.7-beta.1...v1.3.7-beta.2) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add semantic release ([2a8692b](https://github.com/sentrei/sentrei/commit/2a8692b690b4640de5a6d2bd17d374d5857d3c9f))
+
 ## [1.3.7-beta.1](https://github.com/sentrei/sentrei/compare/v1.3.6...v1.3.7-beta.1) (2020-03-25)
 
 ### Bug Fixes

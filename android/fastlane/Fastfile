@@ -17,7 +17,7 @@ platform :android do
       )
       add_badge(
             dark: true,
-            shield: "Version-3-blue",
+            shield: "version-#{version}-blue",
             glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
       )
       sh("cd ../.. && pwd && flutter build apk --flavor beta")

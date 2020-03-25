@@ -55,15 +55,21 @@ platform :ios do
           shield: "Version-3-blue",
       )
     setup_match()
-    sh("cd ../.. && pwd && flutter build ios --no-codesign  --release --flavor beta")
+    build_ios_app(
+      scheme: "beta",
+      export_options: {
+          method: "ad-hoc"
+      },
+      output_directory: "./build/Runner",
+      output_name: "beta.ipa",
+    )
     firebase_app_distribution(
-          app: APP_ID,
           groups: "beta",
-          release_notes: BUILD_NUMBER,
-          firebase_cli_path: FIREBASE_PATH,
-          firebase_cli_token: FIREBASE_TOKEN,
-          apk_path: "./build/Runner/sentrei master.ipa"
-      )
+          app: "1:258612152633:ios:8cca4783fefba001ff40e8",
+          firebase_cli_token: ENV['FIREBASE_TOKEN'],
+          release_notes: ENV['GITHUB_RUN_NUMBER'],
+          ipa_path: "./build/Runner/beta.ipa"
+    )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
 end

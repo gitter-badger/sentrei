@@ -40,7 +40,7 @@ platform :ios do
   desc "Submit a new beta build to firebase"
   lane :beta do
     analyze_commits(
-      match: "v*-beta*"
+      match: "*beta*"
     )
     build = ENV['GITHUB_RUN_NUMBER']
     version = lane_context[SharedValues::RELEASE_NEXT_VERSION]

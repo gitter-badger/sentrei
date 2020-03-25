@@ -1,3 +1,10 @@
+# [1.2.0-beta.14](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.13...v1.2.0-beta.14) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add android build fastlane ([d57bbed](https://github.com/sentrei/sentrei/commit/d57bbed16afbcd4f28d7d62d7502af05aeee7d1d))
+- 🐛 add readme ([f65eed5](https://github.com/sentrei/sentrei/commit/f65eed5761e15c7638309818ab9064b6f211694c))
+
 # [1.2.0-beta.13](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.12...v1.2.0-beta.13) (2020-03-24)
 
 ### Bug Fixes

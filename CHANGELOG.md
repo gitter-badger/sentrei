@@ -1,3 +1,9 @@
+# [1.2.0-beta.26](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.25...v1.2.0-beta.26) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add fastlane session ([29dddce](https://github.com/sentrei/sentrei/commit/29dddce211f9ca6e5bee8e532200759970c4053f))
+
 # [1.2.0-beta.25](https://github.com/sentrei/sentrei/compare/v1.2.0-beta.24...v1.2.0-beta.25) (2020-03-25)
 
 ### Bug Fixes

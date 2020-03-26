@@ -67,7 +67,7 @@ platform :ios do
       output_name: "beta.ipa",
     )
     analyze_commits(
-      match: "v*",
+      match: "v*-beta*",
     )
     notes = conventional_changelog(
       format: "plain",

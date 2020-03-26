@@ -20,13 +20,13 @@ or alternatively using `brew cask install fastlane`
 
 ## iOS
 
-### ios setup_match
+### ios icon
 
 ```
-fastlane ios setup_match
+fastlane ios icon
 ```
 
-Build & sign iOS app
+Set appicons
 
 ### ios beta
 

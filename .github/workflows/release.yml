@@ -91,7 +91,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ${{ matrix.platform }}/vendor/bundle
-          key: gem-v1-${{ matrix.platform }}-${{ hashFiles('${{ matrix.platform }}/Gemfile.lock') }}
+          key: gem-v1-${{ matrix.platform }}-${{ hashFiles('**/${{ matrix.platform }}/Gemfile.lock') }}
           restore-keys: |
             gem-v1-${{ matrix.platform }}-
       - name: Extract branch name
@@ -128,8 +128,8 @@ jobs:
         run: |
           cd ${{ matrix.platform }}
           bundle update --bundler
-          bundle config path vendor/bundle
-          bundle install --jobs 4 --retry 3 --deployment
+          bundle config path ./vendor/bundle
+          bundle install --jobs 4 --retry 3
       - name: Run fastlane
         run: |
           cd ${{ matrix.platform }}

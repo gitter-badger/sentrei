@@ -1,3 +1,9 @@
+# [2.1.0-alpha.5](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.4...v2.1.0-alpha.5) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add faster bundler cache for both platforms ([a4550e3](https://github.com/sentrei/sentrei/commit/a4550e3b9d3371d69ec4b138552b2545923c5821))
+
 # [2.1.0-alpha.4](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.3...v2.1.0-alpha.4) (2020-03-26)
 
 ### Bug Fixes

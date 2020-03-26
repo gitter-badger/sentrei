@@ -33,24 +33,20 @@ platform :ios do
     appicon(
       appicon_image_file: '../assets/sentrei.png',
       appicon_devices: [:iphone, :ios_marketing],
-      appicon_path: "Runner/Assets.xcassets"
-  )
+      appicon_path: "Runner/Assets.xcassets",
+    )
   end
 
   desc "Submit a new beta build to firebase"
   lane :beta do
-    build = ENV['GITHUB_RUN_NUMBER']
-    version = last_git_tag(pattern: "v*-beta*")
     add_badge(
       dark: true,
-      shield: "#{version}-#{build}-blue",
-      no_badge: true,
     )
     disable_automatic_code_signing(
       path: "./Runner.xcodeproj",
       team_id: "8CW7HSL79U",
       profile_name: "match AdHoc com.sentrei.sentrei.beta",
-      code_sign_identity: "iPhone Distribution"
+      code_sign_identity: "iPhone Distribution",
     )
     ensure_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT, TMP_KEYCHAN_PASSWORD_DEFAULT)
     match(
@@ -60,7 +56,7 @@ platform :ios do
       keychain_name: TMP_KEYCHAIN_NAME_DEFAULT,
       keychain_password: TMP_KEYCHAN_PASSWORD_DEFAULT,
       git_url: "https://github.com/shunkakinoki/ios-certificates.git",
-      git_basic_authorization: Base64.strict_encode64("shunkakinoki:#{ENV['GITHUB_ACCESS_TOKEN']}")
+      git_basic_authorization: Base64.strict_encode64("shunkakinoki:#{ENV['GITHUB_ACCESS_TOKEN']}"),
     )
     build_ios_app(
       scheme: "beta",
@@ -71,7 +67,7 @@ platform :ios do
       output_name: "beta.ipa",
     )
     analyze_commits(
-      match: "v*"
+      match: "v*",
     )
     notes = conventional_changelog(
       format: "plain",
@@ -83,7 +79,7 @@ platform :ios do
       app: "1:258612152633:ios:8cca4783fefba001ff40e8",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: notes,
-      ipa_path: "./build/Runner/beta.ipa"
+      ipa_path: "./build/Runner/beta.ipa",
     )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end
@@ -94,7 +90,7 @@ platform :ios do
       path: "./Runner.xcodeproj",
       team_id: "8CW7HSL79U",
       profile_name: "match AdHoc com.sentrei.sentrei",
-      code_sign_identity: "iPhone Distribution"
+      code_sign_identity: "iPhone Distribution",
     )
     ensure_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT, TMP_KEYCHAN_PASSWORD_DEFAULT)
     match(
@@ -104,18 +100,18 @@ platform :ios do
       keychain_name: TMP_KEYCHAIN_NAME_DEFAULT,
       keychain_password: TMP_KEYCHAN_PASSWORD_DEFAULT,
       git_url: "https://github.com/shunkakinoki/ios-certificates.git",
-      git_basic_authorization: Base64.strict_encode64("shunkakinoki:#{ENV['GITHUB_ACCESS_TOKEN']}")
+      git_basic_authorization: Base64.strict_encode64("shunkakinoki:#{ENV['GITHUB_ACCESS_TOKEN']}"),
     )
     build_ios_app(
       scheme: "master",
       export_options: {
-          method: "ad-hoc"
+          method: "ad-hoc",
       },
       output_directory: "./build/Runner",
       output_name: "master.ipa",
     )
     analyze_commits(
-      match: "v*"
+      match: "v*",
     )
     notes = conventional_changelog(
       format: "plain",
@@ -127,7 +123,7 @@ platform :ios do
       app: "1:721847679884:ios:ef9040472124b4715bb4a9",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: notes,
-      ipa_path: "./build/Runner/master.ipa"
+      ipa_path: "./build/Runner/master.ipa",
     )
     delete_tmp_keychain(TMP_KEYCHAIN_NAME_DEFAULT)
   end

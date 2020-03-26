@@ -77,7 +77,7 @@ platform :ios do
     )
     firebase_app_distribution(
       groups: "alpha",
-      app: "1:280671636932:ios:a270efbce363c3eccd6891",
+      app: "1:280671636932:ios:0df6c23796b69f57cd6891",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: notes,
       ipa_path: "./build/Runner/alpha.ipa",

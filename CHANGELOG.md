@@ -1,3 +1,9 @@
+## [1.3.7-alpha.5](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.4...v1.3.7-alpha.5) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 app id for ios alpha ([d87fe95](https://github.com/sentrei/sentrei/commit/d87fe9528ac68bb80542b4422832ba156471c9b2))
+
 ## [1.3.7-alpha.4](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.3...v1.3.7-alpha.4) (2020-03-26)
 
 ### Bug Fixes

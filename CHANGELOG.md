@@ -1,3 +1,9 @@
+## [1.3.7-alpha.7](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.6...v1.3.7-alpha.7) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add correct APP_DISPLAY_NAME ([87819b8](https://github.com/sentrei/sentrei/commit/87819b8f3e29e2924899173add0d18f67e805a2b))
+
 ## [1.3.7-alpha.6](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.5...v1.3.7-alpha.6) (2020-03-26)
 
 ### Bug Fixes

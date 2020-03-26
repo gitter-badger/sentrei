@@ -15,12 +15,8 @@ platform :android do
 
   desc "Submit a new beta build to firebase"
   lane :beta do
-    build = ENV['GITHUB_RUN_NUMBER']
-    version = last_git_tag(pattern: "v*-beta*")
     add_badge(
       dark: true,
-      shield: "#{version}-#{build}-blue",
-      no_badge: true,
       glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
     )
     sh("cd ../.. && flutter build apk --flavor beta")
@@ -45,7 +41,7 @@ platform :android do
   lane :master do
     sh("cd ../.. && flutter build apk --flavor master")
     analyze_commits(
-      match: "v*"
+      match: "v*",
     )
     notes = conventional_changelog(
       format: "plain",
@@ -57,7 +53,7 @@ platform :android do
       app: "1:721847679884:android:1935b57831163cda5bb4a9",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: notes,
-      apk_path: "../build/app/outputs/apk/master/release/app-master-release.apk"
+      apk_path: "../build/app/outputs/apk/master/release/app-master-release.apk",
     )
   end
 end

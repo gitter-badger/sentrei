@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
 void main() {
   Crashlytics.instance.enableInDevMode = true;
-
+  // Pass all uncaught errors from the framework to Crashlytics.
   FlutterError.onError = Crashlytics.instance.recordFlutterError;
 
-  runZoned(() {
-    runApp(MyApp());
-  }, onError: Crashlytics.instance.recordError);
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {

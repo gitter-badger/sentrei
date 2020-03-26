@@ -13,6 +13,31 @@ platform :android do
     )
   end
 
+  desc "Submit a new alpha build to firebase"
+  lane :alpha do
+    add_badge(
+      alpha: true,
+      dark: true,
+      glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
+    )
+    sh("cd ../.. && flutter build apk --flavor alpha")
+    analyze_commits(
+      match: "v*",
+    )
+    notes = conventional_changelog(
+      format: "plain",
+      title: "sentrei alpha",
+      display_title: false,
+    )
+    firebase_app_distribution(
+      groups: "alpha",
+      app: "1:280671636932:android:69407d4e605d5e60cd6891",
+      firebase_cli_token: ENV['FIREBASE_TOKEN'],
+      release_notes: notes,
+      apk_path: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk"
+    )
+  end
+
   desc "Submit a new beta build to firebase"
   lane :beta do
     add_badge(
@@ -21,7 +46,7 @@ platform :android do
     )
     sh("cd ../.. && flutter build apk --flavor beta")
     analyze_commits(
-      match: "v*-beta*",
+      match: "v*",
     )
     notes = conventional_changelog(
       format: "plain",

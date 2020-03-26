@@ -1,3 +1,13 @@
+# [2.0.0](https://github.com/sentrei/sentrei/compare/v1.3.8...v2.0.0) (2020-03-26)
+
+### Features
+
+- 🎸 INITIAL SETTINGS FOR FASTLANE, FLUTTER, AND GHA ([51235b6](https://github.com/sentrei/sentrei/commit/51235b6e18c540f076679a32f110d79a42da5744))
+
+### BREAKING CHANGES
+
+- 🧨 INITIATE
+
 ## [1.3.8](https://github.com/sentrei/sentrei/compare/v1.3.7...v1.3.8) (2020-03-26)
 
 ### Bug Fixes

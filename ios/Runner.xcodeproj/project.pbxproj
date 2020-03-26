@@ -54,7 +54,7 @@
 		9740EEB21CF90195004384FC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Flutter/Debug.xcconfig; sourceTree = "<group>"; };
 		9740EEB31CF90195004384FC /* Generated.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Generated.xcconfig; path = Flutter/Generated.xcconfig; sourceTree = "<group>"; };
 		9740EEBA1CF902C7004384FC /* Flutter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Flutter.framework; path = Flutter/Flutter.framework; sourceTree = "<group>"; };
-		97C146EE1CF9000F007C117D /* sentrei master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sentrei master.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97C146EE1CF9000F007C117D /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C146FB1CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,7 +98,6 @@
 				4CBAE9CAEC1BAA3D7303560B /* Pods-Runner.profile-alpha.xcconfig */,
 				E956441041D9C323366A0ADF /* Pods-Runner.profile-beta.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -129,7 +128,7 @@
 		97C146EF1CF9000F007C117D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				97C146EE1CF9000F007C117D /* sentrei master.app */,
+				97C146EE1CF9000F007C117D /* Runner.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,7 +179,7 @@
 			);
 			name = Runner;
 			productName = Runner;
-			productReference = 97C146EE1CF9000F007C117D /* sentrei master.app */;
+			productReference = 97C146EE1CF9000F007C117D /* Runner.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -318,7 +317,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" == \"Debug-alpha\" ] || [ \"${CONFIGURATION}\" == \"Release-alpha\" ] || [ \"${CONFIGURATION}\" == \"Profile-alpha\" ]; then\ncp -r \"${PROJECT_DIR}/Runner/Firebase/Prod/GoogleService-Info.plist\" \"${PROJECT_DIR}/Runner/GoogleService-Info.plist\"\n\necho \"alpha plist copied\"\n\nelif [ \"${CONFIGURATION}\" == \"Debug-beta\" ] || [ \"${CONFIGURATION}\" == \"Release-beta\" ] || [ \"${CONFIGURATION}\" == \"Profile-beta\" ]; then\n\ncp -r \"${PROJECT_DIR}/Runner/Firebase/beta/GoogleService-Info.plist\" \"${PROJECT_DIR}/Runner/GoogleService-Info.plist\"\n\necho \"beta plist copied\"\n\nelif [ \"${CONFIGURATION}\" == \"Debug-master\" ] || [ \"${CONFIGURATION}\" == \"Release-master\" ] || [ \"${CONFIGURATION}\" == \"Profile-master\" ]; then\n\ncp -r \"${PROJECT_DIR}/Runner/Firebase/master/GoogleService-Info.plist\" \"${PROJECT_DIR}/Runner/GoogleService-Info.plist\"\n\necho \"master plist copied\"\nfi\n";
+			shellScript = "environment=\"default\"\n\n# Regex to extract the scheme name from the Build Configuration\n# We have named our Build Configurations as Debug-dev, Debug-prod etc.\n# Here, dev and prod are the scheme names. This kind of naming is required by Flutter for flavors to work.\n# We are using the $CONFIGURATION variable available in the XCode build environment to extract \n# the environment (or flavor)\n# For eg.\n# If CONFIGURATION=\"Debug-prod\", then environment will get set to \"prod\".\nif [[ $CONFIGURATION =~ -([^-]*)$ ]]; then\nenvironment=${BASH_REMATCH[1]}\nfi\n\necho $environment\n\n# Name and path of the resource we're copying\nGOOGLESERVICE_INFO_PLIST=GoogleService-Info.plist\nGOOGLESERVICE_INFO_FILE=${PROJECT_DIR}/Runner/Firebase/${environment}/${GOOGLESERVICE_INFO_PLIST}\n\n# Make sure GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_FILE}\"\nif [ ! -f $GOOGLESERVICE_INFO_FILE ]\nthen\necho \"No GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\nexit 1\nfi\n\n# Get a reference to the destination location for the GoogleService-Info.plist\n# This is the default location where Firebase init code expects to find GoogleServices-Info.plist file\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}\"\n\n# Copy over the prod GoogleService-Info.plist for Release builds\ncp \"${GOOGLESERVICE_INFO_FILE}\" \"${PLIST_DESTINATION}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -426,7 +425,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = "$";
+				MARKETING_VERSION = $;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei;
 				PRODUCT_NAME = "${APP_DISPLAY_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.sentrei.sentrei";
@@ -565,9 +564,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = "$";
+				MARKETING_VERSION = $;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei;
-				PRODUCT_NAME = "${APP_DISPLAY_NAME}";
+				PRODUCT_NAME = Runner;
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.sentrei.sentrei";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -597,7 +596,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = "$";
+				MARKETING_VERSION = $;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei;
 				PRODUCT_NAME = "${APP_DISPLAY_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.sentrei.sentrei";
@@ -684,9 +683,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = "$";
+				MARKETING_VERSION = $;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei.beta;
-				PRODUCT_NAME = "${APP_DISPLAY_NAME}";
+				PRODUCT_NAME = Runner;
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.sentrei.sentrei.beta";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -768,7 +767,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = "$";
+				MARKETING_VERSION = $;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei.beta;
 				PRODUCT_NAME = "${APP_DISPLAY_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.sentrei.sentrei.beta";
@@ -850,7 +849,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = "$";
+				MARKETING_VERSION = $;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei.beta;
 				PRODUCT_NAME = "${APP_DISPLAY_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.sentrei.sentrei.beta";
@@ -937,9 +936,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = "$";
+				MARKETING_VERSION = $;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei.alpha;
-				PRODUCT_NAME = "${APP_DISPLAY_NAME}";
+				PRODUCT_NAME = Runner;
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.sentrei.sentrei.alpha";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1021,7 +1020,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = "$";
+				MARKETING_VERSION = $;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei.alpha;
 				PRODUCT_NAME = "${APP_DISPLAY_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.sentrei.sentrei.alpha";
@@ -1103,7 +1102,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = "$";
+				MARKETING_VERSION = $;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei.alpha;
 				PRODUCT_NAME = "${APP_DISPLAY_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.sentrei.sentrei.alpha";

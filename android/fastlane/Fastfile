@@ -36,6 +36,7 @@ platform :android do
       release_notes: notes,
       apk_path: "../build/app/outputs/apk/beta/release/app-alpha-release.apk"
     )
+  end
 
   desc "Submit a new beta build to firebase"
   lane :beta do

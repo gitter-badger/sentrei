@@ -10,10 +10,6 @@
 | android | [link](https://appdistribution.firebase.dev/i/dfq8XRGe) | [link](https://appdistribution.firebase.dev/i/hReUCAJq) | [link](https://appdistribution.firebase.dev/i/sXwACykq) |
 | ios | [link](https://appdistribution.firebase.dev/i/QxDsYNoB) | [link](https://appdistribution.firebase.dev/i/NbqaJdfa) | [link](https://appdistribution.firebase.dev/i/bNpuzTfZ) |
 
-## Stargazers over time
-
-[![Stargazers over time](https://starchart.cc/sentrei/sentrei.svg)](https://starchart.cc/sentrei/sentrei)
-
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -32,3 +28,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/sentrei/sentrei.svg)](https://starchart.cc/sentrei/sentrei)

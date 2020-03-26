@@ -1,3 +1,9 @@
+# [2.1.0-alpha.8](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.7...v2.1.0-alpha.8) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add firebase performance plugin ([b466954](https://github.com/sentrei/sentrei/commit/b4669548635ba0022a4760e907b33bc14bb8001c))
+
 # [2.1.0-alpha.7](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.6...v2.1.0-alpha.7) (2020-03-26)
 
 ### Bug Fixes

@@ -1,3 +1,9 @@
+## [1.3.7-alpha.6](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.5...v1.3.7-alpha.6) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 apk path for alphq ([28018b7](https://github.com/sentrei/sentrei/commit/28018b7008b0b883cce02f469f5543db2636da22))
+
 ## [1.3.7-alpha.5](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.4...v1.3.7-alpha.5) (2020-03-26)
 
 ### Bug Fixes

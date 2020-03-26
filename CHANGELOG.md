@@ -1,3 +1,9 @@
+# [2.1.0-alpha.2](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.1...v2.1.0-alpha.2) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add android working crashlytics ([b906858](https://github.com/sentrei/sentrei/commit/b906858d45b8826346dc1ca019dcfe18eafc82a9))
+
 # [2.1.0-alpha.1](https://github.com/sentrei/sentrei/compare/v2.0.0...v2.1.0-alpha.1) (2020-03-26)
 
 ### Bug Fixes

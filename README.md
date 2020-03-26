@@ -1,7 +1,5 @@
 # sentrei
 
-<a href="https://github.com/sentrei/sentrei/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=sentrei/sentrei" />
-</a>
+## Stargazers over time
 
-Made with [contributors-img](https://contributors-img.web.app).
+[![Stargazers over time](https://starchart.cc/sentrei/sentrei.svg)](https://starchart.cc/sentrei/sentrei)

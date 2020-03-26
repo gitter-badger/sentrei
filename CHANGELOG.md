@@ -1,3 +1,76 @@
+## [1.3.7-alpha.7](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.6...v1.3.7-alpha.7) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add correct APP_DISPLAY_NAME ([87819b8](https://github.com/sentrei/sentrei/commit/87819b8f3e29e2924899173add0d18f67e805a2b))
+
+## [1.3.7-alpha.6](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.5...v1.3.7-alpha.6) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 apk path for alphq ([28018b7](https://github.com/sentrei/sentrei/commit/28018b7008b0b883cce02f469f5543db2636da22))
+
+## [1.3.7-alpha.5](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.4...v1.3.7-alpha.5) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 app id for ios alpha ([d87fe95](https://github.com/sentrei/sentrei/commit/d87fe9528ac68bb80542b4422832ba156471c9b2))
+
+## [1.3.7-alpha.4](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.3...v1.3.7-alpha.4) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 fastfile alpha syntax ([4500a50](https://github.com/sentrei/sentrei/commit/4500a5004d2e5002cb4b57db22c0849130c8472a))
+
+## [1.3.7-alpha.3](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.2...v1.3.7-alpha.3) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 alpha fastfile tracking ([148bda0](https://github.com/sentrei/sentrei/commit/148bda0939bc09283bd391307f539e9277c97b1e))
+
+## [1.3.7-alpha.2](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.1...v1.3.7-alpha.2) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 alpha ([266a81d](https://github.com/sentrei/sentrei/commit/266a81da62c4f51714750f1abc4884866fcb4bbe))
+
+## [1.3.7-beta.6](https://github.com/sentrei/sentrei/compare/v1.3.7-beta.5...v1.3.7-beta.6) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add fastfile fix ([97b1052](https://github.com/sentrei/sentrei/commit/97b1052214018040e60659b9af35c42a4254d26c))
+
+## [1.3.7-beta.5](https://github.com/sentrei/sentrei/compare/v1.3.7-beta.4...v1.3.7-beta.5) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 fastfile analyze_commits ([c840079](https://github.com/sentrei/sentrei/commit/c84007982c103b79ca4b1c0f29f1ce68a63bb977))
+
+## [1.3.7-beta.4](https://github.com/sentrei/sentrei/compare/v1.3.7-beta.3...v1.3.7-beta.4) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add fastlane icon ([a9d8dc6](https://github.com/sentrei/sentrei/commit/a9d8dc6b0643348882a5626a50d5443f22a355fe))
+- 🐛 style ([ef47c8f](https://github.com/sentrei/sentrei/commit/ef47c8f82be4b842edb954a9262550096d2eb3e8))
+
+## [1.3.7-beta.3](https://github.com/sentrei/sentrei/compare/v1.3.7-beta.2...v1.3.7-beta.3) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 fastfile analyze ([4e89d8b](https://github.com/sentrei/sentrei/commit/4e89d8b71112e1ec2cf903f65c4b41e933033604))
+
+## [1.3.7-beta.2](https://github.com/sentrei/sentrei/compare/v1.3.7-beta.1...v1.3.7-beta.2) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 add semantic release ([2a8692b](https://github.com/sentrei/sentrei/commit/2a8692b690b4640de5a6d2bd17d374d5857d3c9f))
+
+## [1.3.7-beta.1](https://github.com/sentrei/sentrei/compare/v1.3.6...v1.3.7-beta.1) (2020-03-25)
+
+### Bug Fixes
+
+- 🐛 release analyze_commits beta ([41b49cc](https://github.com/sentrei/sentrei/commit/41b49ccf133a7ba44bbe410a3ad1bbc2b1d7c852))
+
 ## [1.3.6](https://github.com/sentrei/sentrei/compare/v1.3.5...v1.3.6) (2020-03-25)
 
 ### Bug Fixes

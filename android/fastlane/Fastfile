@@ -13,23 +13,45 @@ platform :android do
     )
   end
 
+  desc "Submit a new alpha build to firebase"
+  lane :alpha do
+    add_badge(
+      alpha: true,
+      dark: true,
+      glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
+    )
+    sh("cd ../.. && flutter build apk --flavor alpha")
+    analyze_commits(
+      match: "v*",
+    )
+    notes = conventional_changelog(
+      format: "plain",
+      title: "sentrei alpha",
+      display_title: false,
+    )
+    firebase_app_distribution(
+      groups: "alpha",
+      app: "1:280671636932:android:69407d4e605d5e60cd6891",
+      firebase_cli_token: ENV['FIREBASE_TOKEN'],
+      release_notes: notes,
+      apk_path: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk"
+    )
+  end
+
   desc "Submit a new beta build to firebase"
   lane :beta do
-    analyze_commits(
-      match: "v*-beta*"
-    )
-    build = ENV['GITHUB_RUN_NUMBER']
-    version = lane_context[SharedValues::RELEASE_NEXT_VERSION]
     add_badge(
       dark: true,
-      shield: "#{version}-#{build}-blue",
-      no_badge: true,
       glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
     )
     sh("cd ../.. && flutter build apk --flavor beta")
+    analyze_commits(
+      match: "v*",
+    )
     notes = conventional_changelog(
       format: "plain",
       title: "sentrei master",
+      display_title: false,
     )
     firebase_app_distribution(
       groups: "beta",
@@ -42,20 +64,21 @@ platform :android do
 
   desc "Submit a new master build to firebase"
   lane :master do
-    analyze_commits(
-      match: "v*"
-    )
     sh("cd ../.. && flutter build apk --flavor master")
+    analyze_commits(
+      match: "v*",
+    )
     notes = conventional_changelog(
       format: "plain",
       title: "sentrei master",
+      display_title: false,
     )
     firebase_app_distribution(
       groups: "master",
       app: "1:721847679884:android:1935b57831163cda5bb4a9",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: notes,
-      apk_path: "../build/app/outputs/apk/master/release/app-master-release.apk"
+      apk_path: "../build/app/outputs/apk/master/release/app-master-release.apk",
     )
   end
 end

@@ -1,3 +1,9 @@
+## [1.3.7-beta.5](https://github.com/sentrei/sentrei/compare/v1.3.7-beta.4...v1.3.7-beta.5) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 fastfile analyze_commits ([c840079](https://github.com/sentrei/sentrei/commit/c84007982c103b79ca4b1c0f29f1ce68a63bb977))
+
 ## [1.3.7-beta.4](https://github.com/sentrei/sentrei/compare/v1.3.7-beta.3...v1.3.7-beta.4) (2020-03-26)
 
 ### Bug Fixes

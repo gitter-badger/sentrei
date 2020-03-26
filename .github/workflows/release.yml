@@ -7,7 +7,7 @@ on:
       - master
 jobs:
   release:
-    if: contains(toJson(github.event.commits), '[ci skip]') == false
+    if: contains(toJson(github.event.commits[0]), '[ci skip]') == false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

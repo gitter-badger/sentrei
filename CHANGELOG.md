@@ -1,3 +1,9 @@
+## [1.3.7-alpha.2](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.1...v1.3.7-alpha.2) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 alpha ([266a81d](https://github.com/sentrei/sentrei/commit/266a81da62c4f51714750f1abc4884866fcb4bbe))
+
 ## [1.3.7-beta.6](https://github.com/sentrei/sentrei/compare/v1.3.7-beta.5...v1.3.7-beta.6) (2020-03-26)
 
 ### Bug Fixes

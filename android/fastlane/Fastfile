@@ -34,7 +34,7 @@ platform :android do
       app: "1:280671636932:android:69407d4e605d5e60cd6891",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: notes,
-      apk_path: "../build/app/outputs/apk/beta/release/app-alpha-release.apk"
+      apk_path: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk"
     )
   end
 

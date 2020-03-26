@@ -1,3 +1,19 @@
+# [2.1.0-alpha.1](https://github.com/sentrei/sentrei/compare/v2.0.0...v2.1.0-alpha.1) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add beta & master google services ([9f2d2ed](https://github.com/sentrei/sentrei/commit/9f2d2ed10153dc14f663d5bfbf656d3ec593bc4d))
+- 🐛 add ios firebase GoogleService-info.plist ([19cac81](https://github.com/sentrei/sentrei/commit/19cac81adf832395c062a88b1003a492c5d4f7dc))
+- 🐛 add yarn style ([6921ebf](https://github.com/sentrei/sentrei/commit/6921ebf46d7333fceb44b373e1cce08a5c2621e1))
+- 🐛 correct firebase installation ([8ca8474](https://github.com/sentrei/sentrei/commit/8ca847464ccf1c6ad5d49ef7781ebbd58195ee62))
+- 🐛 ios runner plist to gitignore ([a991f2e](https://github.com/sentrei/sentrei/commit/a991f2eaacfc2e57fa74cdca4b7e8d984e5f5608))
+- 🐛 remove generated plist ([203d363](https://github.com/sentrei/sentrei/commit/203d36342c45cb823c27e5519a8920945821dbd3))
+- 🐛 style for yarn ([66ebe9f](https://github.com/sentrei/sentrei/commit/66ebe9f912e5a5d633f6f22b2a8dfc3f80a7765b))
+
+### Features
+
+- 🎸 add firebase pub ([5a06de9](https://github.com/sentrei/sentrei/commit/5a06de915bfdab965f718849fae020e430b9c8db))
+
 # [2.0.0](https://github.com/sentrei/sentrei/compare/v1.3.8...v2.0.0) (2020-03-26)
 
 ### Features

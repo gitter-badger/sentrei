@@ -1,3 +1,9 @@
+# [2.1.0-alpha.7](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.6...v2.1.0-alpha.7) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add all contributors ([f6a1108](https://github.com/sentrei/sentrei/commit/f6a11084494dcabae92aef8c8748deef3b99f68c))
+
 # [2.1.0-alpha.6](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.5...v2.1.0-alpha.6) (2020-03-26)
 
 ### Bug Fixes

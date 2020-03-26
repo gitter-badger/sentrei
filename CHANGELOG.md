@@ -1,3 +1,21 @@
+## [1.3.7-alpha.5](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.4...v1.3.7-alpha.5) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 app id for ios alpha ([d87fe95](https://github.com/sentrei/sentrei/commit/d87fe9528ac68bb80542b4422832ba156471c9b2))
+
+## [1.3.7-alpha.4](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.3...v1.3.7-alpha.4) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 fastfile alpha syntax ([4500a50](https://github.com/sentrei/sentrei/commit/4500a5004d2e5002cb4b57db22c0849130c8472a))
+
+## [1.3.7-alpha.3](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.2...v1.3.7-alpha.3) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 alpha fastfile tracking ([148bda0](https://github.com/sentrei/sentrei/commit/148bda0939bc09283bd391307f539e9277c97b1e))
+
 ## [1.3.7-alpha.2](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.1...v1.3.7-alpha.2) (2020-03-26)
 
 ### Bug Fixes

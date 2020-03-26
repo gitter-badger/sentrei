@@ -1,3 +1,9 @@
+## [1.3.7-alpha.3](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.2...v1.3.7-alpha.3) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 alpha fastfile tracking ([148bda0](https://github.com/sentrei/sentrei/commit/148bda0939bc09283bd391307f539e9277c97b1e))
+
 ## [1.3.7-alpha.2](https://github.com/sentrei/sentrei/compare/v1.3.7-alpha.1...v1.3.7-alpha.2) (2020-03-26)
 
 ### Bug Fixes

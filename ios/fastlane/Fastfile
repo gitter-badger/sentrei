@@ -69,11 +69,13 @@ platform :ios do
     )
     analyze_commits(
       match: "v*",
+      debug: true,
     )
     notes = conventional_changelog(
       format: "plain",
-      title: "sentrei alpha",
-      display_title: false,
+      title: ENV['GITHUB_RUN_NUMBER'],
+      display_author: true,
+      debug: true,
     )
     firebase_app_distribution(
       groups: "alpha",
@@ -116,11 +118,13 @@ platform :ios do
     )
     analyze_commits(
       match: "v*",
+      debug: true,
     )
     notes = conventional_changelog(
       format: "plain",
-      title: "sentrei beta",
-      display_title: false,
+      title: ENV['GITHUB_RUN_NUMBER'],
+      display_author: true,
+      debug: true,
     )
     firebase_app_distribution(
       groups: "beta",
@@ -160,11 +164,13 @@ platform :ios do
     )
     analyze_commits(
       match: "v*",
+      debug: true,
     )
     notes = conventional_changelog(
       format: "plain",
-      title: "sentrei master",
-      display_title: false,
+      title: ENV['GITHUB_RUN_NUMBER'],
+      display_author: true,
+      debug: true,
     )
     firebase_app_distribution(
       groups: "master",

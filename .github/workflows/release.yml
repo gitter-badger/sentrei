@@ -7,7 +7,6 @@ on:
       - master
 jobs:
   release:
-    if: contains(toJson(github.event.commits[0]), '[ci skip]') == false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -47,10 +46,11 @@ jobs:
         with:
           branch-suffix: short-commit-hash
           token: ${{ secrets.ACCESS_TOKEN }}
-          title: "[ci skip]"
+          title: "[sentrei-auto-pr]"
         env:
           HUSKY_SKIP_HOOKS: 1
   deploy:
+    if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
     runs-on: macos-latest
     needs: [release]
     strategy:

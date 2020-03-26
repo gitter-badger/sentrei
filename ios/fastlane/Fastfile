@@ -66,9 +66,9 @@ platform :ios do
       output_directory: "./build/Runner",
       output_name: "beta.ipa",
     )
-    analyze_commits(
-      match: "v*-beta*",
-    )
+    # analyze_commits(
+    #   match: "v*-beta*",
+    # )
     notes = conventional_changelog(
       format: "plain",
       title: "sentrei beta",
@@ -110,9 +110,9 @@ platform :ios do
       output_directory: "./build/Runner",
       output_name: "master.ipa",
     )
-    analyze_commits(
-      match: "v*",
-    )
+    # analyze_commits(
+    #   match: "v*",
+    # )
     notes = conventional_changelog(
       format: "plain",
       title: "sentrei master",

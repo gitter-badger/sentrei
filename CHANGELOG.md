@@ -1,3 +1,9 @@
+## [1.3.7-beta.6](https://github.com/sentrei/sentrei/compare/v1.3.7-beta.5...v1.3.7-beta.6) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add fastfile fix ([97b1052](https://github.com/sentrei/sentrei/commit/97b1052214018040e60659b9af35c42a4254d26c))
+
 ## [1.3.7-beta.5](https://github.com/sentrei/sentrei/compare/v1.3.7-beta.4...v1.3.7-beta.5) (2020-03-26)
 
 ### Bug Fixes

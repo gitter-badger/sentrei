@@ -23,11 +23,13 @@ platform :android do
     sh("cd ../.. && flutter build apk --flavor alpha")
     analyze_commits(
       match: "v*",
+      debug: true,
     )
     notes = conventional_changelog(
       format: "plain",
-      title: "sentrei alpha",
-      display_title: false,
+      title: ENV['GITHUB_RUN_NUMBER'],
+      display_author: true,
+      debug: true,
     )
     firebase_app_distribution(
       groups: "alpha",
@@ -47,11 +49,13 @@ platform :android do
     sh("cd ../.. && flutter build apk --flavor beta")
     analyze_commits(
       match: "v*",
+      debug: true,
     )
     notes = conventional_changelog(
       format: "plain",
-      title: "sentrei master",
-      display_title: false,
+      title: ENV['GITHUB_RUN_NUMBER'],
+      display_author: true,
+      debug: true,
     )
     firebase_app_distribution(
       groups: "beta",
@@ -67,11 +71,13 @@ platform :android do
     sh("cd ../.. && flutter build apk --flavor master")
     analyze_commits(
       match: "v*",
+      debug: true,
     )
     notes = conventional_changelog(
       format: "plain",
-      title: "sentrei master",
-      display_title: false,
+      title: ENV['GITHUB_RUN_NUMBER'],
+      display_author: true,
+      debug: true,
     )
     firebase_app_distribution(
       groups: "master",

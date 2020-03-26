@@ -91,7 +91,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ${{ matrix.platform }}/vendor/bundle
-          key: gem-v1-${{ matrix.platform }}-${{ hashFiles('android/Gemfile.lock') }}
+          key: gem-v1-${{ matrix.platform }}-${{ hashFiles('${{ matrix.platform }}/Gemfile.lock') }}
           restore-keys: |
             gem-v1-${{ matrix.platform }}-
       - name: Extract branch name

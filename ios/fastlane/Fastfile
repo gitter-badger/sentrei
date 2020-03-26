@@ -40,6 +40,7 @@ platform :ios do
   desc "Submit a new alpha build to firebase"
   lane :alpha do
     add_badge(
+      alpha: true,
       dark: true,
     )
     disable_automatic_code_signing(

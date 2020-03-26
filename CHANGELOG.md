@@ -1,3 +1,86 @@
+# [2.1.0-beta.1](https://github.com/sentrei/sentrei/compare/v2.0.0...v2.1.0-beta.1) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add all contributors ([f6a1108](https://github.com/sentrei/sentrei/commit/f6a11084494dcabae92aef8c8748deef3b99f68c))
+- 🐛 add android working crashlytics ([b906858](https://github.com/sentrei/sentrei/commit/b906858d45b8826346dc1ca019dcfe18eafc82a9))
+- 🐛 add beta & master google services ([9f2d2ed](https://github.com/sentrei/sentrei/commit/9f2d2ed10153dc14f663d5bfbf656d3ec593bc4d))
+- 🐛 add cache bundler for ios & android ([cbd5e47](https://github.com/sentrei/sentrei/commit/cbd5e4723fa8ad95c565f8ad17dad5ae0b142e9a))
+- 🐛 add faster bundler cache for both platforms ([a4550e3](https://github.com/sentrei/sentrei/commit/a4550e3b9d3371d69ec4b138552b2545923c5821))
+- 🐛 add firebase performance plugin ([b466954](https://github.com/sentrei/sentrei/commit/b4669548635ba0022a4760e907b33bc14bb8001c))
+- 🐛 add ios firebase GoogleService-info.plist ([19cac81](https://github.com/sentrei/sentrei/commit/19cac81adf832395c062a88b1003a492c5d4f7dc))
+- 🐛 add performance firebase ([8a149c2](https://github.com/sentrei/sentrei/commit/8a149c21c028018fe7d6066c7c3d7e417483c21a))
+- 🐛 add product name to runner ([b56640d](https://github.com/sentrei/sentrei/commit/b56640d7bec0bade7b8700d1dab9a86b9d00c053))
+- 🐛 add refactored shell script for google ([6233fa7](https://github.com/sentrei/sentrei/commit/6233fa77ed6d71b8862e8cd029d50abcab4faa66))
+- 🐛 add yarn style ([6921ebf](https://github.com/sentrei/sentrei/commit/6921ebf46d7333fceb44b373e1cce08a5c2621e1))
+- 🐛 correct firebase installation ([8ca8474](https://github.com/sentrei/sentrei/commit/8ca847464ccf1c6ad5d49ef7781ebbd58195ee62))
+- 🐛 ios runner plist to gitignore ([a991f2e](https://github.com/sentrei/sentrei/commit/a991f2eaacfc2e57fa74cdca4b7e8d984e5f5608))
+- 🐛 remove generated plist ([203d363](https://github.com/sentrei/sentrei/commit/203d36342c45cb823c27e5519a8920945821dbd3))
+- 🐛 style for yarn ([66ebe9f](https://github.com/sentrei/sentrei/commit/66ebe9f912e5a5d633f6f22b2a8dfc3f80a7765b))
+
+### Features
+
+- 🎸 add firebase pub ([5a06de9](https://github.com/sentrei/sentrei/commit/5a06de915bfdab965f718849fae020e430b9c8db))
+
+# [2.1.0-alpha.8](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.7...v2.1.0-alpha.8) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add firebase performance plugin ([b466954](https://github.com/sentrei/sentrei/commit/b4669548635ba0022a4760e907b33bc14bb8001c))
+
+# [2.1.0-alpha.7](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.6...v2.1.0-alpha.7) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add all contributors ([f6a1108](https://github.com/sentrei/sentrei/commit/f6a11084494dcabae92aef8c8748deef3b99f68c))
+
+# [2.1.0-alpha.6](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.5...v2.1.0-alpha.6) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add product name to runner ([b56640d](https://github.com/sentrei/sentrei/commit/b56640d7bec0bade7b8700d1dab9a86b9d00c053))
+- 🐛 add refactored shell script for google ([6233fa7](https://github.com/sentrei/sentrei/commit/6233fa77ed6d71b8862e8cd029d50abcab4faa66))
+
+# [2.1.0-alpha.5](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.4...v2.1.0-alpha.5) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add faster bundler cache for both platforms ([a4550e3](https://github.com/sentrei/sentrei/commit/a4550e3b9d3371d69ec4b138552b2545923c5821))
+
+# [2.1.0-alpha.4](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.3...v2.1.0-alpha.4) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add cache bundler for ios & android ([cbd5e47](https://github.com/sentrei/sentrei/commit/cbd5e4723fa8ad95c565f8ad17dad5ae0b142e9a))
+
+# [2.1.0-alpha.3](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.2...v2.1.0-alpha.3) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add performance firebase ([8a149c2](https://github.com/sentrei/sentrei/commit/8a149c21c028018fe7d6066c7c3d7e417483c21a))
+
+# [2.1.0-alpha.2](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.1...v2.1.0-alpha.2) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add android working crashlytics ([b906858](https://github.com/sentrei/sentrei/commit/b906858d45b8826346dc1ca019dcfe18eafc82a9))
+
+# [2.1.0-alpha.1](https://github.com/sentrei/sentrei/compare/v2.0.0...v2.1.0-alpha.1) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add beta & master google services ([9f2d2ed](https://github.com/sentrei/sentrei/commit/9f2d2ed10153dc14f663d5bfbf656d3ec593bc4d))
+- 🐛 add ios firebase GoogleService-info.plist ([19cac81](https://github.com/sentrei/sentrei/commit/19cac81adf832395c062a88b1003a492c5d4f7dc))
+- 🐛 add yarn style ([6921ebf](https://github.com/sentrei/sentrei/commit/6921ebf46d7333fceb44b373e1cce08a5c2621e1))
+- 🐛 correct firebase installation ([8ca8474](https://github.com/sentrei/sentrei/commit/8ca847464ccf1c6ad5d49ef7781ebbd58195ee62))
+- 🐛 ios runner plist to gitignore ([a991f2e](https://github.com/sentrei/sentrei/commit/a991f2eaacfc2e57fa74cdca4b7e8d984e5f5608))
+- 🐛 remove generated plist ([203d363](https://github.com/sentrei/sentrei/commit/203d36342c45cb823c27e5519a8920945821dbd3))
+- 🐛 style for yarn ([66ebe9f](https://github.com/sentrei/sentrei/commit/66ebe9f912e5a5d633f6f22b2a8dfc3f80a7765b))
+
+### Features
+
+- 🎸 add firebase pub ([5a06de9](https://github.com/sentrei/sentrei/commit/5a06de915bfdab965f718849fae020e430b9c8db))
+
 # [2.0.0](https://github.com/sentrei/sentrei/compare/v1.3.8...v2.0.0) (2020-03-26)
 
 ### Features

@@ -1,3 +1,16 @@
+## [1.3.7-beta.5](https://github.com/sentrei/sentrei/compare/v1.3.7-beta.4...v1.3.7-beta.5) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 fastfile analyze_commits ([c840079](https://github.com/sentrei/sentrei/commit/c84007982c103b79ca4b1c0f29f1ce68a63bb977))
+
+## [1.3.7-beta.4](https://github.com/sentrei/sentrei/compare/v1.3.7-beta.3...v1.3.7-beta.4) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add fastlane icon ([a9d8dc6](https://github.com/sentrei/sentrei/commit/a9d8dc6b0643348882a5626a50d5443f22a355fe))
+- 🐛 style ([ef47c8f](https://github.com/sentrei/sentrei/commit/ef47c8f82be4b842edb954a9262550096d2eb3e8))
+
 ## [1.3.7-beta.3](https://github.com/sentrei/sentrei/compare/v1.3.7-beta.2...v1.3.7-beta.3) (2020-03-26)
 
 ### Bug Fixes

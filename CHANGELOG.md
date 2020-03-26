@@ -1,3 +1,10 @@
+# [2.1.0-alpha.6](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.5...v2.1.0-alpha.6) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add product name to runner ([b56640d](https://github.com/sentrei/sentrei/commit/b56640d7bec0bade7b8700d1dab9a86b9d00c053))
+- 🐛 add refactored shell script for google ([6233fa7](https://github.com/sentrei/sentrei/commit/6233fa77ed6d71b8862e8cd029d50abcab4faa66))
+
 # [2.1.0-alpha.5](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.4...v2.1.0-alpha.5) (2020-03-26)
 
 ### Bug Fixes

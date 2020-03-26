@@ -1,3 +1,9 @@
+# [2.1.0-alpha.4](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.3...v2.1.0-alpha.4) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add cache bundler for ios & android ([cbd5e47](https://github.com/sentrei/sentrei/commit/cbd5e4723fa8ad95c565f8ad17dad5ae0b142e9a))
+
 # [2.1.0-alpha.3](https://github.com/sentrei/sentrei/compare/v2.1.0-alpha.2...v2.1.0-alpha.3) (2020-03-26)
 
 ### Bug Fixes

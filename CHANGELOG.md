@@ -1,3 +1,9 @@
+## [1.3.8](https://github.com/sentrei/sentrei/compare/v1.3.7...v1.3.8) (2020-03-26)
+
+### Bug Fixes
+
+- 🐛 add sentrei auto pr ([5ad1f17](https://github.com/sentrei/sentrei/commit/5ad1f17e116ac2b6cd28da707dc7b7f84433de05))
+
 ## [1.3.7](https://github.com/sentrei/sentrei/compare/v1.3.6...v1.3.7) (2020-03-26)
 
 ### Bug Fixes

@@ -9,11 +9,33 @@ resource "github_repository" "sentrei" {
 resource "github_branch_protection" "alpha" {
   repository = github_repository.sentrei.name
   branch     = "alpha"
+
+  required_pull_request_reviews {
+    dismiss_stale_reviews           = true
+    require_code_owner_reviews      = true
+    required_approving_review_count = 1
+  }
+
+  required_status_checks {
+    strict   = true
+    contexts = ["auto-approve", "flutter", "terraform", "yarn", "WIP"]
+  }
 }
 
 resource "github_branch_protection" "beta" {
   repository = github_repository.sentrei.name
   branch     = "beta"
+
+  required_pull_request_reviews {
+    dismiss_stale_reviews           = true
+    require_code_owner_reviews      = true
+    required_approving_review_count = 1
+  }
+
+  required_status_checks {
+    strict   = true
+    contexts = ["auto-approve", "flutter", "terraform", "yarn", "WIP"]
+  }
 }
 
 resource "github_branch_protection" "master" {
@@ -29,6 +51,6 @@ resource "github_branch_protection" "master" {
 
   required_status_checks {
     strict   = true
-    contexts = ["flutter"]
+    contexts = ["auto-approve", "flutter", "terraform", "yarn", "atlas/sentrei-master", "WIP"]
   }
 }

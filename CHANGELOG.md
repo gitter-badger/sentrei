@@ -1,3 +1,9 @@
+## [2.1.6](https://github.com/sentrei/sentrei/compare/v2.1.5...v2.1.6) (2020-03-27)
+
+### Bug Fixes
+
+- 🐛 style ([4b12924](https://github.com/sentrei/sentrei/commit/4b12924884247f34b1a0fb5f2297d3181f79d02b))
+
 ## [2.1.5](https://github.com/sentrei/sentrei/compare/v2.1.4...v2.1.5) (2020-03-27)
 
 ### Bug Fixes

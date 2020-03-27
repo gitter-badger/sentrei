@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/sentrei/sentrei/compare/v2.2.0...v2.2.1) (2020-03-27)
+
+### Bug Fixes
+
+- 🐛 change repo to be public ([004b63c](https://github.com/sentrei/sentrei/commit/004b63c44211fa21c4b379b7b22e6377fe7e7a40))
+- 🐛 style for ordering ([5080d9e](https://github.com/sentrei/sentrei/commit/5080d9e6bd0bbcfb5ec1ddb3c3a3215e155adbba))
+
 # [2.2.0](https://github.com/sentrei/sentrei/compare/v2.1.7...v2.2.0) (2020-03-27)
 
 ### Bug Fixes

@@ -1,3 +1,9 @@
+## [2.1.1](https://github.com/sentrei/sentrei/compare/v2.1.0...v2.1.1) (2020-03-27)
+
+### Bug Fixes
+
+- 🐛 add proper prettierignore ([ffee7b4](https://github.com/sentrei/sentrei/commit/ffee7b4499887e7f4347e57959a09c730121aa8a))
+
 # [2.1.0](https://github.com/sentrei/sentrei/compare/v2.0.0...v2.1.0) (2020-03-26)
 
 ### Bug Fixes

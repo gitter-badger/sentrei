@@ -1,3 +1,9 @@
+## [2.2.3](https://github.com/sentrei/sentrei/compare/v2.2.2...v2.2.3) (2020-03-27)
+
+### Bug Fixes
+
+- 🐛 add terraform (master) ([6e05548](https://github.com/sentrei/sentrei/commit/6e0554811c005a563f5b31af118c5fe72494593f))
+
 ## [2.2.2](https://github.com/sentrei/sentrei/compare/v2.2.1...v2.2.2) (2020-03-27)
 
 ### Bug Fixes

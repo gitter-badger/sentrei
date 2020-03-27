@@ -1,3 +1,14 @@
+## [2.1.2](https://github.com/sentrei/sentrei/compare/v2.1.1...v2.1.2) (2020-03-27)
+
+### Bug Fixes
+
+- 🐛 add analysis options ([43161bb](https://github.com/sentrei/sentrei/commit/43161bb489e0c34bec8b705b0143da73b6e15e0c))
+- 🐛 add auto-approve gha ([768a6da](https://github.com/sentrei/sentrei/commit/768a6da69f5b2277d09f37f3b3ac2801da13f999))
+- 🐛 add correct analysis_options.1.8.0.yaml file ([cfdd31a](https://github.com/sentrei/sentrei/commit/cfdd31a2985dfa9b023048c9fd30e7bcdddf3685))
+- 🐛 add proper widget placement ([d2c6762](https://github.com/sentrei/sentrei/commit/d2c6762cfffbfe448acd58e9ad39479a5f25fdda))
+- 🐛 add pub cache ([c72077a](https://github.com/sentrei/sentrei/commit/c72077a7f793da5f9af6eca754a623192cd7952a))
+- 🐛 update pendatic ver ([60279ea](https://github.com/sentrei/sentrei/commit/60279eaf08568c7b379e8cb1859dbe26303a681b))
+
 ## [2.1.1](https://github.com/sentrei/sentrei/compare/v2.1.0...v2.1.1) (2020-03-27)
 
 ### Bug Fixes

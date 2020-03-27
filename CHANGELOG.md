@@ -1,3 +1,10 @@
+## [2.1.4](https://github.com/sentrei/sentrei/compare/v2.1.3...v2.1.4) (2020-03-27)
+
+### Bug Fixes
+
+- 🐛 add correct cla github actions ([1ac11e9](https://github.com/sentrei/sentrei/commit/1ac11e9aecf15a95faeaa2c6a0ffe8e0cfb9746d))
+- 🐛 add github CLA ([93da3b5](https://github.com/sentrei/sentrei/commit/93da3b59c3087d6e5990e44352442e8b567eb43f))
+
 ## [2.1.3](https://github.com/sentrei/sentrei/compare/v2.1.2...v2.1.3) (2020-03-27)
 
 ### Bug Fixes

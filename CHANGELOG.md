@@ -1,3 +1,9 @@
+## [2.2.2](https://github.com/sentrei/sentrei/compare/v2.2.1...v2.2.2) (2020-03-27)
+
+### Bug Fixes
+
+- 🐛 add sentrei protection ([8d892e1](https://github.com/sentrei/sentrei/commit/8d892e1874c13ad8688ef2c1142a24b90ee6b77a))
+
 ## [2.2.1](https://github.com/sentrei/sentrei/compare/v2.2.0...v2.2.1) (2020-03-27)
 
 ### Bug Fixes

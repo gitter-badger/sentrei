@@ -1,3 +1,9 @@
+## [2.1.5](https://github.com/sentrei/sentrei/compare/v2.1.4...v2.1.5) (2020-03-27)
+
+### Bug Fixes
+
+- 🐛 add license and remove cla ([56f28d6](https://github.com/sentrei/sentrei/commit/56f28d66005b69cc74e821e2cc33bafc59243953))
+
 ## [2.1.4](https://github.com/sentrei/sentrei/compare/v2.1.3...v2.1.4) (2020-03-27)
 
 ### Bug Fixes

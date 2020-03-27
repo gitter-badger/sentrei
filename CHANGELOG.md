@@ -1,3 +1,13 @@
+# [2.2.0](https://github.com/sentrei/sentrei/compare/v2.1.7...v2.2.0) (2020-03-27)
+
+### Bug Fixes
+
+- 🐛 add github actions for terraform ([26fd07f](https://github.com/sentrei/sentrei/commit/26fd07ff12b97985a8126e123c074e66cc2c2742))
+
+### Features
+
+- 🎸 add terraform for github ([f6b19e2](https://github.com/sentrei/sentrei/commit/f6b19e267953aa37885250775f19a6e88677a5f6))
+
 ## [2.1.7](https://github.com/sentrei/sentrei/compare/v2.1.6...v2.1.7) (2020-03-27)
 
 ### Bug Fixes

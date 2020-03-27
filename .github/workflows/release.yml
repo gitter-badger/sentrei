@@ -94,6 +94,13 @@ jobs:
           key: gem-v1-${{ matrix.platform }}-${{ hashFiles('**/${{ matrix.platform }}/Gemfile.lock') }}
           restore-keys: |
             gem-v1-${{ matrix.platform }}-
+      - name: Cache flutter
+        uses: actions/cache@v1
+        with:
+          path: ~/.pub-cache
+          key: flutter-v1-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: |
+            flutter-v1-
       - name: Extract branch name
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"

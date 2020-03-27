@@ -6,7 +6,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - uses: actions/cache@v1
+      - name: Cache flutter
+        uses: actions/cache@v1
         with:
           path: ~/.pub-cache
           key: flutter-v1-${{ hashFiles('**/pubspec.lock') }}

@@ -1,3 +1,9 @@
+## [2.2.5](https://github.com/sentrei/sentrei/compare/v2.2.4...v2.2.5) (2020-03-27)
+
+### Bug Fixes
+
+- 🐛 remove number of contributos ([d117e06](https://github.com/sentrei/sentrei/commit/d117e061f6e046eac8ee629162f2e357e7e2006e))
+
 ## [2.2.4](https://github.com/sentrei/sentrei/compare/v2.2.3...v2.2.4) (2020-03-27)
 
 ### Bug Fixes

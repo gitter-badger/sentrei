@@ -6,6 +6,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - uses: actions/cache@v1
+        with:
+          path: ~/.pub-cache
+          key: flutter-v1-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: |
+            flutter-v1-
       - uses: subosito/flutter-action@v1
         with:
           flutter-version: "1.12.13+hotfix.8"

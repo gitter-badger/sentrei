@@ -1,7 +1,6 @@
 # sentrei
 
 <!-- prettier-ignore-start -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 [![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/tenhobi/effective_dart)
 [![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](https://opensource.org/licenses/MIT)
 [![Star on GitHub](https://img.shields.io/github/stars/sentrei/sentrei.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/sentrei/sentrei)

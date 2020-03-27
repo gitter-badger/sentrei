@@ -1,6 +1,5 @@
-name: "CLA"
+name: CLA
 on: pull_request
-
 jobs:
   CLAssistant:
     runs-on: ubuntu-latest
@@ -12,9 +11,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           path-to-signatures: "signatures/version1/cla.json"
-          path-To-cladocument: "https://github.com/ibakshay/test-action-workflow/blob/master/cla.md"
-          # branch should not be protected
+          path-To-cladocument: "https://github.com/sentrei/sentrei/blob/master/README.md"
           branch: "master"
-          whitelist: user1,user2,bot*
+          whitelist: dependabot[bot],github-actions[bot]
           empty-commit-flag: false
-          blockchain-storage-flag: fals
+          blockchain-storage-flag: false

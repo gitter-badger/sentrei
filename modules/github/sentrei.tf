@@ -6,6 +6,16 @@ resource "github_repository" "sentrei" {
   has_projects = true
 }
 
+resource "github_branch_protection" "alpha" {
+  repository = github_repository.sentrei.name
+  branch     = "alpha"
+}
+
+resource "github_branch_protection" "beta" {
+  repository = github_repository.sentrei.name
+  branch     = "beta"
+}
+
 resource "github_branch_protection" "master" {
   repository     = github_repository.sentrei.name
   branch         = "master"
@@ -21,14 +31,4 @@ resource "github_branch_protection" "master" {
     strict   = true
     contexts = ["flutter"]
   }
-}
-
-resource "github_branch_protection" "alpha" {
-  repository = github_repository.sentrei.name
-  branch     = "alpha"
-}
-
-resource "github_branch_protection" "beta" {
-  repository = github_repository.sentrei.name
-  branch     = "beta"
 }

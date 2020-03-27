@@ -1,3 +1,9 @@
+## [2.2.4](https://github.com/sentrei/sentrei/compare/v2.2.3...v2.2.4) (2020-03-27)
+
+### Bug Fixes
+
+- 🐛 modify badge ([d311cab](https://github.com/sentrei/sentrei/commit/d311cabf216606f88dbb5e806036cbbc58c8e607))
+
 ## [2.2.3](https://github.com/sentrei/sentrei/compare/v2.2.2...v2.2.3) (2020-03-27)
 
 ### Bug Fixes

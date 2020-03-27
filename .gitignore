@@ -234,3 +234,8 @@ key.jks
 key.properties
 
 ios/Runner/GoogleService-Info.plist
+ios/.bundle/
+ios/.symlinks/
+ios/build/
+ios/Pods/
+ios/Flutter/

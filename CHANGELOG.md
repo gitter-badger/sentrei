@@ -1,3 +1,9 @@
+## [2.1.7](https://github.com/sentrei/sentrei/compare/v2.1.6...v2.1.7) (2020-03-27)
+
+### Bug Fixes
+
+- 🐛 add makefile upgrade command ([5309b2e](https://github.com/sentrei/sentrei/commit/5309b2ee15ac65125c610120e1ad8bc98591c32f))
+
 ## [2.1.6](https://github.com/sentrei/sentrei/compare/v2.1.5...v2.1.6) (2020-03-27)
 
 ### Bug Fixes

@@ -1,7 +1,7 @@
 resource "github_repository" "sentrei" {
   name         = "sentrei"
   description  = "sentrei"
-  private      = true
+  private      = false
   has_issues   = true
   has_projects = true
 }
@@ -9,7 +9,7 @@ resource "github_repository" "sentrei" {
 resource "github_branch_protection" "master" {
   repository     = github_repository.sentrei.name
   branch         = "master"
-  enforce_admins = false
+  enforce_admins = true
 
   required_pull_request_reviews {
     dismiss_stale_reviews           = true

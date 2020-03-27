@@ -1,3 +1,9 @@
+## [2.1.3](https://github.com/sentrei/sentrei/compare/v2.1.2...v2.1.3) (2020-03-27)
+
+### Bug Fixes
+
+- 🐛 add cache for flutter ([b4e0ff1](https://github.com/sentrei/sentrei/commit/b4e0ff110763bcf2681d0776a8eabeca2befe8ed))
+
 ## [2.1.2](https://github.com/sentrei/sentrei/compare/v2.1.1...v2.1.2) (2020-03-27)
 
 ### Bug Fixes

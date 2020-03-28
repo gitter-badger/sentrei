@@ -97,10 +97,15 @@ jobs:
       - name: Cache flutter
         uses: actions/cache@v1
         with:
+          path: /Users/runner/hostedtoolcache/flutter
+          key: flutter-v1
+      - name: Cache pub
+        uses: actions/cache@v1
+        with:
           path: ~/.pub-cache
-          key: flutter-v1-${{ hashFiles('**/pubspec.lock') }}
+          key: pub-v1-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: |
-            flutter-v1-
+            pub-v1-
       - name: Extract branch name
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"

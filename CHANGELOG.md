@@ -1,3 +1,10 @@
+## [2.3.5](https://github.com/sentrei/sentrei/compare/v2.3.4...v2.3.5) (2020-03-28)
+
+### Bug Fixes
+
+- 🐛 add correct analyze ([3a41b18](https://github.com/sentrei/sentrei/commit/3a41b18c0fa7a2264f31c234323e566152229f3e))
+- 🐛 add flutter packages ([d7a17f5](https://github.com/sentrei/sentrei/commit/d7a17f5aa856d71093c1d5bcc1653019830b57cc))
+
 ## [2.3.4](https://github.com/sentrei/sentrei/compare/v2.3.3...v2.3.4) (2020-03-28)
 
 ### Bug Fixes

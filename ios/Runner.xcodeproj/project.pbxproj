@@ -59,6 +59,7 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6B760CC242F731700018748 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
 		BC3A64296937F67291BB1C97 /* Pods-Runner.release-master.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release-master.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release-master.xcconfig"; sourceTree = "<group>"; };
 		E956441041D9C323366A0ADF /* Pods-Runner.profile-beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile-beta.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile-beta.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +137,7 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				A6B760CC242F731700018748 /* Runner.entitlements */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
 				97C146FD1CF9000F007C117D /* Assets.xcassets */,
 				97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */,
@@ -411,7 +413,8 @@
 				APP_DISPLAY_NAME = "sentrei master";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8CW7HSL79U;
 				ENABLE_BITCODE = NO;
@@ -428,7 +431,7 @@
 				MARKETING_VERSION = $;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei;
 				PRODUCT_NAME = "${APP_DISPLAY_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.sentrei.sentrei";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.sentrei.sentrei";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -550,7 +553,8 @@
 				APP_DISPLAY_NAME = "sentrei master";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8CW7HSL79U;
 				ENABLE_BITCODE = NO;
@@ -567,7 +571,7 @@
 				MARKETING_VERSION = $;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei;
 				PRODUCT_NAME = Runner;
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.sentrei.sentrei";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.sentrei.sentrei";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -582,7 +586,8 @@
 				APP_DISPLAY_NAME = "sentrei master";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8CW7HSL79U;
 				ENABLE_BITCODE = NO;
@@ -599,7 +604,7 @@
 				MARKETING_VERSION = $;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei;
 				PRODUCT_NAME = "${APP_DISPLAY_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.sentrei.sentrei";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.sentrei.sentrei";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -669,6 +674,7 @@
 				APP_DISPLAY_NAME = "sentrei beta";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8CW7HSL79U;
@@ -753,6 +759,7 @@
 				APP_DISPLAY_NAME = "sentrei beta";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8CW7HSL79U;
@@ -835,6 +842,7 @@
 				APP_DISPLAY_NAME = "sentrei beta";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8CW7HSL79U;
@@ -922,6 +930,7 @@
 				APP_DISPLAY_NAME = "sentrei alpha";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8CW7HSL79U;
@@ -1006,6 +1015,7 @@
 				APP_DISPLAY_NAME = "sentrei alpha";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8CW7HSL79U;
@@ -1088,6 +1098,7 @@
 				APP_DISPLAY_NAME = "sentrei alpha";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8CW7HSL79U;

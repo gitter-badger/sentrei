@@ -1,3 +1,10 @@
+## [2.3.4](https://github.com/sentrei/sentrei/compare/v2.3.3...v2.3.4) (2020-03-28)
+
+### Bug Fixes
+
+- 🐛 add flutter cache proper version ([647c882](https://github.com/sentrei/sentrei/commit/647c882e5dbfbeea5571c15c2c332ba88711a6b0))
+- 🐛 imgbotconfig ([393e70f](https://github.com/sentrei/sentrei/commit/393e70f6bc5b65f8557350d2eff5a05fb0d05ad9))
+
 ## [2.3.3](https://github.com/sentrei/sentrei/compare/v2.3.2...v2.3.3) (2020-03-28)
 
 ### Bug Fixes

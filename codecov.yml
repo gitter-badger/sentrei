@@ -2,7 +2,7 @@ coverage:
   precision: 3
   status:
     project:
-      test:
+      default:
         flags:
           - test
         target: auto
@@ -11,12 +11,21 @@ coverage:
         if_no_uploads: error
         if_not_found: success
         if_ci_failed: error
-        informational: true
-        only_pulls: true
+        informational: false
+        only_pulls: false
+    patch:
+      default:
+        target: auto
+        threshold: null
+        base: auto
+        if_no_uploads: error
+        if_not_found: success
+        if_ci_failed: error
+        only_pulls: false
 flags:
   test:
     paths:
-      - test/
+      - lib/
     carryforward: true
 comment:
   layout: "reach, diff, flags, files"

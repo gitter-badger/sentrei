@@ -22,7 +22,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://www.shunkakinoki.com/"><img src="https://avatars0.githubusercontent.com/u/39187513?v=4" width="100px;" alt=""/><br /><sub><b>Shun Kakinoki</b></sub></a><br /><a href="https://github.com/sentrei/sentrei/commits?author=shunkakinoki" title="Code">💻</a> <a href="#projectManagement-shunkakinoki" title="Project Management">📆</a> <a href="#ideas-shunkakinoki" title="Ideas, Planning, & Feedback">🤔</a> <a href="#business-shunkakinoki" title="Business development">💼</a></td>
+    <td align="center"><a href="https://www.shunkakinoki.com/"><img src="https://avatars0.githubusercontent.com/u/39187513?v=4" width="100px;" alt=""/><br /><sub><b>Shun Kakinoki</b></sub></a><br /><a href="https://github.com/sentrei/sentrei/commits?author=shunkakinoki" title="Code">💻</a> <a href="#projectManagement-shunkakinoki" title="Project Management">📆</a> <a href="#ideas-shunkakinoki" title="Ideas, Planning, & Feedback">🤔</a> <a href="#business-shunkakinoki" title="Business development">💼</a> <a href="#infra-shunkakinoki" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
   </tr>
 </table>
 

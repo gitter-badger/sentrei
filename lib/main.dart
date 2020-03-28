@@ -1,4 +1,7 @@
+import "dart:io" show Platform;
 import "package:flutter/material.dart";
+import "package:flutter/services.dart";
+
 import "package:firebase_crashlytics/firebase_crashlytics.dart";
 
 void main() {
@@ -7,6 +10,12 @@ void main() {
   FlutterError.onError = Crashlytics.instance.recordFlutterError;
 
   runApp(MyApp());
+
+  if (Platform.isAndroid) {
+    SystemUiOverlayStyle systemUiOverlayStyle =
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+  }
 }
 
 class MyApp extends StatelessWidget {

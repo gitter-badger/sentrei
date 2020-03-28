@@ -1,12 +1,12 @@
 coverage:
+  precision: 3
   status:
     project:
-      default: false
       test:
         flags:
           - test
         target: auto
-        threshold: 0%
+        threshold: null
         base: auto
         if_no_uploads: error
         if_not_found: success
@@ -17,6 +17,7 @@ flags:
   test:
     paths:
       - test/
+    carryforward: true
 comment:
   layout: "reach, diff, flags, files"
   behavior: default

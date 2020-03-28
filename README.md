@@ -6,12 +6,12 @@
 [![Star on GitHub](https://img.shields.io/github/stars/sentrei/sentrei.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/sentrei/sentrei)
 <!-- prettier-ignore-end -->
 
-## Beta testing invite links
+## Beta testing
 
-|  | alpha | beta | master |
-| --- | --- | --- | --- |
-| android | [link](https://appdistribution.firebase.dev/i/dfq8XRGe) | [link](https://appdistribution.firebase.dev/i/hReUCAJq) | [link](https://appdistribution.firebase.dev/i/sXwACykq) |
-| ios | [link](https://appdistribution.firebase.dev/i/QxDsYNoB) | [link](https://appdistribution.firebase.dev/i/NbqaJdfa) | [link](https://appdistribution.firebase.dev/i/bNpuzTfZ) |
+|         | alpha                                                          | beta                                                           | master                                                         |
+| ------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| android | [INVITE LINK](https://appdistribution.firebase.dev/i/dfq8XRGe) | [INVITE LINK](https://appdistribution.firebase.dev/i/hReUCAJq) | [INVITE LINK](https://appdistribution.firebase.dev/i/sXwACykq) |
+| ios     | [INVITE LINK](https://appdistribution.firebase.dev/i/QxDsYNoB) | [INVITE LINK](https://appdistribution.firebase.dev/i/NbqaJdfa) | [INVITE LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) |
 
 ## Contributors ✨
 

@@ -1,3 +1,14 @@
+## [2.4.1](https://github.com/sentrei/sentrei/compare/v2.4.0...v2.4.1) (2020-03-28)
+
+### Bug Fixes
+
+- 🐛 add carryforward flag ([ab0ab5f](https://github.com/sentrei/sentrei/commit/ab0ab5fca042fa2bac4071d16ef2405a42d32d85))
+- 🐛 add codecov badge ([b6511c5](https://github.com/sentrei/sentrei/commit/b6511c539bc9230f82e134107f4f6aacebc76e6b))
+- 🐛 add codecov coverage ([d69b194](https://github.com/sentrei/sentrei/commit/d69b19479008e6681b31dc84bd635acade0219fe))
+- 🐛 add comment in codecog ([f9958c7](https://github.com/sentrei/sentrei/commit/f9958c78146c986d9bcc93eb0d32b3afdd96b169))
+- 🐛 add test flag ([0a2bacf](https://github.com/sentrei/sentrei/commit/0a2bacf5e5deadbe23a932e0aeb759444d1f7e62))
+- 🐛 back to default ([bab7932](https://github.com/sentrei/sentrei/commit/bab79324f2cd52bff2f46ff20c72b5952fe1bb77))
+
 # [2.4.0](https://github.com/sentrei/sentrei/compare/v2.3.5...v2.4.0) (2020-03-28)
 
 ### Features

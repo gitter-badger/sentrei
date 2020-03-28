@@ -1,3 +1,9 @@
+## [2.3.2](https://github.com/sentrei/sentrei/compare/v2.3.1...v2.3.2) (2020-03-28)
+
+### Bug Fixes
+
+- 🐛 add firebase dynamic links ([2e97635](https://github.com/sentrei/sentrei/commit/2e9763594c1af8d70c095b82c2ef457bbec7e38f))
+
 ## [2.3.1](https://github.com/sentrei/sentrei/compare/v2.3.0...v2.3.1) (2020-03-28)
 
 ### Bug Fixes

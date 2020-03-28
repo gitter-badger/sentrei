@@ -1,3 +1,16 @@
+# [2.3.0](https://github.com/sentrei/sentrei/compare/v2.2.5...v2.3.0) (2020-03-28)
+
+### Bug Fixes
+
+- 🐛 add master_sentrei_com_A ([3b7c5eb](https://github.com/sentrei/sentrei/commit/3b7c5eb95ceba3046eea03a51c22bf14eeb4f7ad))
+- 🐛 add txt record ([5f589e0](https://github.com/sentrei/sentrei/commit/5f589e0daeba1f18c790af46357512a944edc769))
+- 🐛 refactor master ([44684af](https://github.com/sentrei/sentrei/commit/44684afcfd6d6942c530ec1b767cdcde10c89de1))
+
+### Features
+
+- 🎸 add dns provider ([7740558](https://github.com/sentrei/sentrei/commit/7740558f671d28c0e3f0e1d4c078fe874f1d4d86))
+- 🎸 add google provider ([e81e1ff](https://github.com/sentrei/sentrei/commit/e81e1ff5b60fc5ce905051d6255ab2be5eb37312))
+
 ## [2.2.5](https://github.com/sentrei/sentrei/compare/v2.2.4...v2.2.5) (2020-03-27)
 
 ### Bug Fixes

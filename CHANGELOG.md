@@ -1,3 +1,9 @@
+# [2.4.0](https://github.com/sentrei/sentrei/compare/v2.3.5...v2.4.0) (2020-03-28)
+
+### Features
+
+- 🎸 add codecov coverage ([a5ceeb3](https://github.com/sentrei/sentrei/commit/a5ceeb38c744ebde56ecc42807a53037a1aec6f0))
+
 ## [2.3.5](https://github.com/sentrei/sentrei/compare/v2.3.4...v2.3.5) (2020-03-28)
 
 ### Bug Fixes

@@ -1,3 +1,9 @@
+## [2.4.2](https://github.com/sentrei/sentrei/compare/v2.4.1...v2.4.2) (2020-03-28)
+
+### Bug Fixes
+
+- 🐛 rename codecov to be dot ([bf4e04e](https://github.com/sentrei/sentrei/commit/bf4e04ebcb990c6076ed87fdfe90cc4e01d4b8db))
+
 ## [2.4.1](https://github.com/sentrei/sentrei/compare/v2.4.0...v2.4.1) (2020-03-28)
 
 ### Bug Fixes

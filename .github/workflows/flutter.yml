@@ -14,6 +14,8 @@ jobs:
         with:
           path: /Users/runner/hostedtoolcache/flutter
           key: flutter-v1-${{ env.flutter_version }}
+          restore-keys: |
+            flutter-v1-
       - name: Cache pub
         uses: actions/cache@v1
         with:

@@ -1,21 +1,35 @@
 coverage:
+  precision: 3
   status:
     project:
       default:
+        flags:
+          - test
         target: auto
-        threshold: 0%
+        threshold: null
         base: auto
-        paths:
-          - "lib"
         if_no_uploads: error
         if_not_found: success
         if_ci_failed: error
         informational: false
-        only_pulls: true
-      test:
-        flags:
-          - test
+        only_pulls: false
+    patch:
+      default:
+        target: auto
+        threshold: null
+        base: auto
+        if_no_uploads: error
+        if_not_found: success
+        if_ci_failed: error
+        only_pulls: false
 flags:
   test:
     paths:
-      - test
+      - lib/
+    carryforward: true
+comment:
+  layout: "reach, diff, flags, files"
+  behavior: default
+  require_changes: false
+  require_base: no
+  require_head: no

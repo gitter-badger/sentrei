@@ -36,3 +36,4 @@ jobs:
           file: coverage/lcov.info
           name: sentrei
           fail_ci_if_error: true
+          flags: test

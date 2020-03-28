@@ -5,6 +5,9 @@ on:
       - alpha
       - beta
       - master
+env:
+  flutter_channel: "stable"
+  flutter_version: "1.12.13+hotfix.8"
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -69,9 +72,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "12.x"
-      - uses: subosito/flutter-action@v1
-        with:
-          flutter-version: "1.12.13+hotfix.8"
       - name: Install bundler
         run: |
           gem install bundler
@@ -97,10 +97,19 @@ jobs:
       - name: Cache flutter
         uses: actions/cache@v1
         with:
+          path: /Users/runner/hostedtoolcache/flutter
+          key: flutter-v1-${{ env.flutter_version }}
+      - name: Cache pub
+        uses: actions/cache@v1
+        with:
           path: ~/.pub-cache
-          key: flutter-v1-${{ hashFiles('**/pubspec.lock') }}
+          key: pub-v1-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: |
-            flutter-v1-
+            pub-v1-
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: ${{ env.flutter_channel }}
+          flutter-version: ${{ env.flutter_version }}
       - name: Extract branch name
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"

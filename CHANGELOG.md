@@ -1,3 +1,9 @@
+## [2.8.1](https://github.com/sentrei/sentrei/compare/v2.8.0...v2.8.1) (2020-03-29)
+
+### Bug Fixes
+
+- 🐛 remove drive test ([9f62661](https://github.com/sentrei/sentrei/commit/9f626618c2e7ac86e5fa294f3f87b8616d95f22d))
+
 # [2.8.0](https://github.com/sentrei/sentrei/compare/v2.7.0...v2.8.0) (2020-03-29)
 
 ### Bug Fixes

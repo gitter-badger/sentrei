@@ -15,7 +15,7 @@ jobs:
         with:
           ref: ${{ matrix.branch }}
       - run: git fetch origin master
-      - run: git merge --ff-only origin/master
+      - run: git merge --ff-only origin/master || true
       - name: Push
         if: success()
         uses: ad-m/github-push-action@v0.5.0

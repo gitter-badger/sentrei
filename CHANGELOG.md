@@ -1,3 +1,9 @@
+## [2.5.1](https://github.com/sentrei/sentrei/compare/v2.5.0...v2.5.1) (2020-03-29)
+
+### Bug Fixes
+
+- 🐛 add current theme ([bb9cf83](https://github.com/sentrei/sentrei/commit/bb9cf83eb07843c5db8d54df68bf4edafde63f86))
+
 # [2.5.0](https://github.com/sentrei/sentrei/compare/v2.4.4...v2.5.0) (2020-03-29)
 
 ### Bug Fixes

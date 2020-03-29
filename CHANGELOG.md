@@ -1,3 +1,9 @@
+## [2.8.4](https://github.com/sentrei/sentrei/compare/v2.8.3...v2.8.4) (2020-03-29)
+
+### Bug Fixes
+
+- 🐛 add fetch command ([b736446](https://github.com/sentrei/sentrei/commit/b736446ccea4147ee8b04b10a1e87e69d6bb9629))
+
 ## [2.8.3](https://github.com/sentrei/sentrei/compare/v2.8.2...v2.8.3) (2020-03-29)
 
 ### Bug Fixes

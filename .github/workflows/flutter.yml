@@ -84,6 +84,10 @@ jobs:
         with:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: branch
       - run: flutter pub get
       - name: Run android drive
         if: matrix.platform == 'android'
@@ -93,7 +97,7 @@ jobs:
           target: ${{ matrix.target }}
           arch: x86_64
           profile: Nexus 6
-          script: "flutter drive --target=test_driver/driver.dart"
+          script: "flutter drive --target=test_driver/driver.dart --flavor ${{ steps.branch.outputs.branch }}"
       - name: Run ios drive
         if: matrix.platform == 'ios'
         run: |
@@ -106,4 +110,4 @@ jobs:
               '$1 == device { print $2 }'
           )
           xcrun simctl boot "${UDID:?No Simulator with this name found}"
-          flutter drive --target=test_driver/driver.dart
+          flutter drive --target=test_driver/driver.dart --flavor ${{ steps.branch.outputs.branch }}

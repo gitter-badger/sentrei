@@ -1,3 +1,9 @@
+## [2.8.2](https://github.com/sentrei/sentrei/compare/v2.8.1...v2.8.2) (2020-03-29)
+
+### Bug Fixes
+
+- 🐛 add README.md ([666fad4](https://github.com/sentrei/sentrei/commit/666fad4cffee22330c497cae50d0c49534241eda))
+
 ## [2.8.1](https://github.com/sentrei/sentrei/compare/v2.8.0...v2.8.1) (2020-03-29)
 
 ### Bug Fixes

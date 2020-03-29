@@ -58,6 +58,9 @@ jobs:
             version: 0
             device: "iPhone 8 (13.3)"
           - platform: ios
+            version: 1
+            device: "iPhone 11 (13.3)"
+          - platform: ios
             version: 2
             device: "iPhone 11 Pro Max (13.3)"
     steps:

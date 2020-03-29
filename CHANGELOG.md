@@ -1,3 +1,15 @@
+# [2.7.0](https://github.com/sentrei/sentrei/compare/v2.6.0...v2.7.0) (2020-03-29)
+
+### Bug Fixes
+
+- 🐛 add ios and android ([8943e8c](https://github.com/sentrei/sentrei/commit/8943e8ce46f1d5ae8ce5c75c150c4531b2085f60))
+- 🐛 add matrix test ([01f2156](https://github.com/sentrei/sentrei/commit/01f2156f1c8300cc4a05f6e883e1508408032713))
+- 🐛 android bug ([1d9c70e](https://github.com/sentrei/sentrei/commit/1d9c70ef39d53439adeb6d393cc907f053c5fd5d))
+
+### Features
+
+- 🎸 add flutter drive test ([612e841](https://github.com/sentrei/sentrei/commit/612e841b6e79e544c854b42eacf26fe5f1ea899e))
+
 # [2.6.0](https://github.com/sentrei/sentrei/compare/v2.5.5...v2.6.0) (2020-03-29)
 
 ### Features

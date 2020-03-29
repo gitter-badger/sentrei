@@ -1,3 +1,26 @@
+# [2.8.0](https://github.com/sentrei/sentrei/compare/v2.7.0...v2.8.0) (2020-03-29)
+
+### Bug Fixes
+
+- 🐛 add base pr branch ([37b9dbf](https://github.com/sentrei/sentrei/commit/37b9dbf8ac1103c31094398ae6b8efed7e91aa7e))
+- 🐛 add base_ref ([96607f9](https://github.com/sentrei/sentrei/commit/96607f95627fbfe73ae555027b4a706fec574f09))
+- 🐛 add branch output ([dc13d14](https://github.com/sentrei/sentrei/commit/dc13d148391b3cb2df7c3a1a328a5ea0f2aae520))
+- 🐛 add flavor head_ref ([3b121cc](https://github.com/sentrei/sentrei/commit/3b121ccd15b1689e1d32ec0262a51312ae987633))
+- 🐛 add full_name ([f3410de](https://github.com/sentrei/sentrei/commit/f3410de19b08014851750defc6899298c44baad7))
+- 🐛 add head ref ([2462c17](https://github.com/sentrei/sentrei/commit/2462c17e3853d0b61555ec41054cc311be7d9a2b))
+- 🐛 add pull_request head ref ([eab6201](https://github.com/sentrei/sentrei/commit/eab62019f1b3ca6ec9c4140d275d1859701aee74))
+- 🐛 add required status checks ([2ed2790](https://github.com/sentrei/sentrei/commit/2ed27906a9eff98ee6d84884a6b98bfa226dd693))
+- 🐛 add version only 0 & 1 ([f5947d9](https://github.com/sentrei/sentrei/commit/f5947d91757627d08645f93c836644a6d129d568))
+- 🐛 add versioning correct ([d8f049b](https://github.com/sentrei/sentrei/commit/d8f049bf61671ae63da9175f2f22cf695b06580a))
+- 🐛 change base to head ([a6e8102](https://github.com/sentrei/sentrei/commit/a6e81028a9bc095a768ea937667883b5ae13ddec))
+- 🐛 change to base ([a35c377](https://github.com/sentrei/sentrei/commit/a35c37799097a90082a360181bf8ee80e9c7f839))
+- 🐛 remove needs ([4e7444c](https://github.com/sentrei/sentrei/commit/4e7444cbf790a689a0ad717954ccd154dae3c316))
+
+### Features
+
+- 🎸 add flutter drive ([2198541](https://github.com/sentrei/sentrei/commit/2198541e8ee67d584f3f0ee91185e52706bf8eaf))
+- 🎸 add flutter drive test integration ([3e8bb48](https://github.com/sentrei/sentrei/commit/3e8bb48d2aa18bedf0a783054cabcd5554d6ba4e))
+
 # [2.7.0](https://github.com/sentrei/sentrei/compare/v2.6.0...v2.7.0) (2020-03-29)
 
 ### Bug Fixes

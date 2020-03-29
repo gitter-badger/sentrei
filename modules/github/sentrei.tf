@@ -1,9 +1,12 @@
 resource "github_repository" "sentrei" {
   name         = "sentrei"
-  description  = "sentrei"
+  description  = "Official sentrei app"
   private      = false
   has_issues   = true
   has_projects = true
+  has_wiki     = false
+
+  topics = ["flutter", "flutter-app", "flutter-ui"]
 }
 
 resource "github_branch_protection" "alpha" {

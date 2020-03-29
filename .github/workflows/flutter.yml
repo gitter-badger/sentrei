@@ -41,9 +41,10 @@ jobs:
     runs-on: macos-latest
     needs: [flutter]
     strategy:
+      fail-fast: true
       matrix:
         platform: [android, ios]
-        version: [0, 1, 2]
+        version: [0, 1]
         include:
           - platform: android
             version: 0
@@ -51,18 +52,11 @@ jobs:
             target: default
           - platform: android
             version: 1
-            api-level: 23
-            target: default
-          - platform: android
-            version: 2
             api-level: 29
             target: default
           - platform: ios
             version: 0
             device: "iPhone 8 (13.3)"
-          - platform: ios
-            version: 1
-            device: "iPhone 11 (13.3)"
           - platform: ios
             version: 2
             device: "iPhone 11 Pro Max (13.3)"
@@ -88,7 +82,7 @@ jobs:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
       - run: flutter pub get
-      - name: Run android emulator
+      - name: Run android drive
         if: matrix.platform == 'android'
         uses: reactivecircus/android-emulator-runner@v2
         with:
@@ -97,7 +91,7 @@ jobs:
           arch: x86_64
           profile: Nexus 6
           script: "flutter drive --target=test_driver/driver.dart"
-      - name: Run ios simulator
+      - name: Run ios drive
         if: matrix.platform == 'ios'
         run: |
           xcrun instruments -s

@@ -5,6 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:provider/provider.dart';
+import 'package:nested/nested.dart';
+
+import 'package:sentrei/providers/theme.dart';
 
 void main() {
   Crashlytics.instance.enableInDevMode = true;
@@ -25,27 +29,37 @@ class MyApp extends StatelessWidget {
   static FirebaseAnalyticsObserver observer =
       FirebaseAnalyticsObserver(analytics: analytics);
 
+  List<SingleChildWidget> _buildProviders(BuildContext context) {
+    return [
+      ChangeNotifierProvider(create: (_) => ThemeProvider()),
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with 'flutter run'. You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // 'hot reload' (press 'r' in the console where you ran 'flutter run',
-        // or simply save your changes to 'hot reload' in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-      navigatorObservers: [
-        FirebaseAnalyticsObserver(analytics: analytics),
-      ],
-    );
+    return MultiProvider(
+        providers: _buildProviders(context),
+        child: Consumer<ThemeProvider>(builder: (context, theme, _) {
+          return MaterialApp(
+            title: 'Flutter Demo',
+            theme: ThemeData(
+              // This is the theme of your application.
+              //
+              // Try running your application with 'flutter run'. You'll see the
+              // application has a blue toolbar. Then, without quitting the app, try
+              // changing the primarySwatch below to Colors.green and then invoke
+              // 'hot reload' (press 'r' in the console where you ran 'flutter run',
+              // or simply save your changes to 'hot reload' in a Flutter IDE).
+              // Notice that the counter didn't reset back to zero; the application
+              // is not restarted.
+              primarySwatch: Colors.blue,
+            ),
+            home: MyHomePage(title: 'Flutter Demo Home Page'),
+            navigatorObservers: [
+              FirebaseAnalyticsObserver(analytics: analytics),
+            ],
+          );
+        }));
   }
 }
 

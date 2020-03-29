@@ -29,7 +29,7 @@ class Routes {
         handler: Handler(
             handlerFunc:
                 (BuildContext context, Map<String, List<String>> params) =>
-                    MyHomePage()));
+                    HomePage()));
 
     _listRouter.clear();
 

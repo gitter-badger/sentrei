@@ -1,3 +1,10 @@
+## [2.4.3](https://github.com/sentrei/sentrei/compare/v2.4.2...v2.4.3) (2020-03-29)
+
+### Bug Fixes
+
+- 🐛 add flutter analytics ([b88989d](https://github.com/sentrei/sentrei/commit/b88989d3d1ff66dcf3b1a4f877456da3e9b594c7))
+- 🐛 naming revert ([a3b006d](https://github.com/sentrei/sentrei/commit/a3b006d67e7d4a1d79427f8d10b91d4f5b7ec341))
+
 ## [2.4.2](https://github.com/sentrei/sentrei/compare/v2.4.1...v2.4.2) (2020-03-28)
 
 ### Bug Fixes

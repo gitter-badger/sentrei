@@ -89,7 +89,7 @@ jobs:
           target: ${{ matrix.target }}
           arch: x86_64
           profile: Nexus 6
-          script: "flutter drive --target=test_driver/driver.dart --flavor ${{ github.event.pull_request.head.ref }}"
+          script: "flutter drive --target=test_driver/driver.dart --flavor ${{ github.event.client_payload.pull_request.head.repo.full_name }}"
       - name: Run ios drive
         if: matrix.platform == 'ios'
         run: |
@@ -102,4 +102,4 @@ jobs:
               '$1 == device { print $2 }'
           )
           xcrun simctl boot "${UDID:?No Simulator with this name found}"
-          flutter drive --target=test_driver/driver.dart --flavor ${{ github.event.pull_request.head.ref }}
+          flutter drive --target=test_driver/driver.dart --flavor ${{ github.event.client_payload.pull_request.head.repo.full_name }}

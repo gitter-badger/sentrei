@@ -1,3 +1,9 @@
+## [2.8.5](https://github.com/sentrei/sentrei/compare/v2.8.4...v2.8.5) (2020-03-29)
+
+### Bug Fixes
+
+- 🐛 add true exit ([991b80f](https://github.com/sentrei/sentrei/commit/991b80f2d8c0b8b116d1f83a6b235734628f6268))
+
 ## [2.8.4](https://github.com/sentrei/sentrei/compare/v2.8.3...v2.8.4) (2020-03-29)
 
 ### Bug Fixes

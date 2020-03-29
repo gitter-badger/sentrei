@@ -78,14 +78,14 @@ jobs:
       - name: Install firebase
         run: |
           npm install -g firebase-tools
-      - name: Install imagemagick
-        run: |
-          brew install imagemagick
-          brew install graphicsmagick
-          brew install librsvg
-          brew unlink pango
-          brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/7cf3b63be191cb2ce4cd86f4406915128ec97432/Formula/pango.rb
-          brew switch pango 1.42.4_1
+      - name: Get brew cache directory
+        id: brew-cache
+        run: echo "::set-output name=dir::$(brew --cache)/downloads"
+      - name: Cache brew
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.brew-cache.outputs.dir }}
+          key: brew-v1-${{ hashFiles('**/brew.sh') }}
       - name: Cache bundler
         id: bundler
         uses: actions/cache@v1
@@ -112,6 +112,8 @@ jobs:
         with:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
+      - name: Install brew
+        run: ./brew.sh
       - name: Extract branch name
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"

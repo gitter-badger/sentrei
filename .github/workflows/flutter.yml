@@ -41,7 +41,7 @@ jobs:
           flutter-version: ${{ env.flutter_version }}
       - run: flutter pub get
       - name: Run android test-drive
-        if: matrix.test == android
+        if: ${{ matrix.test }} == android
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: ${{ matrix.api-level }}
@@ -50,7 +50,7 @@ jobs:
           profile: Nexus 6
           script: flutter drive --target=test_driver/driver.dart
       - name: Run ios test-drive
-        if: matrix.test == ios
+        if: ${{ matrix.test }} == ios
         run: |
           xcrun instruments -s
           UDID=$(
@@ -63,7 +63,7 @@ jobs:
           xcrun simctl boot "${UDID:?No Simulator with this name found}"
           flutter drive --target=test_driver/driver.dart
       - name: Run flutter test
-        if: matrix.test == flutter
+        if: ${{ matrix.test }} == flutter
         run: |
           flutter analyze
           flutter test --coverage

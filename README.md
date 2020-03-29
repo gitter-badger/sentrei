@@ -1,4 +1,6 @@
-# sentrei
+<p align="center">
+  <img src="assets/banner.png">
+</p>
 
 <!-- prettier-ignore-start -->
 [![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/tenhobi/effective_dart)

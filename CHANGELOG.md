@@ -1,3 +1,9 @@
+## [2.5.3](https://github.com/sentrei/sentrei/compare/v2.5.2...v2.5.3) (2020-03-29)
+
+### Bug Fixes
+
+- 🐛 add full path ([ef5198b](https://github.com/sentrei/sentrei/commit/ef5198b536837d42bc90fa70135ecd51a9629947))
+
 ## [2.5.2](https://github.com/sentrei/sentrei/compare/v2.5.1...v2.5.2) (2020-03-29)
 
 ### Bug Fixes

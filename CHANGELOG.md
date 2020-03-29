@@ -1,3 +1,9 @@
+## [2.5.2](https://github.com/sentrei/sentrei/compare/v2.5.1...v2.5.2) (2020-03-29)
+
+### Bug Fixes
+
+- 🐛 add brew cache ([afb8ade](https://github.com/sentrei/sentrei/commit/afb8adeeace5cc9a3d200292c2df6875db6f786f))
+
 ## [2.5.1](https://github.com/sentrei/sentrei/compare/v2.5.0...v2.5.1) (2020-03-29)
 
 ### Bug Fixes

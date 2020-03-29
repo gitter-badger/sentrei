@@ -6,6 +6,18 @@ env:
 jobs:
   flutter:
     runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        test: [android, ios, flutter]
+        include:
+          - test: android
+            api-level: [21, 29]
+            target: [default]
+          - test: ios
+            device:
+              - "iPhone 8 (13.3)"
+              - "iPhone 11 Pro Max (13.3)"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -28,12 +40,37 @@ jobs:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
       - run: flutter pub get
-      - run: flutter analyze
-      - run: flutter test --coverage
+      - name: Run android test-drive
+        if: matrix.test == android
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ matrix.api-level }}
+          target: ${{ matrix.target }}
+          arch: x86_64
+          profile: Nexus 6
+          script: flutter drive --target=test_driver/driver.dart
+      - name: Run ios test-drive
+        if: matrix.test == ios
+        run: |
+          xcrun instruments -s
+          UDID=$(
+            xcrun instruments -s |
+            awk \
+              -F ' *[][]' \
+              -v 'device=${{ matrix.device }}' \
+              '$1 == device { print $2 }'
+          )
+          xcrun simctl boot "${UDID:?No Simulator with this name found}"
+          flutter drive --target=test_driver/driver.dart
+      - name: Run flutter test
+        if: matrix.test == flutter
+        run: |
+          flutter analyze
+          flutter test --coverage
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
           file: coverage/lcov.info
           name: sentrei
           fail_ci_if_error: true
-          flags: test
+          flags: ${{ matrix.test }}

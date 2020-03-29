@@ -4,7 +4,9 @@ coverage:
     project:
       default:
         flags:
-          - test
+          - android
+          - ios
+          - flutter
         target: auto
         threshold: null
         base: auto
@@ -24,10 +26,12 @@ coverage:
         informational: true
         only_pulls: false
 flags:
-  test:
-    paths:
-      - lib/
+  android:
     carryforward: true
+  ios:
+    carryforward: true
+  flutter:
+    carryforward: false
 comment:
   layout: "reach, diff, flags, files"
   behavior: default

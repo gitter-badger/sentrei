@@ -6,21 +6,6 @@ env:
 jobs:
   flutter:
     runs-on: macos-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        platform: [android, ios, flutter]
-        include:
-          - platform: android
-            api-level:
-              - 21
-              - 29
-            target:
-              - default
-          - platform: ios
-            device:
-              - "iPhone 8 (13.3)"
-              - "iPhone 11 Pro Max (13.3)"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -43,19 +28,97 @@ jobs:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
       - run: flutter pub get
-      - name: Run android test-drive
-        if: matrix.platform == 'android'
+      - run: flutter analyze
+      - run: flutter test --coverage
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          file: coverage/lcov.info
+          name: sentrei
+          fail_ci_if_error: true
+          flags: test
+  android:
+    runs-on: macos-latest
+    needs: [flutter]
+    strategy:
+      matrix:
+        api-level: [21, 29]
+        target: [default]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache flutter
+        uses: actions/cache@v1
+        with:
+          path: /Users/runner/hostedtoolcache/flutter
+          key: flutter-v1-${{ env.flutter_version }}
+          restore-keys: |
+            flutter-v1-
+      - name: Cache pub
+        uses: actions/cache@v1
+        with:
+          path: ~/.pub-cache
+          key: pub-v1-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: |
+            pub-v1-
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: ${{ env.flutter_channel }}
+          flutter-version: ${{ env.flutter_version }}
+      - run: flutter pub get
+      - name: List all simulators
+        run: xcrun instruments -s
+      - name: Run android emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: ${{ matrix.api-level }}
           target: ${{ matrix.target }}
           arch: x86_64
           profile: Nexus 6
-          script: flutter drive --target=test_driver/driver.dart
-      - name: Run ios test-drive
-        if: matrix.platform == 'ios'
+          script: "flutter drive --target=test_driver/driver.dart"
+      - run: flutter drive --target=test_driver/driver.dart
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          file: coverage/lcov.info
+          name: sentrei
+          fail_ci_if_error: true
+          flags: test
+  ios:
+    runs-on: macos-latest
+    needs: [flutter]
+    strategy:
+      fail-fast: false
+      matrix:
+        device:
+          - "iPhone 8 (13.3)"
+          - "iPhone 11 Pro Max (13.3)"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache flutter
+        uses: actions/cache@v1
+        with:
+          path: /Users/runner/hostedtoolcache/flutter
+          key: flutter-v1-${{ env.flutter_version }}
+          restore-keys: |
+            flutter-v1-
+      - name: Cache pub
+        uses: actions/cache@v1
+        with:
+          path: ~/.pub-cache
+          key: pub-v1-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: |
+            pub-v1-
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: ${{ env.flutter_channel }}
+          flutter-version: ${{ env.flutter_version }}
+      - run: flutter pub get
+      - name: List all simulators
+        run: xcrun instruments -s
+      - name: Run ios simulator
         run: |
-          xcrun instruments -s
           UDID=$(
             xcrun instruments -s |
             awk \
@@ -64,16 +127,11 @@ jobs:
               '$1 == device { print $2 }'
           )
           xcrun simctl boot "${UDID:?No Simulator with this name found}"
-          flutter drive --target=test_driver/driver.dart
-      - name: Run flutter test
-        if: matrix.platform == 'flutter'
-        run: |
-          flutter analyze
-          flutter test --coverage
+      - run: flutter drive --target=test_driver/driver.dart
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
           file: coverage/lcov.info
           name: sentrei
           fail_ci_if_error: true
-          flags: ${{ matrix.platform }}
+          flags: test

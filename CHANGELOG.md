@@ -1,3 +1,10 @@
+## [2.5.5](https://github.com/sentrei/sentrei/compare/v2.5.4...v2.5.5) (2020-03-29)
+
+### Bug Fixes
+
+- 🐛 add package info ([c234a37](https://github.com/sentrei/sentrei/commit/c234a37939b9c731d174c0837316940f92f2187d))
+- 🐛 styel refactoring ([7a05b29](https://github.com/sentrei/sentrei/commit/7a05b29af04089f8800e4580fb77617f8b6cc401))
+
 ## [2.5.4](https://github.com/sentrei/sentrei/compare/v2.5.3...v2.5.4) (2020-03-29)
 
 ### Bug Fixes

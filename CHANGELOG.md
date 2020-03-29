@@ -1,3 +1,9 @@
+## [2.4.4](https://github.com/sentrei/sentrei/compare/v2.4.3...v2.4.4) (2020-03-29)
+
+### Bug Fixes
+
+- 🐛 add github repository sentrei settings ([db3e1e9](https://github.com/sentrei/sentrei/commit/db3e1e9c9498da30a54f254890f689ddbdee5f51))
+
 ## [2.4.3](https://github.com/sentrei/sentrei/compare/v2.4.2...v2.4.3) (2020-03-29)
 
 ### Bug Fixes

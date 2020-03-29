@@ -1,3 +1,9 @@
+## [2.8.3](https://github.com/sentrei/sentrei/compare/v2.8.2...v2.8.3) (2020-03-29)
+
+### Bug Fixes
+
+- 🐛 add github sync ([bdbab2f](https://github.com/sentrei/sentrei/commit/bdbab2f7ea2e9c577a867f3ad4f66d1173e1c23e))
+
 ## [2.8.2](https://github.com/sentrei/sentrei/compare/v2.8.1...v2.8.2) (2020-03-29)
 
 ### Bug Fixes

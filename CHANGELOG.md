@@ -1,3 +1,14 @@
+# [2.5.0](https://github.com/sentrei/sentrei/compare/v2.4.4...v2.5.0) (2020-03-29)
+
+### Bug Fixes
+
+- 🐛 add nested as building provider ([b435bdd](https://github.com/sentrei/sentrei/commit/b435bdd75d2548324843abc3b7a5dad2ff1b895e))
+- 🐛 change codecov to informative ([d1bb625](https://github.com/sentrei/sentrei/commit/d1bb625ec680cd5292f324ce6cf73126027a48d4))
+
+### Features
+
+- 🎸 add provider initiate ([0ca9a0e](https://github.com/sentrei/sentrei/commit/0ca9a0e98e4ad46cc6e966c4df7ab4df702d7703))
+
 ## [2.4.4](https://github.com/sentrei/sentrei/compare/v2.4.3...v2.4.4) (2020-03-29)
 
 ### Bug Fixes

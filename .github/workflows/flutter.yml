@@ -39,7 +39,6 @@ jobs:
           flags: test
   drive:
     runs-on: macos-latest
-    needs: [flutter]
     strategy:
       fail-fast: true
       matrix:

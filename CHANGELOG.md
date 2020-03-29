@@ -1,3 +1,10 @@
+## [2.8.6](https://github.com/sentrei/sentrei/compare/v2.8.5...v2.8.6) (2020-03-29)
+
+### Bug Fixes
+
+- 🐛 change cron to once a day ([113656e](https://github.com/sentrei/sentrei/commit/113656ed12e5dd29e71b44d9a97d7c3c96d19610))
+- 🐛 cron ([ac64dd7](https://github.com/sentrei/sentrei/commit/ac64dd71b4a332b59b3f375c8ccdcc9c9f19efa0))
+
 ## [2.8.5](https://github.com/sentrei/sentrei/compare/v2.8.4...v2.8.5) (2020-03-29)
 
 ### Bug Fixes

@@ -9,7 +9,7 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:provider/provider.dart';
 import 'package:nested/nested.dart';
 
-import 'package:sentrei/providers/theme.dart';
+import 'package:sentrei/providers/providers.dart';
 
 void main() {
   Crashlytics.instance.enableInDevMode = true;
@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
   List<SingleChildWidget> _buildProviders(BuildContext context) {
     return [
       ChangeNotifierProvider(create: (_) => ThemeProvider()),
+      ChangeNotifierProvider(create: (_) => PackageInfoProvider()),
     ];
   }
 

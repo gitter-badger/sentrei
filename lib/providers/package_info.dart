@@ -5,7 +5,7 @@ import 'package:package_info/package_info.dart';
 
 class PackageInfoProvider extends ChangeNotifier {
   PackageInfo _packageInfo =
-      PackageInfo(appName: "", packageName: "", version: "", buildNumber: "");
+      PackageInfo(appName: '', packageName: '', version: '', buildNumber: '');
 
   PackageInfo get packageInfo => _packageInfo;
 

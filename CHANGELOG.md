@@ -1,3 +1,9 @@
+## [2.5.4](https://github.com/sentrei/sentrei/compare/v2.5.3...v2.5.4) (2020-03-29)
+
+### Bug Fixes
+
+- 🐛 add proper crashlytics ([3759c34](https://github.com/sentrei/sentrei/commit/3759c346cc8c4a6333f83e5454a03583310d8665))
+
 ## [2.5.3](https://github.com/sentrei/sentrei/compare/v2.5.2...v2.5.3) (2020-03-29)
 
 ### Bug Fixes

@@ -54,6 +54,6 @@ resource "github_branch_protection" "master" {
 
   required_status_checks {
     strict   = true
-    contexts = ["auto-approve", "flutter", "terraform (master)", "yarn", "atlas/sentrei/sentrei-master", "WIP"]
+    contexts = ["auto-approve", "drive (android, 0)", "drive (android, 1)", "drive (ios, 0)", "drive (ios, 1)", "flutter", "terraform (master)", "yarn", "atlas/sentrei/sentrei-master", "WIP"]
   }
 }

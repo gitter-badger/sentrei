@@ -1,3 +1,9 @@
+# [2.6.0](https://github.com/sentrei/sentrei/compare/v2.5.5...v2.6.0) (2020-03-29)
+
+### Features
+
+- 🎸 ini provider fluro ([8e228d4](https://github.com/sentrei/sentrei/commit/8e228d4dbb0ef423a852d0317eb2e826ad8afd62))
+
 ## [2.5.5](https://github.com/sentrei/sentrei/compare/v2.5.4...v2.5.5) (2020-03-29)
 
 ### Bug Fixes

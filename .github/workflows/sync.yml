@@ -17,5 +17,5 @@ jobs:
           ref: ${{ matrix.branch }}
       - run: git fetch
       - run: git checkout ${{ matrix.branch }}
-      - run: git merge --ff-only master || true
+      - run: git merge --ff-only origin/master || true
       - run: git push

@@ -56,18 +56,6 @@ jobs:
           title: "chore: [sentrei-auto-pr]"
         env:
           HUSKY_SKIP_HOOKS: 1
-      - name: Get upload url
-        env:
-          url: ${{ steps.create_release.outputs.upload_url }}
-        run: |
-          mkdir artifact
-          echo $version
-          echo $version > artifact/url.txt
-      - name: Upload artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: ${{ steps.branch.outputs.branch }}
-          path: artifact/url.txt
   deploy:
     if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
     runs-on: macos-latest
@@ -123,19 +111,24 @@ jobs:
             pub-v1-
       - name: Install brew
         run: ./brew.sh
+      - name: Extract version semver
+        id: version
+        run: |
+          version=$(node -pe "require('./package.json').version")
+          echo "##[set-output name=version;]$version"
       - name: Extract branch name
         id: branch
-        shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-      - name: Download artifact
-        uses: actions/download-artifact@v1
-        with:
-          name: release-url-${{ steps.branch.outputs.branch }}
-      - name: Get upload url
+      - name: Extract upload_url
         id: get_url
         run: |
-          url=$(cat artifact/url.txt
-          echo "##[set-output name=upload_url;]$url"
+          api_url="https://api.github.com/repos/$GITHUB_REPOSITORY/releases"
+          release_id="$(curl -H "Authorization: token $GITHUB_TOKEN" "$api_url/tags/$tag" | jq -r '.id | select(. != null)')"
+          upload_url="https://uploads.github.com/repos/$GITHUB_REPOSITORY/releases/$release_id/assets"
+          echo "##[set-output name=upload_url;]$upload_url"
+        env:
+          GITHUB_REPOSITORY: $GITHUB_REPOSITORY
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: subosito/flutter-action@v1
         with:
           channel: ${{ env.flutter_channel }}

@@ -62,12 +62,12 @@ jobs:
         run: |
           mkdir artifact
           echo $version
-          echo $version > artifact/${{ steps.branch.outputs.branch }}.txt
+          echo $version > artifact/url.txt
       - name: Upload artifact
         uses: actions/upload-artifact@v1
         with:
-          name: release-url-${{ steps.branch.outputs.branch }}
-          path: artifact/${{ steps.branch.outputs.branch }}.txt
+          name: ${{ steps.branch.outputs.branch }}
+          path: artifact/url.txt
   deploy:
     if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
     runs-on: macos-latest
@@ -121,6 +121,12 @@ jobs:
           key: pub-v1-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: |
             pub-v1-
+      - name: Install brew
+        run: ./brew.sh
+      - name: Extract branch name
+        id: branch
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       - name: Download artifact
         uses: actions/download-artifact@v1
         with:
@@ -128,18 +134,12 @@ jobs:
       - name: Get upload url
         id: get_url
         run: |
-          url=$(cat artifact/${{ steps.branch.outputs.branch }}.txt)
+          url=$(cat artifact/url.txt
           echo "##[set-output name=upload_url;]$url"
       - uses: subosito/flutter-action@v1
         with:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
-      - name: Install brew
-        run: ./brew.sh
-      - name: Extract branch name
-        id: branch
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       - name: Decrypt secrets
         if: matrix.platform == 'android'
         run: |
@@ -166,7 +166,6 @@ jobs:
         run: |
           flutter build ios --no-codesign --release --flavor ${{ steps.branch.outputs.branch }}
       - name: Install dependencies with bundler
-        # if: steps.bundler.outputs.cache-hit != 'true'
         run: |
           cd ${{ matrix.platform }}
           bundle update --bundler

@@ -1,3 +1,9 @@
+## [2.8.11](https://github.com/sentrei/sentrei/compare/v2.8.10...v2.8.11) (2020-03-30)
+
+### Bug Fixes
+
+- 🐛 change to pages ([9a1cc54](https://github.com/sentrei/sentrei/commit/9a1cc54c7c30bbb7b94bafec7a5b474535000490))
+
 ## [2.8.10](https://github.com/sentrei/sentrei/compare/v2.8.9...v2.8.10) (2020-03-30)
 
 ### Bug Fixes

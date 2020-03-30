@@ -1,3 +1,12 @@
+## [2.8.17](https://github.com/sentrei/sentrei/compare/v2.8.16...v2.8.17) (2020-03-30)
+
+### Bug Fixes
+
+- 🐛 add a ([1b777c6](https://github.com/sentrei/sentrei/commit/1b777c66f050febcfb7c57565c447296ccc2e956))
+- 🐛 add release version ([8ac961e](https://github.com/sentrei/sentrei/commit/8ac961ed22bcf4ee85b7c958f01e3b9eede9aafa))
+- 🐛 add v ([0ed24ba](https://github.com/sentrei/sentrei/commit/0ed24ba0ede9a0ba19aa2d9cf830e00d167f33c8))
+- 🐛 remove tmp a github action ([7e6073a](https://github.com/sentrei/sentrei/commit/7e6073a11f7db0377db87dbbb807dd18fb68f633))
+
 ## [2.8.16](https://github.com/sentrei/sentrei/compare/v2.8.15...v2.8.16) (2020-03-30)
 
 ### Bug Fixes

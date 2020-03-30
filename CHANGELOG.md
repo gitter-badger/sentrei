@@ -1,3 +1,10 @@
+## [2.8.8](https://github.com/sentrei/sentrei/compare/v2.8.7...v2.8.8) (2020-03-30)
+
+### Bug Fixes
+
+- 🐛 add semantic-pull-request ([29cd3c1](https://github.com/sentrei/sentrei/commit/29cd3c17266e450b764a891e247eedf191b59353))
+- 🐛 add semantic-release-bot ([2a301d5](https://github.com/sentrei/sentrei/commit/2a301d5f444fceb911475b7d692fe45df8a708a2))
+
 ## [2.8.7](https://github.com/sentrei/sentrei/compare/v2.8.6...v2.8.7) (2020-03-30)
 
 ### Bug Fixes

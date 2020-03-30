@@ -124,7 +124,7 @@ jobs:
         run: |
           api_url="https://api.github.com/repos/$GITHUB_REPOSITORY/releases"
           release_id="$(curl -H "Authorization: token $GITHUB_TOKEN" "$api_url/tags/v$version" | jq -r '.id | select(. != null)')"
-          upload_url="https://uploads.github.com/repos/$GITHUB_REPOSITORY/releases/$release_id/assets"
+          upload_url="https://uploads.github.com/repos/$GITHUB_REPOSITORY/releases/$release_id/assets{?name,label}"
           echo "##[set-output name=upload_url;]$upload_url"
         env:
           version: ${{ steps.version.outputs.version }}

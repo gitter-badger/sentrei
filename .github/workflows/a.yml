@@ -21,7 +21,7 @@ jobs:
         id: get_url
         run: |
           api_url="https://api.github.com/repos/$GITHUB_REPOSITORY/releases"
-          release_id="$(curl -H "Authorization: token $GITHUB_TOKEN" "$api_url/tags/$version" | jq -r '.id | select(. != null)')"
+          release_id="$(curl -H "Authorization: token $GITHUB_TOKEN" "$api_url/tags/v$version" | jq -r '.id | select(. != null)')"
           upload_url="https://uploads.github.com/repos/$GITHUB_REPOSITORY/releases/$release_id/assets"
           echo $upload_url
           echo "##[set-output name=upload_url;]$upload_url"

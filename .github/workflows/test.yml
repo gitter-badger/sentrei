@@ -1,19 +1,24 @@
 name: Test
-on: push
+on:
+  push
+  # schedule:
+  #   - cron: "0 0,8,16 * * *"
 env:
   flutter_channel: "stable"
   flutter_version: "1.12.13+hotfix.8"
 jobs:
   test:
     runs-on: macos-latest
-    needs: [release]
     strategy:
       fail-fast: false
       matrix:
         platform: [android]
+        scheme: [alpha, beta, master]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: ${{ matrix.scheme }}
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: "2.x"
@@ -53,9 +58,6 @@ jobs:
             pub-v1-
       - name: Install brew
         run: ./brew.sh
-      - name: Extract branch name
-        id: branch
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       - uses: subosito/flutter-action@v1
         with:
           channel: ${{ env.flutter_channel }}
@@ -96,7 +98,7 @@ jobs:
       - name: Run ios ipa
         if: matrix.platform == 'ios'
         run: |
-          flutter build ios --no-codesign --release --flavor ${{ steps.branch.outputs.branch }}
+          flutter build ios --no-codesign --release --flavor ${{ matrix.scheme }}
       - name: Install dependencies with bundler
         run: |
           cd ${{ matrix.platform }}
@@ -106,7 +108,7 @@ jobs:
       - name: Run fastlane
         run: |
           cd ${{ matrix.platform }}
-          bundle exec fastlane test ${{ steps.branch.outputs.branch }}:true
+          bundle exec fastlane test ${{ matrix.scheme }}:true
         env:
           CI: true
           FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}

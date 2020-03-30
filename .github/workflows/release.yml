@@ -61,6 +61,7 @@ jobs:
           url: ${{ steps.create_release.outputs.upload_url }}
         run: |
           mkdir artifact
+          echo $version
           echo $version > artifact/${{ steps.branch.outputs.branch }}.txt
       - name: Upload artifact
         uses: actions/upload-artifact@v1

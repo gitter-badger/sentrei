@@ -1,3 +1,10 @@
+## [2.8.7](https://github.com/sentrei/sentrei/compare/v2.8.6...v2.8.7) (2020-03-30)
+
+### Bug Fixes
+
+- 🐛 add origin/m,aster ([9ff204e](https://github.com/sentrei/sentrei/commit/9ff204e66bb664835b78b198c3ad19174a1515fb))
+- 🐛 github sync ([2125d0c](https://github.com/sentrei/sentrei/commit/2125d0cf927ed2f74ba5790c764b8e37037f8938))
+
 ## [2.8.6](https://github.com/sentrei/sentrei/compare/v2.8.5...v2.8.6) (2020-03-29)
 
 ### Bug Fixes

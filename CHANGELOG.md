@@ -1,3 +1,9 @@
+## [2.8.13](https://github.com/sentrei/sentrei/compare/v2.8.12...v2.8.13) (2020-03-30)
+
+### Bug Fixes
+
+- 🐛 add release version ([2ad0307](https://github.com/sentrei/sentrei/commit/2ad0307007a3ceaf9dd0f8d74e80143b947ebdbe))
+
 ## [2.8.12](https://github.com/sentrei/sentrei/compare/v2.8.11...v2.8.12) (2020-03-30)
 
 ### Bug Fixes

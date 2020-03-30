@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 
 import 'package:sentrei/home/home.dart';
-import '404.dart';
+import 'package:sentrei/widgets/widgets.dart';
 
 abstract class IRouterProvider {
   void initRouter(Router router);

@@ -1,9 +1,7 @@
 name: Sync
 on:
-  pull_request
-  # schedule:
-  #   # - cron: "0 0 0 * *"
-  #   - cron: "*/3 * * * *"
+  schedule:
+    - cron: "0 0 * * *"
 jobs:
   sync:
     strategy:

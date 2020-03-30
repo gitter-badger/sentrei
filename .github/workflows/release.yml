@@ -29,6 +29,10 @@ jobs:
         if: steps.yarn.outputs.cache-hit != 'true'
         run: |
           yarn install
+      - name: Extract branch name
+        id: branch
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       - name: Release
         run: |
           yarn run release
@@ -52,6 +56,17 @@ jobs:
           title: "chore: [sentrei-auto-pr]"
         env:
           HUSKY_SKIP_HOOKS: 1
+      - name: Get upload url
+        env:
+          url: ${{ steps.create_release.outputs.upload_url }}
+        run: |
+          mkdir artifact
+          echo $version > artifact/${{ steps.branch.outputs.branch }}.txt
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: release-url-${{ steps.branch.outputs.branch }}
+          path: artifact/${{ steps.branch.outputs.branch }}.txt
   deploy:
     if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true
     runs-on: macos-latest
@@ -105,6 +120,15 @@ jobs:
           key: pub-v1-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: |
             pub-v1-
+      - name: Download artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: release-url-${{ steps.branch.outputs.branch }}
+      - name: Get upload url
+        id: get_url
+        run: |
+          url=$(cat artifact/${{ steps.branch.outputs.branch }}.txt)
+          echo "##[set-output name=upload_url;]$url"
       - uses: subosito/flutter-action@v1
         with:
           channel: ${{ env.flutter_channel }}
@@ -112,9 +136,9 @@ jobs:
       - name: Install brew
         run: ./brew.sh
       - name: Extract branch name
+        id: branch
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: branch
       - name: Decrypt secrets
         if: matrix.platform == 'android'
         run: |
@@ -160,3 +184,23 @@ jobs:
           GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER
           GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+      - name: Upload android asset
+        if: matrix.platform == 'android'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.get_url.outputs.upload_url }}
+          asset_path: build/app/outputs/apk/${{ steps.branch.outputs.branch }}/release/app-${{ steps.branch.outputs.branch }}-release.apk
+          asset_name: app-${{ steps.branch.outputs.branch }}-release.apk
+          asset_content_type: application/vnd.android.package-archive
+      - name: Upload ios asset
+        if: matrix.platform == 'ios'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.get_url.outputs.upload_url }}
+          asset_path: ios/build/Runner/${{ steps.branch.outputs.branch }}.ipa
+          asset_name: ${{ steps.branch.outputs.branch }}.ipa
+          asset_content_type: application/octet-stream

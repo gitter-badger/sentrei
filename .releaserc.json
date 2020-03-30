@@ -10,6 +10,9 @@
         "tarballDir": "dist"
       }
     ],
-    "@semantic-release/github"
+    "@semantic-release/github",
+    ["@semantic-release/exec", {
+      "publishCmd": "echo '##[set-output name=version;]${nextRelease.version}'"
+    }]
   ]
 }

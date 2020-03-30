@@ -1,3 +1,9 @@
+## [2.8.19](https://github.com/sentrei/sentrei/compare/v2.8.18...v2.8.19) (2020-03-30)
+
+### Bug Fixes
+
+- 🐛 add correct upload url ([16943bf](https://github.com/sentrei/sentrei/commit/16943bfa759bcf1d00c1fc91778ebf4c5ee9abf5))
+
 ## [2.8.17](https://github.com/sentrei/sentrei/compare/v2.8.16...v2.8.17) (2020-03-30)
 
 ### Bug Fixes

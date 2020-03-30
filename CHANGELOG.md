@@ -1,3 +1,9 @@
+## [2.8.10](https://github.com/sentrei/sentrei/compare/v2.8.9...v2.8.10) (2020-03-30)
+
+### Bug Fixes
+
+- 🐛 remove cache brew ([4d4b228](https://github.com/sentrei/sentrei/commit/4d4b228c2040fd088da51df07eabeccc51ec7060))
+
 ## [2.8.9](https://github.com/sentrei/sentrei/compare/v2.8.8...v2.8.9) (2020-03-30)
 
 ### Bug Fixes

@@ -1,3 +1,9 @@
+## [2.8.9](https://github.com/sentrei/sentrei/compare/v2.8.8...v2.8.9) (2020-03-30)
+
+### Bug Fixes
+
+- 🐛 add widget folder ([c58d708](https://github.com/sentrei/sentrei/commit/c58d708c2bdee2ae73472d11736a4081d197dd78))
+
 ## [2.8.8](https://github.com/sentrei/sentrei/compare/v2.8.7...v2.8.8) (2020-03-30)
 
 ### Bug Fixes

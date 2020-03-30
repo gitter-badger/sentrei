@@ -1,3 +1,9 @@
+## [2.8.12](https://github.com/sentrei/sentrei/compare/v2.8.11...v2.8.12) (2020-03-30)
+
+### Bug Fixes
+
+- 🐛 add mx dns ([7ea44b4](https://github.com/sentrei/sentrei/commit/7ea44b47ac705f8815977d312baadd382eb3d552))
+
 ## [2.8.11](https://github.com/sentrei/sentrei/compare/v2.8.10...v2.8.11) (2020-03-30)
 
 ### Bug Fixes

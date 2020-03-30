@@ -5,3 +5,11 @@ gradle-wrapper.jar
 /gradlew.bat
 /local.properties
 GeneratedPluginRegistrant.java
+
+firebase/sentrei-alpha.json
+firebase/sentrei-beta.json
+firebase/sentrei-master.json
+
+key/api.json
+key/key.jks
+key/key.properties

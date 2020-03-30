@@ -56,8 +56,6 @@ jobs:
           key: pub-v1-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: |
             pub-v1-
-      - name: Install brew
-        run: ./brew.sh
       - uses: subosito/flutter-action@v1
         with:
           channel: ${{ env.flutter_channel }}

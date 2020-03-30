@@ -1,3 +1,9 @@
+## [2.8.14](https://github.com/sentrei/sentrei/compare/v2.8.13...v2.8.14) (2020-03-30)
+
+### Bug Fixes
+
+- 🐛 add version env echo ([cfddd8c](https://github.com/sentrei/sentrei/commit/cfddd8c44c70d5ab9de0f8cffcb2387f9ef63c66))
+
 ## [2.8.13](https://github.com/sentrei/sentrei/compare/v2.8.12...v2.8.13) (2020-03-30)
 
 ### Bug Fixes

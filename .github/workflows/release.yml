@@ -78,11 +78,11 @@ jobs:
       - name: Install firebase
         run: |
           npm install -g firebase-tools
-      - name: Cache brew
-        uses: actions/cache@v1
-        with:
-          path: /Users/runner/Library/Caches/Homebrew/downloads
-          key: brew-v1-${{ hashFiles('**/brew.sh') }}
+      # - name: Cache brew
+      #   uses: actions/cache@v1
+      #   with:
+      #     path: /Users/runner/Library/Caches/Homebrew/downloads
+      #     key: brew-v1-${{ hashFiles('**/brew.sh') }}
       - name: Cache bundler
         id: bundler
         uses: actions/cache@v1

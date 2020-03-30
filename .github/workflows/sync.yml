@@ -1,8 +1,9 @@
 name: Sync
 on:
-  schedule:
-    # - cron: "0 0 0 * *"
-    - cron: "*/3 * * * *"
+  pull_request
+  # schedule:
+  #   # - cron: "0 0 0 * *"
+  #   - cron: "*/3 * * * *"
 jobs:
   sync:
     strategy:
@@ -12,12 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ matrix.branch }}
       - run: git fetch
       - run: git checkout ${{ matrix.branch }}
-      - run: git merge --ff-only master || true
-      - name: Push
-        uses: ad-m/github-push-action@v0.5.0
-        with:
-          branch: ${{ matrix.branch }}
-          github_token: ${{ secrets.ACCESS_TOKEN }}
-          force: true
+      - run: git merge --ff-only origin/master || true
+      - run: git push

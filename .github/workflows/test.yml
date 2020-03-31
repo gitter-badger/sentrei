@@ -14,9 +14,9 @@ jobs:
         platform: [android]
     steps:
       - name: Dump the client payload context
+        run: echo "$PAYLOAD_CONTEXT"
         env:
           PAYLOAD_CONTEXT: ${{ toJson(github.event.client_payload) }}
-        run: echo "$PAYLOAD_CONTEXT"
       - name: Checkout
         if: steps.check.outputs.triggered == 'true'
         uses: actions/checkout@v2

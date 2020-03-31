@@ -38,6 +38,19 @@ platform :android do
       release_notes: notes,
       apk_path: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk"
     )
+    firebase_test_lab_android(
+      project_id: "sentrei-alpha",
+      gcloud_service_key_file: "firebase/sentrei-alpha.json",
+      type: "robo",
+      devices: [
+        {
+          model: "Pixel2",
+          version: "29"
+        }
+      ],
+      app_apk: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk",
+      download_dir: "results",
+    )
   end
 
   desc "Submit a new beta build to firebase"
@@ -64,6 +77,19 @@ platform :android do
       release_notes: notes,
       apk_path: "../build/app/outputs/apk/beta/release/app-beta-release.apk"
     )
+    firebase_test_lab_android(
+      project_id: "sentrei-beta",
+      gcloud_service_key_file: "firebase/sentrei-beta.json",
+      type: "robo",
+      devices: [
+        {
+          model: "Pixel2",
+          version: "29"
+        }
+      ],
+      app_apk: "../build/app/outputs/apk/beta/release/app-beta-release.apk",
+      download_dir: "results",
+    )
   end
 
   desc "Submit a new master build to firebase"
@@ -85,6 +111,19 @@ platform :android do
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
       release_notes: notes,
       apk_path: "../build/app/outputs/apk/master/release/app-master-release.apk",
+    )
+    firebase_test_lab_android(
+      project_id: "sentrei-master",
+      gcloud_service_key_file: "firebase/sentrei-master.json",
+      type: "robo",
+      devices: [
+        {
+          model: "Pixel2",
+          version: "29"
+        }
+      ],
+      app_apk: "../build/app/outputs/apk/master/release/app-master-release.apk",
+      download_dir: "results",
     )
   end
   lane :test do |options|

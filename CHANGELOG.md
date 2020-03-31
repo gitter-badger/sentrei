@@ -1,3 +1,10 @@
+## [2.10.5](https://github.com/sentrei/sentrei/compare/v2.10.4...v2.10.5) (2020-03-31)
+
+### Bug Fixes
+
+- 🐛 add if: steps.check.outputs.triggered == 'true' ([0870be0](https://github.com/sentrei/sentrei/commit/0870be0fb202e3d6b14956a5c10280137735f962))
+- 🐛 add ready gha ([561f60e](https://github.com/sentrei/sentrei/commit/561f60e6796f38d934750a5331db4b56d6f7a53a))
+
 ## [2.10.4](https://github.com/sentrei/sentrei/compare/v2.10.3...v2.10.4) (2020-03-31)
 
 ### Bug Fixes

@@ -151,6 +151,13 @@ jobs:
           ./key.sh
         env:
           SENTREI_PASSPHRASE: ${{ secrets.SENTREI_PASSPHRASE }}
+      - name: Decrypt fastlane
+        if: matrix.platform == 'android'
+        run: |
+          cd ${{ matrix.platform }}/firebase
+          ./firebase.sh
+        env:
+          SENTREI_PASSPHRASE: ${{ secrets.SENTREI_PASSPHRASE }}
       - run: flutter pub get
       - name: Run android apk
         if: matrix.platform == 'android'
@@ -205,7 +212,7 @@ jobs:
           asset_path: ios/build/Runner/${{ steps.branch.outputs.branch }}.ipa
           asset_name: ${{ steps.branch.outputs.branch }}.ipa
           asset_content_type: application/octet-stream
-      - name: Run fastlane
+      - name: Run fastlane test
         if: matrix.platform == 'android'
         run: |
           cd ${{ matrix.platform }}

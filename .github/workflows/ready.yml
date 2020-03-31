@@ -6,11 +6,6 @@ jobs:
   ready:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Dump the client payload context
-        env:
-          PAYLOAD_CONTEXT: ${{ toJson(github.event.client_payload.pull_request) }}
-        run: echo "$PAYLOAD_CONTEXT"
       - uses: actions/github-script@0.9.0
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}

@@ -1,3 +1,10 @@
+## [2.10.3](https://github.com/sentrei/sentrei/compare/v2.10.2...v2.10.3) (2020-03-31)
+
+### Bug Fixes
+
+- 🐛 add dns ([c0c64fe](https://github.com/sentrei/sentrei/commit/c0c64fe40298084f6b5291609de8929b3dcd3563))
+- 🐛 add GitGuardian Security Checks ([1584b50](https://github.com/sentrei/sentrei/commit/1584b50165236657779d21691447030fb2350cc1))
+
 ## [2.10.2](https://github.com/sentrei/sentrei/compare/v2.10.1...v2.10.2) (2020-03-31)
 
 ### Bug Fixes

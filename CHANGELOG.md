@@ -1,3 +1,10 @@
+## [2.10.9](https://github.com/sentrei/sentrei/compare/v2.10.8...v2.10.9) (2020-03-31)
+
+### Bug Fixes
+
+- 🐛 add ready merge ([a457277](https://github.com/sentrei/sentrei/commit/a457277100b42ae017a730af776e6550867af804))
+- 🐛 add tojson github.event ([0a95ed9](https://github.com/sentrei/sentrei/commit/0a95ed9f98db158719fbc1f3389ae49632f50d0f))
+
 ## [2.10.8](https://github.com/sentrei/sentrei/compare/v2.10.7...v2.10.8) (2020-03-31)
 
 ### Bug Fixes

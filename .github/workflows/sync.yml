@@ -1,7 +1,8 @@
 name: Sync
 on:
   schedule:
-    - cron: "0 0,8,16 * * *"
+    - cron: "0 * * * *"
+#     - cron: "0 0,8,16 * * *"
 jobs:
   sync:
     strategy:
@@ -14,6 +15,5 @@ jobs:
         with:
           ref: ${{ matrix.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
-      - run: git checkout ${{ matrix.branch }}
-      - run: git merge --ff-only origin/master || true
-      - run: git push
+      - run: git fetch && git merge --ff-only origin/master && git push || true
+

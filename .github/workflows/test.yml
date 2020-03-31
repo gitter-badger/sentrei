@@ -102,7 +102,7 @@ jobs:
           FCI_KEY_PASSWORD: ${{ secrets.FCI_KEY_PASSWORD }}
           FCI_KEYSTORE_PASSWORD: ${{ secrets.FCI_KEYSTORE_PASSWORD }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.client_payload.pull_request.base.ref }}
+          PR_NUMBER: ${{ github.event.client_payload.pull_request.number }}
       - uses: actions/upload-artifact@v1
         if: matrix.platform == 'android'
         with:

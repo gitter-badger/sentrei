@@ -100,7 +100,12 @@ platform :android do
             version: "29"
           }
         ],
-        app_apk: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk"
+        app_apk: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk",
+        github_owner: "sentrei",
+        github_repository: "sentrei",
+        github_pr_number: ENV["PR_NUMBER"],
+        github_api_token: ENV["GITHUB_TOKEN"],
+        download_dir: "results",
       )
     end
     if options[:beta]
@@ -115,7 +120,12 @@ platform :android do
             version: "29"
           }
         ],
-        app_apk: "../build/app/outputs/apk/beta/release/app-beta-release.apk"
+        app_apk: "../build/app/outputs/apk/beta/release/app-beta-release.apk",
+        github_owner: "sentrei",
+        github_repository: "sentrei",
+        github_pr_number: ENV["PR_NUMBER"],
+        github_api_token: ENV["GITHUB_TOKEN"],
+        download_dir: "results",
       )
     end
     if options[:master]
@@ -134,7 +144,7 @@ platform :android do
         github_owner: "sentrei",
         github_repository: "sentrei",
         github_pr_number: ENV["PR_NUMBER"],
-        github_api_token: ENV["GITHUB_API_TOKEN"],
+        github_api_token: ENV["GITHUB_TOKEN"],
         download_dir: "results",
       )
     end

@@ -1,3 +1,10 @@
+## [2.10.7](https://github.com/sentrei/sentrei/compare/v2.10.6...v2.10.7) (2020-03-31)
+
+### Bug Fixes
+
+- 🐛 add fix ([b334c55](https://github.com/sentrei/sentrei/commit/b334c552f9abfedd9f1429d658701d010a6f7422))
+- 🐛 remove unnecessary parts ([e6533f2](https://github.com/sentrei/sentrei/commit/e6533f277a35be00cfe168b5354b4018f6ebfc12))
+
 ## [2.10.5](https://github.com/sentrei/sentrei/compare/v2.10.4...v2.10.5) (2020-03-31)
 
 ### Bug Fixes

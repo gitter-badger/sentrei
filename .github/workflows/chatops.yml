@@ -16,10 +16,3 @@ jobs:
         env:
           PAYLOAD_CONTEXT: ${{ toJson(github.event.client_payload) }}
         run: echo "$PAYLOAD_CONTEXT"
-      # - name: Label when approved
-      #   if: steps.check.outputs.triggered == 'true'
-      #   uses: pullreminders/label-when-approved-action@master
-      #   env:
-      #     APPROVALS: "1"
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     ADD_LABEL: "ready-to-merge"

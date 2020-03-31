@@ -1,3 +1,17 @@
+# [3.0.0](https://github.com/sentrei/sentrei/compare/v2.10.13...v3.0.0) (2020-03-31)
+
+### Bug Fixes
+
+- 🐛 add ready msg ([ff6938f](https://github.com/sentrei/sentrei/commit/ff6938fa72bfff851dd67253e0b40a4c0cf8b5bb))
+
+### Features
+
+- 🎸 add correct release ([b3b1ffb](https://github.com/sentrei/sentrei/commit/b3b1ffb1c66905a9017c71cb7c213b70574ffdd2))
+
+### BREAKING CHANGES
+
+- 🧨 Test-lab complete integration
+
 ## [2.10.13](https://github.com/sentrei/sentrei/compare/v2.10.12...v2.10.13) (2020-03-31)
 
 ### Bug Fixes

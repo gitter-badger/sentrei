@@ -1,3 +1,9 @@
+## [2.10.12](https://github.com/sentrei/sentrei/compare/v2.10.11...v2.10.12) (2020-03-31)
+
+### Bug Fixes
+
+- 🐛 add correct test code ([2b96a1f](https://github.com/sentrei/sentrei/commit/2b96a1f3a84333b8038f81f39a1d999ba032e3f4))
+
 ## [2.10.11](https://github.com/sentrei/sentrei/compare/v2.10.10...v2.10.11) (2020-03-31)
 
 ### Bug Fixes

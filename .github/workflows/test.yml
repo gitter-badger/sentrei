@@ -35,6 +35,8 @@ jobs:
       - name: Install firebase
         run: |
           npm install -g firebase-tools
+      - name: Install gcloud
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       - name: Cache bundler
         id: bundler
         uses: actions/cache@v1

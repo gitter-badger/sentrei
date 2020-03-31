@@ -1,3 +1,9 @@
+## [2.10.11](https://github.com/sentrei/sentrei/compare/v2.10.10...v2.10.11) (2020-03-31)
+
+### Bug Fixes
+
+- 🐛 add ready ([0e65749](https://github.com/sentrei/sentrei/commit/0e65749c105e45c5f711ce97821dbef664a4a462))
+
 ## [2.10.10](https://github.com/sentrei/sentrei/compare/v2.10.9...v2.10.10) (2020-03-31)
 
 ### Bug Fixes

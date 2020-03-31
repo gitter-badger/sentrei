@@ -1,6 +1,6 @@
 name: sentrei
 description: A new Flutter project.
-version: 2.10.7
+version: 2.10.8
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

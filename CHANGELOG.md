@@ -1,3 +1,9 @@
+## [2.9.2](https://github.com/sentrei/sentrei/compare/v2.9.1...v2.9.2) (2020-03-31)
+
+### Bug Fixes
+
+- 🐛 add test sync ([4d75a88](https://github.com/sentrei/sentrei/commit/4d75a886a662c66cc310351c085f0a899225e5c3))
+
 ## [2.9.1](https://github.com/sentrei/sentrei/compare/v2.9.0...v2.9.1) (2020-03-31)
 
 ### Bug Fixes

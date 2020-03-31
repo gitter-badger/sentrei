@@ -22,7 +22,7 @@ resource "google_dns_record_set" "sentrei_com_SPF" {
   type         = "SPF"
   ttl          = 300
 
-  rrdatas = ["v=spf1 include:_spf.google.com ~all"]
+  rrdatas = ["\"v=spf1\" \"include:_spf.google.com\" \"~all\""]
 }
 
 resource "google_dns_record_set" "sentrei_com_TXT" {
@@ -40,5 +40,5 @@ resource "google_dns_record_set" "sentrei_com_TXT_2" {
   type         = "TXT"
   ttl          = 300
 
-  rrdatas = ["v=spf1 include:_spf.google.com ~all"]
+  rrdatas = ["\"v=spf1\" \"include:_spf.google.com\" \"~all\""]
 }

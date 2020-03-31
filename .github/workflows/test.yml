@@ -1,7 +1,7 @@
 name: Test
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "*/15 * * * *"
     # - cron: "0 0,8,16 * * *"
 env:
   flutter_channel: "stable"
@@ -13,13 +13,12 @@ jobs:
       fail-fast: false
       matrix:
         platform: [android]
-        branch: [master]
-        # branch: [alpha, beta, master]
+        branch: [alpha, beta, master]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        # with:
-        #   ref: ${{ matrix.branch }}
+        with:
+          ref: ${{ matrix.branch }}
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: "2.x"

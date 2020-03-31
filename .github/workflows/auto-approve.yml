@@ -19,10 +19,7 @@ jobs:
     steps:
       - name: comment PR
         uses: unsplash/comment-on-pr@master
-        if: |
-          github.actor == 'github-actions[bot]' ||
-          github.actor == 'dependabot[bot]' ||
-          github.actor == 'dependabot-preview[bot]'
+        if: contains(toJson(github.event.commits), '[sentrei-auto-pr]') == true && github.actor == 'shunkakinoki'
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:

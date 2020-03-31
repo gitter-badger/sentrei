@@ -2,7 +2,7 @@ auth:
 	keytool -list -v -alias key -keystore android/key/key.jks
 
 delete:
-	keytool --delete android/key/key.jks
+	keytool --delete -v -keystore android/key/key.jks -alias key
 
 encrypt:
 	keytool -genkey -v -keystore android/key/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key

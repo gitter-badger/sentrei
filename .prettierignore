@@ -229,9 +229,12 @@ dist
 
 secring.*
 
-api-4997473042007130719-469020-7539250087b0.json
-key.jks
-key.properties
+android/key/api.json
+android/key/key.jks
+android/key/key.properties
+android/firebase/sentre-alpha.json
+android/firebase/sentre-beta.json
+android/firebase/sentre-master.json
 
 ios/Runner/GoogleService-Info.plist
 ios/.bundle/

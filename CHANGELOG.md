@@ -1,3 +1,9 @@
+## [2.10.4](https://github.com/sentrei/sentrei/compare/v2.10.3...v2.10.4) (2020-03-31)
+
+### Bug Fixes
+
+- 🐛 add gitbase module ([ca1a885](https://github.com/sentrei/sentrei/commit/ca1a885fa1d2d3394a3e6890d8a2c806bf6a8a22))
+
 ## [2.10.3](https://github.com/sentrei/sentrei/compare/v2.10.2...v2.10.3) (2020-03-31)
 
 ### Bug Fixes

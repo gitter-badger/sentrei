@@ -111,6 +111,8 @@ jobs:
             pub-v1-
       - name: Install brew
         run: ./brew.sh
+      - name: Install gcloud
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       - name: Extract version semver
         id: version
         run: |
@@ -183,18 +185,6 @@ jobs:
           GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER
           GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-      - name: Run fastlane
-        if: matrix.platform == 'android'
-        run: |
-          cd ${{ matrix.platform }}
-          bundle exec fastlane test ${{ github.base_ref }}:true
-        env:
-          CI: true
-          FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}
-          FCI_KEY_PASSWORD: ${{ secrets.FCI_KEY_PASSWORD }}
-          FCI_KEYSTORE_PASSWORD: ${{ secrets.FCI_KEYSTORE_PASSWORD }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: $PR_NUMBER
       - name: Upload android asset
         if: matrix.platform == 'android'
         uses: actions/upload-release-asset@v1
@@ -215,3 +205,15 @@ jobs:
           asset_path: ios/build/Runner/${{ steps.branch.outputs.branch }}.ipa
           asset_name: ${{ steps.branch.outputs.branch }}.ipa
           asset_content_type: application/octet-stream
+      - name: Run fastlane
+        if: matrix.platform == 'android'
+        run: |
+          cd ${{ matrix.platform }}
+          bundle exec fastlane test ${{ github.base_ref }}:true
+        env:
+          CI: true
+          FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}
+          FCI_KEY_PASSWORD: ${{ secrets.FCI_KEY_PASSWORD }}
+          FCI_KEYSTORE_PASSWORD: ${{ secrets.FCI_KEYSTORE_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: $PR_NUMBER

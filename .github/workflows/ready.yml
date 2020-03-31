@@ -1,21 +1,12 @@
 name: Ready
-on: [issue_comment]
+on:
+  repository_dispatch:
+    types: [ready-cmd]
 jobs:
   ready:
     runs-on: ubuntu-latest
     steps:
-      - name: Listen PR comments
-        uses: khan/pull-request-comment-trigger@master
-        id: check
-        with:
-          trigger: "/ready"
-          reaction: rocket
+      - name: Dump the client payload context
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Label when approved
-        if: steps.check.outputs.triggered == 'true'
-        uses: pullreminders/label-when-approved-action@master
-        env:
-          APPROVALS: "1"
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ADD_LABEL: "ready-to-merge"
+          PAYLOAD_CONTEXT: ${{ toJson(github.event.client_payload) }}
+        run: echo "$PAYLOAD_CONTEXT"

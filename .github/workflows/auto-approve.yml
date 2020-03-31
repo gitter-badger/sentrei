@@ -14,3 +14,16 @@ jobs:
           github.actor == 'imgbot[bot]'
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
+  ready:
+    runs-on: ubuntu-latest
+    steps:
+      - name: comment PR
+        uses: unsplash/comment-on-pr@master
+        if: |
+          github.actor == 'github-actions[bot]' ||
+          github.actor == 'dependabot[bot]' ||
+          github.actor == 'dependabot-preview[bot]'
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        with:
+          msg: "/ready"

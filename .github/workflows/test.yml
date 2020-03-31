@@ -1,8 +1,5 @@
 name: Test
-on:
-  schedule:
-    - cron: "*/15 * * * *"
-    # - cron: "0 0,8,16 * * *"
+on: pull_request
 env:
   flutter_channel: "stable"
   flutter_version: "1.12.13+hotfix.8"
@@ -13,12 +10,9 @@ jobs:
       fail-fast: false
       matrix:
         platform: [android]
-        branch: [alpha, beta, master]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: ${{ matrix.branch }}
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: "2.x"
@@ -36,6 +30,14 @@ jobs:
           npm install -g firebase-tools
       - name: Install gcloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      - name: Export pr number
+        uses: actions/github-script@0.3.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const core = require('@actions/core')
+            const prNumber = context.payload.number;
+            core.exportVariable('PR_NUMBER', prNumber);
       - name: Cache bundler
         id: bundler
         uses: actions/cache@v1
@@ -66,36 +68,22 @@ jobs:
         if: matrix.platform == 'android'
         run: |
           cd ${{ matrix.platform }}/key
-          gpg --quiet --batch --yes --decrypt --passphrase="$SENTREI_PASSPHRASE" \
-          --output api.json api.json.gpg
-          gpg --quiet --batch --yes --decrypt --passphrase="$SENTREI_PASSPHRASE" \
-          --output key.jks key.jks.gpg
-          gpg --quiet --batch --yes --decrypt --passphrase="$SENTREI_PASSPHRASE" \
-          --output sentrei-alpha.json sentrei-alpha.json.gpg
-          gpg --quiet --batch --yes --decrypt --passphrase="$SENTREI_PASSPHRASE" \
-          --output sentrei-beta.json sentrei-beta.json.gpg
-          gpg --quiet --batch --yes --decrypt --passphrase="$SENTREI_PASSPHRASE" \
-          --output sentrei-master.json sentrei-master.json.gpg
+          ./key.sh
         env:
           SENTREI_PASSPHRASE: ${{ secrets.SENTREI_PASSPHRASE }}
       - name: Decrypt fastlane
         if: matrix.platform == 'android'
         run: |
           cd ${{ matrix.platform }}/firebase
-          gpg --quiet --batch --yes --decrypt --passphrase="$SENTREI_PASSPHRASE" \
-          --output sentrei-alpha.json sentrei-alpha.json.gpg
-          gpg --quiet --batch --yes --decrypt --passphrase="$SENTREI_PASSPHRASE" \
-          --output sentrei-beta.json sentrei-beta.json.gpg
-          gpg --quiet --batch --yes --decrypt --passphrase="$SENTREI_PASSPHRASE" \
-          --output sentrei-master.json sentrei-master.json.gpg
+          ./firebase.sh
         env:
           SENTREI_PASSPHRASE: ${{ secrets.SENTREI_PASSPHRASE }}
       - run: flutter pub get
       - name: Run android apk
         if: matrix.platform == 'android'
         run: |
-          flutter build apk --flavor ${{ matrix.branch }}
-          flutter build appbundle --flavor ${{ matrix.branch }}
+          flutter build apk --flavor ${{ github.base_ref }}
+          flutter build appbundle --flavor ${{ github.base_ref }}
         env:
           CI: true
           FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}
@@ -104,7 +92,7 @@ jobs:
       - name: Run ios ipa
         if: matrix.platform == 'ios'
         run: |
-          flutter build ios --no-codesign --release --flavor ${{ matrix.branch }}
+          flutter build ios --no-codesign --release --flavor ${{ github.base_ref }}
       - name: Install dependencies with bundler
         run: |
           cd ${{ matrix.platform }}
@@ -114,9 +102,15 @@ jobs:
       - name: Run fastlane
         run: |
           cd ${{ matrix.platform }}
-          bundle exec fastlane test ${{ matrix.branch }}:true
+          bundle exec fastlane test ${{ github.base_ref }}:true
         env:
           CI: true
           FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}
           FCI_KEY_PASSWORD: ${{ secrets.FCI_KEY_PASSWORD }}
           FCI_KEYSTORE_PASSWORD: ${{ secrets.FCI_KEYSTORE_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: $PR_NUMBER
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Results
+          path: ${{ matrix.platform }}/results

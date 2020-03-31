@@ -138,10 +138,7 @@ jobs:
         if: matrix.platform == 'android'
         run: |
           cd ${{ matrix.platform }}/key
-          gpg --quiet --batch --yes --decrypt --passphrase="$SENTREI_PASSPHRASE" \
-          --output api.json api.json.gpg
-          gpg --quiet --batch --yes --decrypt --passphrase="$SENTREI_PASSPHRASE" \
-          --output key.jks key.jks.gpg
+          ./key.sh
         env:
           SENTREI_PASSPHRASE: ${{ secrets.SENTREI_PASSPHRASE }}
       - run: flutter pub get
@@ -169,6 +166,7 @@ jobs:
         run: |
           cd ${{ matrix.platform }}
           bundle exec fastlane ${{ steps.branch.outputs.branch }}
+          bundle exec fastlane test ${{ steps.branch.outputs.branch }}:true
         env:
           CI: true
           FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}

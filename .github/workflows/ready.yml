@@ -1,9 +1,5 @@
 name: Ready
-on:
-  pull_request:
-    types: [opened]
-  issue_comment:
-    types: [created]
+on: [issue_comment]
 jobs:
   ready:
     runs-on: ubuntu-latest
@@ -17,6 +13,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Label when approved
+        if: steps.check.outputs.triggered == 'true'
         uses: pullreminders/label-when-approved-action@master
         env:
           APPROVALS: "1"

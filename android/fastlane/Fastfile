@@ -130,7 +130,12 @@ platform :android do
             version: "29"
           }
         ],
-        app_apk: "../build/app/outputs/apk/master/release/app-master-release.apk"
+        app_apk: "../build/app/outputs/apk/master/release/app-master-release.apk",
+        github_owner: "sentrei",
+        github_repository: "sentrei",
+        github_pr_number: ENV["PR_NUMBER"],
+        github_api_token: ENV["GITHUB_API_TOKEN"],
+        download_dir: "results",
       )
     end
   end

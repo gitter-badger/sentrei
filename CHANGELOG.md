@@ -1,3 +1,9 @@
+## [2.10.8](https://github.com/sentrei/sentrei/compare/v2.10.7...v2.10.8) (2020-03-31)
+
+### Bug Fixes
+
+- 🐛 add checkout cmd ([bc6bda7](https://github.com/sentrei/sentrei/commit/bc6bda7bf85a1e19cd97e72065ba979eb0939fe3))
+
 ## [2.10.7](https://github.com/sentrei/sentrei/compare/v2.10.6...v2.10.7) (2020-03-31)
 
 ### Bug Fixes

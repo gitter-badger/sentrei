@@ -13,13 +13,13 @@ jobs:
       fail-fast: false
       matrix:
         platform: [android]
-        scheme: [master]
-        # scheme: [alpha, beta, master]
+        branch: [master]
+        # branch: [alpha, beta, master]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         # with:
-        #   ref: ${{ matrix.scheme }}
+        #   ref: ${{ matrix.branch }}
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: "2.x"
@@ -87,8 +87,8 @@ jobs:
       - name: Run android apk
         if: matrix.platform == 'android'
         run: |
-          flutter build apk --flavor ${{ steps.branch.outputs.branch }}
-          flutter build appbundle --flavor ${{ steps.branch.outputs.branch }}
+          flutter build apk --flavor ${{ matrix.branch }}
+          flutter build appbundle --flavor ${{ matrix.branch }}
         env:
           CI: true
           FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}
@@ -97,7 +97,7 @@ jobs:
       - name: Run ios ipa
         if: matrix.platform == 'ios'
         run: |
-          flutter build ios --no-codesign --release --flavor ${{ matrix.scheme }}
+          flutter build ios --no-codesign --release --flavor ${{ matrix.branch }}
       - name: Install dependencies with bundler
         run: |
           cd ${{ matrix.platform }}
@@ -107,7 +107,7 @@ jobs:
       - name: Run fastlane
         run: |
           cd ${{ matrix.platform }}
-          bundle exec fastlane test ${{ matrix.scheme }}:true
+          bundle exec fastlane test ${{ matrix.branch }}:true
         env:
           CI: true
           FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}

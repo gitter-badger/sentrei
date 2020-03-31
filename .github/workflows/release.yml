@@ -111,6 +111,8 @@ jobs:
             pub-v1-
       - name: Install brew
         run: ./brew.sh
+      - name: Install gcloud
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       - name: Extract version semver
         id: version
         run: |
@@ -130,6 +132,14 @@ jobs:
           version: ${{ steps.version.outputs.version }}
           GITHUB_REPOSITORY: $GITHUB_REPOSITORY
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Env pr number
+        uses: actions/github-script@0.3.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const core = require('@actions/core')
+            const prNumber = context.payload.number;
+            core.exportVariable('PR_NUMBER', prNumber);
       - uses: subosito/flutter-action@v1
         with:
           channel: ${{ env.flutter_channel }}
@@ -166,7 +176,6 @@ jobs:
         run: |
           cd ${{ matrix.platform }}
           bundle exec fastlane ${{ steps.branch.outputs.branch }}
-          bundle exec fastlane test ${{ steps.branch.outputs.branch }}:true
         env:
           CI: true
           FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}
@@ -196,3 +205,15 @@ jobs:
           asset_path: ios/build/Runner/${{ steps.branch.outputs.branch }}.ipa
           asset_name: ${{ steps.branch.outputs.branch }}.ipa
           asset_content_type: application/octet-stream
+      - name: Run fastlane
+        if: matrix.platform == 'android'
+        run: |
+          cd ${{ matrix.platform }}
+          bundle exec fastlane test ${{ github.base_ref }}:true
+        env:
+          CI: true
+          FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}
+          FCI_KEY_PASSWORD: ${{ secrets.FCI_KEY_PASSWORD }}
+          FCI_KEYSTORE_PASSWORD: ${{ secrets.FCI_KEYSTORE_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: $PR_NUMBER

@@ -1,5 +1,7 @@
 name: Test
-on: [issue_comment]
+on:
+  repository_dispatch:
+    types: [test-cmd]
 env:
   flutter_channel: "stable"
   flutter_version: "1.12.13+hotfix.8"
@@ -11,14 +13,10 @@ jobs:
       matrix:
         platform: [android]
     steps:
-      - name: Listen PR comments
-        uses: khan/pull-request-comment-trigger@master
-        id: check
-        with:
-          trigger: "/test"
-          reaction: rocket
+      - name: Dump the client payload context
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          PAYLOAD_CONTEXT: ${{ toJson(github.event.client_payload) }}
+        run: echo "$PAYLOAD_CONTEXT"
       - name: Checkout
         if: steps.check.outputs.triggered == 'true'
         uses: actions/checkout@v2

@@ -1,0 +1,12 @@
+name: Ready
+on:
+  repository_dispatch:
+    types: [ready-cmd]
+jobs:
+  ready:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump the client payload context
+        env:
+          PAYLOAD_CONTEXT: ${{ toJson(github.event.client_payload) }}
+        run: echo "$PAYLOAD_CONTEXT"

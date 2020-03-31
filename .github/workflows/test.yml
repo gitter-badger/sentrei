@@ -1,11 +1,14 @@
 name: Test
-on: [issue_comment]
+on:
+  pull_request:
+    types: [opened]
+  issue_comment:
+    types: [created]
 env:
   flutter_channel: "stable"
   flutter_version: "1.12.13+hotfix.8"
 jobs:
   test:
-    if: (github.event.issue.pull_request != null) && contains(github.event.comment.body, '/test')
     runs-on: macos-latest
     strategy:
       fail-fast: false
@@ -13,43 +16,49 @@ jobs:
         platform: [android]
     steps:
       - name: Listen PR comments
-        id: prcomm
-        uses: machine-learning-apps/actions-chatops@master
+        uses: khan/pull-request-comment-trigger@master
+        id: check
         with:
-          APP_PEM: ${{ secrets.APP_PEM }}
-          APP_ID: ${{ secrets.APP_ID }}
-          TRIGGER_PHRASE: "/test"
-          INDICATOR_LABEL: "test-label"
+          trigger: "/test"
+          reaction: rocket
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       - name: Checkout
-        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/checkout@v2
       - uses: actions/setup-ruby@v1
-        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        if: steps.check.outputs.triggered == 'true'
         with:
           ruby-version: "2.x"
       - uses: actions/setup-java@v1
-        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        if: steps.check.outputs.triggered == 'true'
         with:
           java-version: "12.x"
       - uses: actions/setup-node@v1
-        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        if: steps.check.outputs.triggered == 'true'
         with:
           node-version: "12.x"
       - name: Install bundler
-        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        if: steps.check.outputs.triggered == 'true'
         run: |
           gem install bundler
       - name: Install firebase
-        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        if: steps.check.outputs.triggered == 'true'
         run: |
           npm install -g firebase-tools
       - name: Install gcloud
-        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        if: steps.check.outputs.triggered == 'true'
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      - name: Env pr number
+        uses: actions/github-script@0.3.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const core = require('@actions/core')
+            const prNumber = context.payload.number;
+            core.exportVariable('PR_NUMBER', prNumber);
       - name: Cache bundler
-        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/cache@v1
         with:
           path: ${{ matrix.platform }}/vendor/bundle
@@ -57,7 +66,7 @@ jobs:
           restore-keys: |
             gem-v1-${{ matrix.platform }}-
       - name: Cache flutter
-        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/cache@v1
         with:
           path: /Users/runner/hostedtoolcache/flutter
@@ -65,7 +74,7 @@ jobs:
           restore-keys: |
             flutter-v1-
       - name: Cache pub
-        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/cache@v1
         with:
           path: ~/.pub-cache
@@ -73,26 +82,26 @@ jobs:
           restore-keys: |
             pub-v1-
       - uses: subosito/flutter-action@v1
-        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        if: steps.check.outputs.triggered == 'true'
         with:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
       - name: Decrypt secrets
-        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true' && matrix.platform == 'android'
+        if: steps.check.outputs.triggered == 'true' && matrix.platform == 'android'
         run: |
           cd ${{ matrix.platform }}/key
           ./key.sh
         env:
           SENTREI_PASSPHRASE: ${{ secrets.SENTREI_PASSPHRASE }}
       - name: Decrypt fastlane
-        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true' && matrix.platform == 'android'
+        if: steps.check.outputs.triggered == 'true' && matrix.platform == 'android'
         run: |
           cd ${{ matrix.platform }}/firebase
           ./firebase.sh
         env:
           SENTREI_PASSPHRASE: ${{ secrets.SENTREI_PASSPHRASE }}
       - name: Run android apk
-        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true' && matrix.platform == 'android'
+        if: steps.check.outputs.triggered == 'true' && matrix.platform == 'android'
         run: |
           flutter pub get
           flutter build apk --flavor ${{ github.base_ref }}
@@ -103,7 +112,7 @@ jobs:
           FCI_KEY_PASSWORD: ${{ secrets.FCI_KEY_PASSWORD }}
           FCI_KEYSTORE_PASSWORD: ${{ secrets.FCI_KEYSTORE_PASSWORD }}
       - name: Run ios ipa
-        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true' && matrix.platform == 'ios'
+        if: steps.check.outputs.triggered == 'true' && matrix.platform == 'ios'
         run: |
           flutter build ios --no-codesign --release --flavor ${{ github.base_ref }}
       - name: Install dependencies with bundler
@@ -113,7 +122,7 @@ jobs:
           bundle config path ./vendor/bundle
           bundle install --jobs 4 --retry 3
       - name: Run fastlane test
-        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true' && matrix.platform == 'android'
+        if: steps.check.outputs.triggered == 'true' && matrix.platform == 'android'
         run: |
           cd ${{ matrix.platform }}
           bundle exec fastlane test ${{ github.base_ref }}:true
@@ -125,7 +134,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: $PR_NUMBER
       - uses: actions/upload-artifact@v1
-        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true' && matrix.platform == 'android'
+        if: steps.check.outputs.triggered == 'true' && matrix.platform == 'android'
         with:
           name: Results
           path: ${{ matrix.platform }}/results
+      - name: Label when approved
+        uses: pullreminders/label-when-approved-action@master
+        env:
+          APPROVALS: "1"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ADD_LABEL: "ready-to-merge"

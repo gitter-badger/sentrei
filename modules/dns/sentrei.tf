@@ -25,20 +25,11 @@ resource "google_dns_record_set" "sentrei_com_SPF" {
   rrdatas = ["\"v=spf1\" \"include:_spf.google.com\" \"~all\""]
 }
 
-resource "google_dns_record_set" "sentrei_com_TXT_1" {
+resource "google_dns_record_set" "sentrei_com_TXT" {
   name         = google_dns_managed_zone.sentrei.dns_name
   managed_zone = google_dns_managed_zone.sentrei.name
   type         = "TXT"
   ttl          = 300
 
   rrdatas = ["\"v=spf1\" \"include:_spf.google.com\" \"~all\""]
-}
-
-resource "google_dns_record_set" "sentrei_com_TXT_2" {
-  name         = google_dns_managed_zone.sentrei.dns_name
-  managed_zone = google_dns_managed_zone.sentrei.name
-  type         = "TXT"
-  ttl          = 300
-
-  rrdatas = ["google-site-verification=_SIRccUJfM_2d2h_pFobDrrPUlm-iNAbqHDYH3qPBxQ"]
 }

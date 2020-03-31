@@ -92,12 +92,12 @@ platform :android do
       sh("cd ../.. && flutter build apk --flavor alpha")
       firebase_test_lab_android(
         project_id: "sentrei-alpha",
-        gcloud_service_key_file: "firebase/sentrei-alpha.json",
+        gcloud_service_key_file: "key/sentrei-alpha.json",
         type: "robo",
         devices: [
           {
-            model: "Pixel3",
-            version: "28"
+            model: "Pixel2",
+            version: "29"
           }
         ],
         app_apk: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk"
@@ -107,12 +107,12 @@ platform :android do
       sh("cd ../.. && flutter build apk --flavor beta")
       firebase_test_lab_android(
         project_id: "sentrei-beta",
-        gcloud_service_key_file: "firebase/sentrei-beta.json",
+        gcloud_service_key_file: "key/sentrei-beta.json",
         type: "robo",
         devices: [
           {
-            model: "Pixel3",
-            version: "28"
+            model: "Pixel2",
+            version: "29"
           }
         ],
         app_apk: "../build/app/outputs/apk/beta/release/app-beta-release.apk"
@@ -122,12 +122,12 @@ platform :android do
       sh("cd ../.. && flutter build apk --flavor master")
       firebase_test_lab_android(
         project_id: "sentrei-master",
-        gcloud_service_key_file: "firebase/sentrei-master.json",
+        gcloud_service_key_file: "key/sentrei-master.json",
         type: "robo",
         devices: [
           {
-            model: "Pixel3",
-            version: "28"
+            model: "Pixel2",
+            version: "29"
           }
         ],
         app_apk: "../build/app/outputs/apk/master/release/app-master-release.apk"

@@ -11,5 +11,8 @@ firebase/sentrei-beta.json
 firebase/sentrei-master.json
 
 /key.properties
-store/api.json
-store/key.jks
+key/api.json
+key/key.jks
+key/sentrei-alpha.json
+key/sentrei-master.json
+key/sentrei-beta.json

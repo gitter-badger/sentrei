@@ -1,3 +1,9 @@
+## [2.9.3](https://github.com/sentrei/sentrei/compare/v2.9.2...v2.9.3) (2020-03-31)
+
+### Bug Fixes
+
+- 🐛 add firebase json ([67dce8c](https://github.com/sentrei/sentrei/commit/67dce8c9330c834f0b5190fd605573cf6dfffcbf))
+
 ## [2.9.2](https://github.com/sentrei/sentrei/compare/v2.9.1...v2.9.2) (2020-03-31)
 
 ### Bug Fixes

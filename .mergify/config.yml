@@ -7,7 +7,7 @@ pull_request_rules:
         force: true
       merge:
         method: merge
-        strict: true
+        strict: smart
   - name: Automatic Merge for Pull Requests
     conditions:
       - base=beta
@@ -16,7 +16,7 @@ pull_request_rules:
         force: true
       merge:
         method: merge
-        strict: true
+        strict: smart
   - name: Automatic Merge for Pull Requests
     conditions:
       - base=master
@@ -25,4 +25,4 @@ pull_request_rules:
         force: true
       merge:
         method: merge
-        strict: true
+        strict: smart

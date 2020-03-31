@@ -112,7 +112,7 @@ jobs:
           bundle update --bundler
           bundle config path ./vendor/bundle
           bundle install --jobs 4 --retry 3
-      - name: Run fastlane
+      - name: Run fastlane test
         if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true' && matrix.platform == 'android'
         run: |
           cd ${{ matrix.platform }}

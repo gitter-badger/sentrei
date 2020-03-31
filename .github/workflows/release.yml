@@ -130,6 +130,14 @@ jobs:
           version: ${{ steps.version.outputs.version }}
           GITHUB_REPOSITORY: $GITHUB_REPOSITORY
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Env pr number
+        uses: actions/github-script@0.3.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const core = require('@actions/core')
+            const prNumber = context.payload.number;
+            core.exportVariable('PR_NUMBER', prNumber);
       - uses: subosito/flutter-action@v1
         with:
           channel: ${{ env.flutter_channel }}
@@ -166,7 +174,6 @@ jobs:
         run: |
           cd ${{ matrix.platform }}
           bundle exec fastlane ${{ steps.branch.outputs.branch }}
-          bundle exec fastlane test ${{ steps.branch.outputs.branch }}:true
         env:
           CI: true
           FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}
@@ -176,6 +183,18 @@ jobs:
           GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER
           GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+      - name: Run fastlane
+        if: matrix.platform == 'android'
+        run: |
+          cd ${{ matrix.platform }}
+          bundle exec fastlane test ${{ github.base_ref }}:true
+        env:
+          CI: true
+          FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}
+          FCI_KEY_PASSWORD: ${{ secrets.FCI_KEY_PASSWORD }}
+          FCI_KEYSTORE_PASSWORD: ${{ secrets.FCI_KEYSTORE_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: $PR_NUMBER
       - name: Upload android asset
         if: matrix.platform == 'android'
         uses: actions/upload-release-asset@v1

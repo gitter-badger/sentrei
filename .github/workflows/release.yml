@@ -209,7 +209,7 @@ jobs:
         if: matrix.platform == 'android'
         run: |
           cd ${{ matrix.platform }}
-          bundle exec fastlane test ${{ github.base_ref }}:true
+          bundle exec fastlane test ${{ steps.branch.outputs.branch }}:true
         env:
           CI: true
           FCI_KEY_ALIAS: ${{ secrets.FCI_KEY_ALIAS }}

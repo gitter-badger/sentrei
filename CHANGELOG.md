@@ -1,3 +1,9 @@
+## [2.10.2](https://github.com/sentrei/sentrei/compare/v2.10.1...v2.10.2) (2020-03-31)
+
+### Bug Fixes
+
+- 🐛 add fastlane test ([ae053d0](https://github.com/sentrei/sentrei/commit/ae053d04a9b1f44f02672707c314adfca8210ba0))
+
 ## [2.10.1](https://github.com/sentrei/sentrei/compare/v2.10.0...v2.10.1) (2020-03-31)
 
 ### Bug Fixes

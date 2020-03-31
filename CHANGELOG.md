@@ -1,3 +1,9 @@
+## [2.10.10](https://github.com/sentrei/sentrei/compare/v2.10.9...v2.10.10) (2020-03-31)
+
+### Bug Fixes
+
+- 🐛 add ready to merge label ([be63cf7](https://github.com/sentrei/sentrei/commit/be63cf7e357f56f24918288a65994befb0cf2075))
+
 ## [2.10.9](https://github.com/sentrei/sentrei/compare/v2.10.8...v2.10.9) (2020-03-31)
 
 ### Bug Fixes

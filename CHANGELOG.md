@@ -1,3 +1,9 @@
+## [2.10.1](https://github.com/sentrei/sentrei/compare/v2.10.0...v2.10.1) (2020-03-31)
+
+### Bug Fixes
+
+- 🐛 add android test ([1aac79b](https://github.com/sentrei/sentrei/commit/1aac79b6e661358266e56e016c461a9820af1e6a))
+
 # [2.10.0](https://github.com/sentrei/sentrei/compare/v2.9.3...v2.10.0) (2020-03-31)
 
 ### Bug Fixes

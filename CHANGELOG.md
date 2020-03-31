@@ -1,3 +1,13 @@
+# [2.10.0](https://github.com/sentrei/sentrei/compare/v2.9.3...v2.10.0) (2020-03-31)
+
+### Bug Fixes
+
+- 🐛 add test v2 ([df76ec0](https://github.com/sentrei/sentrei/commit/df76ec0c39eadb780a22b7dc652cb551cadf756c))
+
+### Features
+
+- 🎸 add full func test lab ([beece94](https://github.com/sentrei/sentrei/commit/beece9401ecebd25a3b02302229239f8d2352cac))
+
 ## [2.9.3](https://github.com/sentrei/sentrei/compare/v2.9.2...v2.9.3) (2020-03-31)
 
 ### Bug Fixes

@@ -32,14 +32,6 @@ jobs:
           npm install -g firebase-tools
       - name: Install gcloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
-      - name: Env pr number
-        uses: actions/github-script@0.3.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const core = require('@actions/core')
-            const prNumber = context.payload.number;
-            core.exportVariable('PR_NUMBER', prNumber);
       - name: Cache bundler
         uses: actions/cache@v1
         with:
@@ -110,7 +102,7 @@ jobs:
           FCI_KEY_PASSWORD: ${{ secrets.FCI_KEY_PASSWORD }}
           FCI_KEYSTORE_PASSWORD: ${{ secrets.FCI_KEYSTORE_PASSWORD }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: $PR_NUMBER
+          PR_NUMBER: ${{ github.event.client_payload.pull_request.base.ref }}
       - uses: actions/upload-artifact@v1
         if: matrix.platform == 'android'
         with:

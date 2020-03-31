@@ -65,24 +65,24 @@ jobs:
         if: matrix.platform == 'android'
         run: |
           cd ${{ matrix.platform }}/key
-          gpg --quiet --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" \
+          gpg --quiet --batch --yes --decrypt --passphrase="$SENTREI_PASSPHRASE" \
           --output api.json api.json.gpg
-          gpg --quiet --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" \
+          gpg --quiet --batch --yes --decrypt --passphrase="$SENTREI_PASSPHRASE" \
           --output key.jks key.jks.gpg
         env:
-          LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
+          SENTREI_PASSPHRASE: ${{ secrets.SENTREI_PASSPHRASE }}
       - name: Decrypt fastlane
         if: matrix.platform == 'android'
         run: |
-          cd ${{ matrix.platform }}/fastlane
-          gpg --quiet --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" \
+          cd ${{ matrix.platform }}/firebase
+          gpg --quiet --batch --yes --decrypt --passphrase="$SENTREI_PASSPHRASE" \
           --output sentrei-alpha.json sentrei-alpha.json.gpg
-          gpg --quiet --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" \
+          gpg --quiet --batch --yes --decrypt --passphrase="$SENTREI_PASSPHRASE" \
           --output sentrei-beta.json sentrei-beta.json.gpg
-          gpg --quiet --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" \
+          gpg --quiet --batch --yes --decrypt --passphrase="$SENTREI_PASSPHRASE" \
           --output sentrei-master.json sentrei-master.json.gpg
         env:
-          LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
+          SENTREI_PASSPHRASE: ${{ secrets.SENTREI_PASSPHRASE }}
       - run: flutter pub get
       - name: Run android apk
         if: matrix.platform == 'android'

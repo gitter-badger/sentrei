@@ -138,12 +138,12 @@ jobs:
         if: matrix.platform == 'android'
         run: |
           cd ${{ matrix.platform }}/key
-          gpg --quiet --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" \
+          gpg --quiet --batch --yes --decrypt --passphrase="$SENTREI_PASSPHRASE" \
           --output api.json api.json.gpg
-          gpg --quiet --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" \
+          gpg --quiet --batch --yes --decrypt --passphrase="$SENTREI_PASSPHRASE" \
           --output key.jks key.jks.gpg
         env:
-          LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
+          SENTREI_PASSPHRASE: ${{ secrets.SENTREI_PASSPHRASE }}
       - run: flutter pub get
       - name: Run android apk
         if: matrix.platform == 'android'

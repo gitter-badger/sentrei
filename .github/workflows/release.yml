@@ -137,7 +137,7 @@ jobs:
       - name: Decrypt secrets
         if: matrix.platform == 'android'
         run: |
-          cd ${{ matrix.platform }}/key
+          cd ${{ matrix.platform }}/store
           gpg --quiet --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" \
           --output api.json api.json.gpg
           gpg --quiet --batch --yes --decrypt --passphrase="$LARGE_SECRET_PASSPHRASE" \

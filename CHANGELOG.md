@@ -1,3 +1,9 @@
+## [2.10.13](https://github.com/sentrei/sentrei/compare/v2.10.12...v2.10.13) (2020-03-31)
+
+### Bug Fixes
+
+- add test test-lab ([7281261](https://github.com/sentrei/sentrei/commit/7281261db893190541804d85564322217035606a))
+
 ## [2.10.12](https://github.com/sentrei/sentrei/compare/v2.10.11...v2.10.12) (2020-03-31)
 
 ### Bug Fixes

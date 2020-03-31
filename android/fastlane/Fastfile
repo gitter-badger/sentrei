@@ -87,4 +87,51 @@ platform :android do
       apk_path: "../build/app/outputs/apk/master/release/app-master-release.apk",
     )
   end
+  lane :test do |options|
+    if options[:alpha]
+      sh("cd ../.. && flutter build apk --flavor alpha")
+      firebase_test_lab_android(
+        project_id: "sentrei-alpha",
+        gcloud_service_key_file: "firebase/sentrei-alpha.json",
+        type: "robo",
+        devices: [
+          {
+            model: "Pixel3",
+            version: "28"
+          }
+        ],
+        app_apk: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk"
+      )
+    end
+    if options[:beta]
+      sh("cd ../.. && flutter build apk --flavor beta")
+      firebase_test_lab_android(
+        project_id: "sentrei-beta",
+        gcloud_service_key_file: "firebase/sentrei-beta.json",
+        type: "robo",
+        devices: [
+          {
+            model: "Pixel3",
+            version: "28"
+          }
+        ],
+        app_apk: "../build/app/outputs/apk/beta/release/app-beta-release.apk"
+      )
+    end
+    if options[:master]
+      sh("cd ../.. && flutter build apk --flavor master")
+      firebase_test_lab_android(
+        project_id: "sentrei-master",
+        gcloud_service_key_file: "firebase/sentrei-master.json",
+        type: "robo",
+        devices: [
+          {
+            model: "Pixel3",
+            version: "28"
+          }
+        ],
+        app_apk: "../build/app/outputs/apk/master/release/app-master-release.apk"
+      )
+    end
+  end
 end

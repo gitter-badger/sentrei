@@ -1,3 +1,17 @@
+## [2.9.1](https://github.com/sentrei/sentrei/compare/v2.9.0...v2.9.1) (2020-03-31)
+
+### Bug Fixes
+
+- 🐛 add additional keystore ([9e493b2](https://github.com/sentrei/sentrei/commit/9e493b29c55546629f58a06f70f5c5497793910a))
+- 🐛 add correct .gitignore ([ddb06f0](https://github.com/sentrei/sentrei/commit/ddb06f0f2d3e281fb664cfdb3b51af000b922032))
+- 🐛 add makefile utils ([30dd13e](https://github.com/sentrei/sentrei/commit/30dd13e1bae4cf7dd31041dd0296ea0c8cc0e7fc))
+- 🐛 add matrix branch ([bb0f797](https://github.com/sentrei/sentrei/commit/bb0f79737c5d2d2486a8e949bd42e55d62ceec34))
+- 🐛 add sync gha ([043c5a2](https://github.com/sentrei/sentrei/commit/043c5a24205fdf78becd5c68386ebb0ba5ef77d1))
+- 🐛 add test lab keys ([cd2e80c](https://github.com/sentrei/sentrei/commit/cd2e80c870f237bfc9871454e9af9d184d6dbae4))
+- 🐛 change to SENTREI_PASSPHRASE ([1a164da](https://github.com/sentrei/sentrei/commit/1a164da2f5901b71da7effac2806e64c117d2ca3))
+- 🐛 install gcloud gha ([802cd97](https://github.com/sentrei/sentrei/commit/802cd97a9ded24833be9011772d873a686ead216))
+- 🐛 style ([d538d64](https://github.com/sentrei/sentrei/commit/d538d64bf7ae07b624cca7eac0ac46256362e425))
+
 ## [2.8.19](https://github.com/sentrei/sentrei/compare/v2.8.18...v2.8.19) (2020-03-30)
 
 ### Bug Fixes

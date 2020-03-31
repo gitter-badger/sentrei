@@ -7,12 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Add label
-        env:
-          GITHUB_REPOSITORY: ${{ github.repository }}
-          ISSUE_PAYLOAD: ${{ toJson(github.event.issue) }}
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          labels=$(echo "${ISSUE_PAYLOAD}" | jq '.labels[]|.name' | jq -s . | jq -c '.|.+["ready-to-merge"]|unique')
-          curl -X PATCH -d '{"labels": '${labels}'}' -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${ISSUE_NUMBER}
+      - uses: actions/github-script@0.9.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.addLabels({
+              issue_number: context.payload.pull_request.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['ready-to-merge']
+            })

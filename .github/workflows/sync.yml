@@ -16,4 +16,3 @@ jobs:
           ref: ${{ matrix.branch }}
           token: ${{ secrets.ACCESS_TOKEN }}
       - run: git fetch && git merge --ff-only origin/master && git push || true
-

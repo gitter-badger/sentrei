@@ -5,6 +5,14 @@
 - 🐛 add fix ([b334c55](https://github.com/sentrei/sentrei/commit/b334c552f9abfedd9f1429d658701d010a6f7422))
 - 🐛 remove unnecessary parts ([e6533f2](https://github.com/sentrei/sentrei/commit/e6533f277a35be00cfe168b5354b4018f6ebfc12))
 
+## [2.10.6](https://github.com/sentrei/sentrei/compare/v2.10.5...v2.10.6) (2020-03-31)
+
+### Bug Fixes
+
+- 🐛 add chatops ([6dd11c7](https://github.com/sentrei/sentrei/commit/6dd11c7ac34331618dea546a2625a44e499e613d))
+- 🐛 add ready yml ([3102fdc](https://github.com/sentrei/sentrei/commit/3102fdc1da9aaeef0f577d8f5960d28300d0e8c6))
+- 🐛 chatops.json ([cfc1163](https://github.com/sentrei/sentrei/commit/cfc1163c1c60b136be8b409ae6881ae6e0c051c6))
+
 ## [2.10.5](https://github.com/sentrei/sentrei/compare/v2.10.4...v2.10.5) (2020-03-31)
 
 ### Bug Fixes

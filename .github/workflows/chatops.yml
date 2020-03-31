@@ -7,19 +7,8 @@ jobs:
       - name: Slash command dispatch
         uses: peter-evans/slash-command-dispatch@v1
         with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           reaction-token: ${{ secrets.GITHUB_TOKEN }}
           reactions: true
           config-from-file: .github/chatops.json
-          commands: ready
-      - name: Dump the client payload context
-        env:
-          PAYLOAD_CONTEXT: ${{ toJson(github.event.client_payload) }}
-        run: echo "$PAYLOAD_CONTEXT"
-      # - name: Label when approved
-      #   if: steps.check.outputs.triggered == 'true'
-      #   uses: pullreminders/label-when-approved-action@master
-      #   env:
-      #     APPROVALS: "1"
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     ADD_LABEL: "ready-to-merge"
+          commands: ready, test

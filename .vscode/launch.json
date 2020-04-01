@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "alpha",
+      "request": "launch",
+      "args": ["--flavor", "alpha", "-t", "lib/main.dart"],
+      "type": "dart"
+    },
+    {
+      "name": "beta",
+      "request": "launch",
+      "args": ["--flavor", "beta", "-t", "lib/main.dart"],
+      "type": "dart"
+    },
+    {
+      "name": "master",
+      "request": "launch",
+      "args": ["--flavor", "master", "-t", "lib/main.dart"],
+      "type": "dart"
+    }
+  ]
+}

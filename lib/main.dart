@@ -52,12 +52,14 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: _buildProviders(context),
-        child: Consumer<ThemeProvider>(builder: (context, theme, _) {
+        child: Consumer<ThemeProvider>(builder: (context, provider, _) {
           return MaterialApp(
             title: 'sentrei',
-            theme: theme.currentTheme,
-            home: HomePage(),
+            theme: provider.getTheme(),
+            darkTheme: provider.getTheme(isDarkMode: true),
+            themeMode: provider.getThemeMode(),
             onGenerateRoute: Application.router.generator,
+            home: home ?? HomePage(),
             navigatorObservers: [
               FirebaseAnalyticsObserver(analytics: analytics),
             ],

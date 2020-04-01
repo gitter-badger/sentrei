@@ -46,7 +46,7 @@ jobs:
           key: flutter-v1-${{ env.flutter_version }}
           restore-keys: |
             flutter-v1-
-      - name: Cache flutter
+      - name: Cache flutter build
         uses: actions/cache@v1
         with:
           path: build

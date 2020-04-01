@@ -1,3 +1,9 @@
+## [3.0.4](https://github.com/sentrei/sentrei/compare/v3.0.3...v3.0.4) (2020-04-01)
+
+### Bug Fixes
+
+- 🐛 cache flutter build ([7952ba9](https://github.com/sentrei/sentrei/commit/7952ba980851a5435a34679f41b53f33f9788383))
+
 ## [3.0.1](https://github.com/sentrei/sentrei/compare/v3.0.0...v3.0.1) (2020-03-31)
 
 ### Bug Fixes

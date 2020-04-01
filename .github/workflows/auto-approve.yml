@@ -23,7 +23,14 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
       - name: comment PR
         uses: unsplash/comment-on-pr@master
-        if: github.event.issue.pull_request != null && contains(toJson(github.event.issue.pull_request.commits), '[sentrei-auto-pr]') && (github.actor == 'shunkakinoki')
+        if: github.event.issue.pull_request != null && contains(toJson(github.event.issue.pull_request.title), '[sentrei-auto-pr]') && (github.actor == 'shunkakinoki')
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        with:
+          msg: "/ready"
+      - name: comment PR
+        uses: unsplash/comment-on-pr@master
+        if: github.event.issue.pull_request != null && contains(toJson(github.event.issue.pull_request.title), 'fix') && (github.actor == 'shunkakinoki')
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:

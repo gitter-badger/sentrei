@@ -1,3 +1,9 @@
+# [3.1.0](https://github.com/sentrei/sentrei/compare/v3.0.4...v3.1.0) (2020-04-01)
+
+### Features
+
+- 🎸 add theme provider ([c628580](https://github.com/sentrei/sentrei/commit/c628580a4d3c5bf97d2ec4d6b4ef52c4a0c8e274))
+
 ## [3.0.4](https://github.com/sentrei/sentrei/compare/v3.0.3...v3.0.4) (2020-04-01)
 
 ### Bug Fixes

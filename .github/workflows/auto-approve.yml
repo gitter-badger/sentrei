@@ -17,9 +17,13 @@ jobs:
   ready:
     runs-on: ubuntu-latest
     steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
       - name: comment PR
         uses: unsplash/comment-on-pr@master
-        if: github.event.issue.pull_request != null && contains(toJson(github.event.commits), '[sentrei-auto-pr]') && (github.actor == 'shunkakinoki')
+        if: github.event.issue.pull_request != null && contains(toJson(github.event.issue.pull_request.commits), '[sentrei-auto-pr]') && (github.actor == 'shunkakinoki')
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:

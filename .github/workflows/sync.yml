@@ -1,5 +1,7 @@
 name: Sync
 on:
+  repository_dispatch:
+    types: [sync-cmd]
   schedule:
     - cron: "0 0,8,16 * * *"
 jobs:

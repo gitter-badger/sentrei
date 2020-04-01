@@ -46,6 +46,13 @@ jobs:
           key: flutter-v1-${{ env.flutter_version }}
           restore-keys: |
             flutter-v1-
+      - name: Cache flutter
+        uses: actions/cache@v1
+        with:
+          path: build
+          key: flutter-build-v1-${{ matrix.platform }}-$GITHUB_RUN_NUMBER
+          restore-keys: |
+            flutter-build-v1-${{ matrix.platform }}-
       - name: Cache pub
         uses: actions/cache@v1
         with:

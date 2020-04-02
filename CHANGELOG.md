@@ -1,3 +1,9 @@
+## [3.2.13](https://github.com/sentrei/sentrei/compare/v3.2.12...v3.2.13) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 build gradle ([7da5520](https://github.com/sentrei/sentrei/commit/7da552068e432a1809efdafd78c91698299cc091))
+
 ## [3.2.12](https://github.com/sentrei/sentrei/compare/v3.2.11...v3.2.12) (2020-04-02)
 
 ### Bug Fixes

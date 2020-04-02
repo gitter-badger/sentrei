@@ -1,9 +1,10 @@
+.bundle
+.symlinks
+build
+vendor/bundle
+Flutter
+Pods
 Runner/GoogleService-Info.plist
-.bundle/
-.symlinks/
-build/
-Pods/
-Flutter/
 
 *.mode1v3
 *.mode2v3
@@ -37,24 +38,3 @@ Runner/GeneratedPluginRegistrant.*
 !default.mode2v3
 !default.pbxuser
 !default.perspectivev3
-
-## Environment normalization:
-/.bundle/
-android/.bundle/
-ios/.bundle/
-/vendor/bundle
-android/vendor/bundle
-ios/vendor/bundle
-/lib/bundler/man/
-
-# for a library or gem, you might want to ignore these files since the code is
-# intended to run in multiple environments; otherwise, check them in:
-# Gemfile.lock
-# .ruby-version
-# .ruby-gemset
-
-# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
-.rvmrc
-
-# Used by RuboCop. Remote config files pulled in from inherit_from directive.
-# .rubocop-https?--*

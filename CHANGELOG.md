@@ -1,3 +1,9 @@
+## [3.2.3](https://github.com/sentrei/sentrei/compare/v3.2.2...v3.2.3) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 chore ([4b0e9c7](https://github.com/sentrei/sentrei/commit/4b0e9c726025310ccbd34fd57442c4f0756e76e1))
+
 ## [3.2.2](https://github.com/sentrei/sentrei/compare/v3.2.1...v3.2.2) (2020-04-02)
 
 ### Bug Fixes

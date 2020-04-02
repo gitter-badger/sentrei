@@ -1,3 +1,9 @@
+## [3.2.14](https://github.com/sentrei/sentrei/compare/v3.2.13...v3.2.14) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 add \$ANDROID_SIGN_PWD ([4204c0f](https://github.com/sentrei/sentrei/commit/4204c0f2176cc0e59e5d7b5c7f289f05428329c3))
+
 ## [3.2.13](https://github.com/sentrei/sentrei/compare/v3.2.12...v3.2.13) (2020-04-02)
 
 ### Bug Fixes

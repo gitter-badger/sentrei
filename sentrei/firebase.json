@@ -1,6 +1,8 @@
 {
   "hosting": {
-    "public": "api",
+    "site": "sentrei-docs",
+    "target": "docs",
+    "public": "docs/api",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {

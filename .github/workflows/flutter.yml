@@ -15,10 +15,11 @@ jobs:
       - run: echo $PR_NUMBER
       - id: file_changes
         uses: trilom/file-changes-action@v1.2.3
-        env:
-          PR_NUMBER: $PR_NUMBER
         with:
           prNumber: $PR_NUMBER
+      - name: test
+        run: |
+          cat $HOME/files.txt
       - name: Cache flutter
         uses: actions/cache@v1
         with:

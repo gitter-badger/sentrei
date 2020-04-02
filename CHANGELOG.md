@@ -1,3 +1,10 @@
+## [3.2.18](https://github.com/sentrei/sentrei/compare/v3.2.17...v3.2.18) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 add .firebaserc ([d3b7cda](https://github.com/sentrei/sentrei/commit/d3b7cdac0354ae61bea559b1c49d9790dd4c1dbb))
+- 🐛 remove cache gha ([408f408](https://github.com/sentrei/sentrei/commit/408f408a6676da73605a0807bdf0b59923cf18f0))
+
 ## [3.2.17](https://github.com/sentrei/sentrei/compare/v3.2.16...v3.2.17) (2020-04-02)
 
 ### Bug Fixes

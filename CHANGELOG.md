@@ -1,3 +1,9 @@
+## [3.2.10](https://github.com/sentrei/sentrei/compare/v3.2.9...v3.2.10) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 add directory build ([f8e80ae](https://github.com/sentrei/sentrei/commit/f8e80ae5b98acbc65dc845c97c613f8144cbe5ee))
+
 ## [3.2.9](https://github.com/sentrei/sentrei/compare/v3.2.8...v3.2.9) (2020-04-02)
 
 ### Bug Fixes

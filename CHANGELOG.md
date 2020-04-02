@@ -1,3 +1,9 @@
+## [3.2.1](https://github.com/sentrei/sentrei/compare/v3.2.0...v3.2.1) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 update flutter yaml ([442f66b](https://github.com/sentrei/sentrei/commit/442f66b84e9260bfd6c48ccbecf8ed9626887005))
+
 # [3.1.0](https://github.com/sentrei/sentrei/compare/v3.0.4...v3.1.0) (2020-04-01)
 
 ### Features

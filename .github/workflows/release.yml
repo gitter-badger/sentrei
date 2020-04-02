@@ -191,7 +191,7 @@ jobs:
         with:
           upload_url: ${{ steps.get_url.outputs.upload_url }}
           asset_path: sentrei/build/app/outputs/apk/${{ steps.branch.outputs.branch }}/release/app-${{ steps.branch.outputs.branch }}-release.apk
-          asset_name: app-${{ steps.branch.outputs.branch }}-release.apk
+          asset_name: ${{ steps.branch.outputs.branch }}.apk
           asset_content_type: application/vnd.android.package-archive
       - name: Upload ios asset
         if: matrix.platform == 'ios'

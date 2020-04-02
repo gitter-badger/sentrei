@@ -1,12 +1,5 @@
 [
   {
-    "command": "drive",
-    "permission": "none",
-    "issue_type": "pull-request",
-    "allow_edits": true,
-    "event_type_suffix": "-cmd"
-  },
-  {
     "command": "ready",
     "permission": "admin",
     "issue_type": "pull-request",

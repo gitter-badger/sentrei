@@ -30,4 +30,4 @@ rm -f key.properties
 echo "storePassword=$ANDROID_SIGN_PWD" >> key.properties
 echo "keyPassword=$ANDROID_SIGN_PWD" >> key.properties
 echo "keyAlias=key" >> key.properties
-echo "storeFile=key.jks" >> key.properties
+echo "storeFile=key/key.jks" >> key.properties

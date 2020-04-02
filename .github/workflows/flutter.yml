@@ -15,7 +15,7 @@ jobs:
       - id: change
         run: |
           git fetch
-          git diff --name-status ${{ github.event.pull_request.head.ref }}..${{ github.event.pull_request.base.ref }}
+          git diff --name-status origin/${{ github.event.pull_request.head.ref }}..origin/${{ github.event.pull_request.base.ref }}
           git diff --quiet ${{ github.event.pull_request.head.ref }}..${{ github.event.pull_request.base.ref }} -- sentrei; nochanges=$?
           if [ $nochanges -eq 0 ]; then
             echo ::set-output name=changed::false

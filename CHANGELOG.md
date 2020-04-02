@@ -1,3 +1,9 @@
+## [3.2.9](https://github.com/sentrei/sentrei/compare/v3.2.8...v3.2.9) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 add ios correct build ([6a48482](https://github.com/sentrei/sentrei/commit/6a484824e9d14ed20428212e2979d22fee5c972b))
+
 ## [3.2.8](https://github.com/sentrei/sentrei/compare/v3.2.7...v3.2.8) (2020-04-02)
 
 ### Bug Fixes

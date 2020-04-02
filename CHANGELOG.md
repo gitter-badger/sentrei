@@ -1,3 +1,9 @@
+## [3.2.7](https://github.com/sentrei/sentrei/compare/v3.2.6...v3.2.7) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 update pod ([9d115d6](https://github.com/sentrei/sentrei/commit/9d115d65cb0c5b699de07c12f6ce9fca517b29b3))
+
 ## [3.2.6](https://github.com/sentrei/sentrei/compare/v3.2.5...v3.2.6) (2020-04-02)
 
 ### Bug Fixes

@@ -3,8 +3,12 @@
 </p>
 
 <!-- prettier-ignore-start -->
-[![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/tenhobi/effective_dart)
-[![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](https://opensource.org/licenses/MIT)
+[![Effective Dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/tenhobi/effective_dart)
+[![Flutter](https://img.shields.io/badge/built%20with-Flutter-brightgreen)](https://flutter.dev/docs)
+[![Issues](https://img.shields.io/github/issues/sentrei/sentrei)](https://github.com/sentrei/sentrei/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/sentrei/sentrei)](https://github.com/sentrei/sentrei/pulls)
+[![License](https://img.shields.io/github/license/sentrei/sentrei)](https://github.com/sentrei/sentrei/blob/master/LICENSE.md)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/sentrei/sentrei/graphs/commit-activity)
 [![Star on GitHub](https://img.shields.io/github/stars/sentrei/sentrei.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/sentrei/sentrei)
 [![codecov](https://codecov.io/gh/sentrei/sentrei/branch/master/graph/badge.svg)](https://codecov.io/gh/sentrei/sentrei)
 [![mergify-status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/sentrei/sentrei&style=flat)](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/sentrei/sentrei&style=flat)

@@ -5,11 +5,11 @@
   "targets": {
     "sentrei-master": {
       "hosting": {
-        "masterdocs": [
-          "sentrei-master-docs"
-        ],
         "docs": [
           "sentrei-docs"
+        ],
+        "masterdocs": [
+          "sentrei-master-docs"
         ]
       }
     }

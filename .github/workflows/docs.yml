@@ -38,22 +38,6 @@ jobs:
         with:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
-      - name: Cache flutter
-        if: steps.change.outputs.changed == 'true'
-        uses: actions/cache@v1
-        with:
-          path: /opt/hostedtoolcache/flutter
-          key: flutter-v1-${{ runner.os }}-${{ env.flutter_version }}
-          restore-keys: |
-            flutter-v1-${{ runner.os }}-
-      - name: Cache pub
-        if: steps.change.outputs.changed == 'true'
-        uses: actions/cache@v1
-        with:
-          path: ~/.pub-cache
-          key: pub-v1-${{ hashFiles('**/pubspec.lock') }}
-          restore-keys: |
-            pub-v1-
       - name: Generate docs
         if: steps.change.outputs.changed == 'true'
         working-directory: sentrei

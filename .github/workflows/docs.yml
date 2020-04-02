@@ -1,10 +1,15 @@
-name: Flutter
-on: pull_request
+name: Docs
+on:
+  push:
+    branches:
+      - master
+  repository_dispatch:
+    types: [test-cmd]
 env:
   flutter_channel: "stable"
   flutter_version: "1.12.13+hotfix.8"
 jobs:
-  flutter:
+  docs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -42,17 +47,6 @@ jobs:
         with:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
-      - if: steps.change.outputs.changed == 'true'
-        working-directory: sentrei
+      - name: Generate docs
         run: |
-          flutter pub get
-          flutter analyze
-          flutter test --coverage
-      - name: Upload coverage to Codecov
-        if: steps.change.outputs.changed == 'true'
-        uses: codecov/codecov-action@v1
-        with:
-          file: sentrei/coverage/lcov.info
-          name: sentrei
-          fail_ci_if_error: true
-          flags: test
+          flutter pub global run dartdoc:dartdoc --exclude 'dart:async,dart:collection,dart:convert,dart:core,dart:developer,dart:io,dart:isolate,dart:math,dart:typed_data,dart:ui,dart:ffi,dart:html,dart:js,dart:js_util'

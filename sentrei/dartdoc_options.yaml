@@ -1,0 +1,38 @@
+dartdoc:
+  linkToSource:
+    root: "."
+    uriTemplate: "https://github.com/sentrei/sentrei/blob/master/sentrei/%f%#L%l%"
+  exclude:
+    - dart:async
+    - dart:collection
+    - dart:convert
+    - dart:core
+    - dart:developer
+    - dart:io
+    - dart:isolate
+    - dart:math
+    - dart:typed_data
+    - dart:ui
+    - dart:ffi
+    - dart:html
+    - dart:js
+    - dart:js_util
+  ignore:
+    - ambiguous-doc-reference
+    - ambiguous-reexport
+    - broken-link
+    - category-order-gives-missing-package-name
+    - deprecated
+    - ignored-canonical-for
+    - invalid-parameter
+    - missing-from-search-index
+    - no-canonical-found
+    - no-library-level-docs
+    - not-implemented
+    - orphaned-file
+    - reexported-private-api-across-packages
+    - tool-error
+    - type-as-html
+    - unknown-macro
+    - unresolved-doc-reference
+    - unresolved-export

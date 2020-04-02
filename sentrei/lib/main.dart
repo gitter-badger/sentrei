@@ -64,7 +64,7 @@ class App extends StatelessWidget {
               FirebaseAnalyticsObserver(analytics: analytics),
             ],
             builder: (context, child) {
-              // Guarantee text size is not affected by phone system settings  https://www.kikt.top/posts/flutter/layout/dynamic-text/
+              // Guarantee text size is not affected by phone system settings https://www.kikt.top/posts/flutter/layout/dynamic-text/
               return MediaQuery(
                 data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
                 child: child,

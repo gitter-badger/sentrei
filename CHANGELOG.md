@@ -1,3 +1,14 @@
+## [3.2.4](https://github.com/sentrei/sentrei/compare/v3.2.3...v3.2.4) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 add fetch ([0a6f50b](https://github.com/sentrei/sentrei/commit/0a6f50b707730936a7b9ddafa041b77f5ebbc03b))
+- 🐛 add git fetch ([ef132a8](https://github.com/sentrei/sentrei/commit/ef132a828320bfbcf8f5b3031b0ff815b84a6c2d))
+- 🐛 change ([4b0f04b](https://github.com/sentrei/sentrei/commit/4b0f04be2830b0acd9ee435db43b9308282efc7a))
+- 🐛 chore ([54acd9d](https://github.com/sentrei/sentrei/commit/54acd9d784c6c024b936689fc8d62003133f676e))
+- 🐛 chore ([a769d24](https://github.com/sentrei/sentrei/commit/a769d24ac41d71a7a53c5f092fcdb91a9a93acc4))
+- 🐛 chore ([6dc5525](https://github.com/sentrei/sentrei/commit/6dc552501178fba3788fcf5e37fa5ad7a80a74d5))
+
 ## [3.2.3](https://github.com/sentrei/sentrei/compare/v3.2.2...v3.2.3) (2020-04-02)
 
 ### Bug Fixes

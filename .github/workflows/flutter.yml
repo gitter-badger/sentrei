@@ -5,17 +5,19 @@ env:
   flutter_version: "1.12.13+hotfix.8"
 jobs:
   flutter:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 3
       - name: Cache flutter
         uses: actions/cache@v1
         with:
-          path: /Users/runner/hostedtoolcache/flutter
-          key: flutter-v1-${{ env.flutter_version }}
+          path: /opt/hostedtoolcache/flutter
+          key: flutter-v1-${{ runner.os }}-${{ env.flutter_version }}
           restore-keys: |
-            flutter-v1-
+            flutter-v1-${{ runner.os }}-
       - name: Cache pub
         uses: actions/cache@v1
         with:
@@ -31,11 +33,7 @@ jobs:
       - run: |
           cd sentrei
           flutter pub get
-      - run: |
-          cd sentrei
           flutter analyze
-      - run: |
-          cd sentrei
           flutter test --coverage
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1

@@ -1,3 +1,9 @@
+## [3.2.6](https://github.com/sentrei/sentrei/compare/v3.2.5...v3.2.6) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 update key and gemfile.lock ([ec9e386](https://github.com/sentrei/sentrei/commit/ec9e38681fe3d276be9a812a62ae7cf868734e30))
+
 ## [3.2.5](https://github.com/sentrei/sentrei/compare/v3.2.4...v3.2.5) (2020-04-02)
 
 ### Bug Fixes

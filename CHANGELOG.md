@@ -1,3 +1,9 @@
+## [3.2.17](https://github.com/sentrei/sentrei/compare/v3.2.16...v3.2.17) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 sentrei ([8a20e02](https://github.com/sentrei/sentrei/commit/8a20e02411eeae2697db3240681d656a6f34277a))
+
 ## [3.2.16](https://github.com/sentrei/sentrei/compare/v3.2.15...v3.2.16) (2020-04-02)
 
 ### Bug Fixes

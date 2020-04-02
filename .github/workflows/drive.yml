@@ -70,4 +70,11 @@ jobs:
               '$1 == device { print $2 }'
           )
           xcrun simctl boot "${UDID:?No Simulator with this name found}"
+          xcrun simctl io booted recordVideo recording.mov &
+          sleep 5
+          export RECORDING_PID=${!}
           flutter drive --target=test_driver/driver.dart --flavor ${{ github.base_ref }}
+          sleep 5
+          kill -SIGINT $RECORDING_PID
+          sleep 10
+          cp recording.mov /tmp/iwfpapp_screenshot

@@ -262,13 +262,9 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,7 +425,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = $;
+				MARKETING_VERSION = "$";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei;
 				PRODUCT_NAME = "${APP_DISPLAY_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.sentrei.sentrei";
@@ -569,7 +565,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = $;
+				MARKETING_VERSION = "$";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei;
 				PRODUCT_NAME = Runner;
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.sentrei.sentrei";
@@ -602,7 +598,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = $;
+				MARKETING_VERSION = "$";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei;
 				PRODUCT_NAME = "${APP_DISPLAY_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.sentrei.sentrei";
@@ -690,7 +686,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = $;
+				MARKETING_VERSION = "$";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei.beta;
 				PRODUCT_NAME = Runner;
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.sentrei.sentrei.beta";
@@ -775,7 +771,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = $;
+				MARKETING_VERSION = "$";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei.beta;
 				PRODUCT_NAME = "${APP_DISPLAY_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.sentrei.sentrei.beta";
@@ -858,7 +854,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = $;
+				MARKETING_VERSION = "$";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei.beta;
 				PRODUCT_NAME = "${APP_DISPLAY_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.sentrei.sentrei.beta";
@@ -946,7 +942,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = $;
+				MARKETING_VERSION = "$";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei.alpha;
 				PRODUCT_NAME = Runner;
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.sentrei.sentrei.alpha";
@@ -1031,7 +1027,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = $;
+				MARKETING_VERSION = "$";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei.alpha;
 				PRODUCT_NAME = "${APP_DISPLAY_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.sentrei.sentrei.alpha";
@@ -1114,7 +1110,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = $;
+				MARKETING_VERSION = "$";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sentrei.sentrei.alpha;
 				PRODUCT_NAME = "${APP_DISPLAY_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.sentrei.sentrei.alpha";

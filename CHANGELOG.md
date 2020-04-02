@@ -1,3 +1,9 @@
+## [3.2.8](https://github.com/sentrei/sentrei/compare/v3.2.7...v3.2.8) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 release bundler ([94c7871](https://github.com/sentrei/sentrei/commit/94c787164bfe2226e43d3953df4ffce310c499ff))
+
 ## [3.2.7](https://github.com/sentrei/sentrei/compare/v3.2.6...v3.2.7) (2020-04-02)
 
 ### Bug Fixes

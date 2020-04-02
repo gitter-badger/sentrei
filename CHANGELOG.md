@@ -1,3 +1,9 @@
+## [3.2.2](https://github.com/sentrei/sentrei/compare/v3.2.1...v3.2.2) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 bug in gha ([ec33452](https://github.com/sentrei/sentrei/commit/ec334526500e5e079f42d813a6b15d63c5a4af31))
+
 ## [3.2.1](https://github.com/sentrei/sentrei/compare/v3.2.0...v3.2.1) (2020-04-02)
 
 ### Bug Fixes

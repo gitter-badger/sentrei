@@ -76,6 +76,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: ${{ env.flutter_channel }}
+          flutter-version: ${{ env.flutter_version }}
       - name: Install brew
         working-directory: sentrei
         run: |
@@ -139,10 +143,6 @@ jobs:
           version: ${{ steps.version.outputs.version }}
           GITHUB_REPOSITORY: $GITHUB_REPOSITORY
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: subosito/flutter-action@v1
-        with:
-          channel: ${{ env.flutter_channel }}
-          flutter-version: ${{ env.flutter_version }}
       - name: Decrypt android secrets
         if: matrix.platform == 'android'
         working-directory: sentrei/${{ matrix.platform }}

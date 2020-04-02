@@ -38,7 +38,7 @@ jobs:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
       - if: steps.changed-flutter.outputs.changed == 'true'
-      - run: |
+        run: |
           cd sentrei
           flutter pub get
           flutter analyze

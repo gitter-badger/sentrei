@@ -24,6 +24,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: ${{ env.flutter_channel }}
+          flutter-version: ${{ env.flutter_version }}
       - name: Install brew
         working-directory: sentrei
         run: |
@@ -87,10 +91,6 @@ jobs:
           version: ${{ steps.version.outputs.version }}
           GITHUB_REPOSITORY: $GITHUB_REPOSITORY
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: subosito/flutter-action@v1
-        with:
-          channel: ${{ env.flutter_channel }}
-          flutter-version: ${{ env.flutter_version }}
       - name: Decrypt android secrets
         if: matrix.platform == 'android'
         working-directory: sentrei/${{ matrix.platform }}
@@ -98,17 +98,6 @@ jobs:
           ./key.sh
         env:
           ANDROID_SIGN_PWD: ${{ secrets.ANDROID_SIGN_PWD }}
-      - name: Run android apk
-        if: matrix.platform == 'android'
-        working-directory: sentrei
-        run: |
-          flutter build apk --flavor ${{ steps.branch.outputs.branch }}
-          flutter build appbundle --flavor ${{ steps.branch.outputs.branch }}
-      - name: Run ios ipa
-        if: matrix.platform == 'ios'
-        working-directory: sentrei
-        run: |
-          flutter build ios --no-codesign --release --flavor ${{ steps.branch.outputs.branch }
       - name: Run fastlane test
         if: matrix.platform == 'android'
         run: |

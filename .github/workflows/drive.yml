@@ -1,0 +1,73 @@
+on:
+  repository_dispatch:
+    types: [drive-cmd]
+env:
+  flutter_channel: "stable"
+  flutter_version: "1.12.13+hotfix.8"
+jobs:
+  drive:
+    runs-on: macos-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        platform: [android, ios]
+        version: [0, 1]
+        include:
+          - platform: android
+            version: 0
+            api-level: 21
+            target: default
+          - platform: android
+            version: 1
+            api-level: 29
+            target: default
+          - platform: ios
+            version: 0
+            device: "iPhone 8 (13.3)"
+          - platform: ios
+            version: 1
+            device: "iPhone 11 Pro Max (13.3)"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache flutter
+        uses: actions/cache@v1
+        with:
+          path: /Users/runner/hostedtoolcache/flutter
+          key: flutter-v1-${{ env.flutter_version }}
+          restore-keys: |
+            flutter-v1-
+      - name: Cache pub
+        uses: actions/cache@v1
+        with:
+          path: ~/.pub-cache
+          key: pub-v1-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: |
+            pub-v1-
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: ${{ env.flutter_channel }}
+          flutter-version: ${{ env.flutter_version }}
+      - run: flutter pub get
+      - name: Run android drive
+        if: matrix.platform == 'android'
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ matrix.api-level }}
+          target: ${{ matrix.target }}
+          arch: x86_64
+          profile: Nexus 6
+          script: "flutter drive --target=test_driver/driver.dart --flavor ${{ github.base_ref }}"
+      - name: Run ios drive
+        if: matrix.platform == 'ios'
+        run: |
+          xcrun instruments -s
+          UDID=$(
+            xcrun instruments -s |
+            awk \
+              -F ' *[][]' \
+              -v 'device=${{ matrix.device }}' \
+              '$1 == device { print $2 }'
+          )
+          xcrun simctl boot "${UDID:?No Simulator with this name found}"
+          flutter drive --target=test_driver/driver.dart --flavor ${{ github.base_ref }}

@@ -102,28 +102,6 @@ jobs:
         working-directory: sentrei
         run: |
           flutter pub get
-      - name: Cache bundler
-        id: bundler
-        uses: actions/cache@v1
-        with:
-          path: sentrei/${{ matrix.platform }}/vendor/bundle
-          key: gem-v1-${{ matrix.platform }}-${{ hashFiles('**/sentrei/${{ matrix.platform }}/Gemfile.lock') }}
-          restore-keys: |
-            gem-v1-${{ matrix.platform }}-
-      - name: Cache flutter
-        uses: actions/cache@v1
-        with:
-          path: /Users/runner/hostedtoolcache/flutter
-          key: flutter-v1-${{ runner.os }}-${{ env.flutter_version }}
-          restore-keys: |
-            flutter-v1-${{ runner.os }}-
-      - name: Cache pub
-        uses: actions/cache@v1
-        with:
-          path: ~/.pub-cache
-          key: pub-v1-${{ hashFiles('**/pubspec.lock') }}
-          restore-keys: |
-            pub-v1-
       - name: Extract version semver
         id: version
         run: |

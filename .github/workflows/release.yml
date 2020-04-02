@@ -87,7 +87,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: sentrei/${{ matrix.platform }}/vendor/bundle
-          key: gem-v1-${{ matrix.platform }}-${{ hashFiles('**/${{ matrix.platform }}/Gemfile.lock') }}
+          key: gem-v1-${{ matrix.platform }}-${{ hashFiles('**/sentrei/${{ matrix.platform }}/Gemfile.lock') }}
           restore-keys: |
             gem-v1-${{ matrix.platform }}-
       - name: Cache flutter
@@ -108,6 +108,12 @@ jobs:
         run: ./brew.sh
       - name: Install gcloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      - name: Install dependencies with bundler
+        run: |
+          cd sentrei/${{ matrix.platform }}
+          bundle update --bundler
+          bundle config path ./vendor/bundle
+          bundle install --jobs 4 --retry 3
       - name: Extract version semver
         id: version
         run: |
@@ -164,12 +170,6 @@ jobs:
         run: |
           cd sentrei
           flutter build ios --no-codesign --release --flavor ${{ steps.branch.outputs.branch }}
-      - name: Install dependencies with bundler
-        run: |
-          cd sentrei/${{ matrix.platform }}
-          bundle update --bundler
-          bundle config path ./vendor/bundle
-          bundle install --jobs 4 --retry 3
       - name: Run fastlane
         run: |
           cd sentrei/${{ matrix.platform }}

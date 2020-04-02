@@ -17,10 +17,11 @@
 
 ## Beta testing
 
-|         | alpha                                                          | beta                                                           | master                                                         |
-| ------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| android | [INVITE LINK](https://appdistribution.firebase.dev/i/dfq8XRGe) | [INVITE LINK](https://appdistribution.firebase.dev/i/hReUCAJq) | [INVITE LINK](https://appdistribution.firebase.dev/i/sXwACykq) |
-| ios     | [INVITE LINK](https://appdistribution.firebase.dev/i/QxDsYNoB) | [INVITE LINK](https://appdistribution.firebase.dev/i/NbqaJdfa) | [INVITE LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) |
+| Version | Android | iOS |
+| ------- | ------- | --- |
+| alpha | [LINK](https://appdistribution.firebase.dev/i/dfq8XRGe) | [LINK](https://appdistribution.firebase.dev/i/QxDsYNoB) |
+| beta | [LINK](https://appdistribution.firebase.dev/i/hReUCAJq) | [LINK](https://appdistribution.firebase.dev/i/NbqaJdfa) |
+| master | [LINK](https://appdistribution.firebase.dev/i/sXwACykq) | [LINK](https://appdistribution.firebase.dev/i/bNpuzTfZ) |
 
 ## Contributors ✨
 

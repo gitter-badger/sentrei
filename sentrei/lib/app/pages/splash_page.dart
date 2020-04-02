@@ -41,7 +41,7 @@ class _SplashPageState extends State<SplashPage> {
 
   void _initSplash() {
     _subscription =
-        Stream.value(1).delay(Duration(milliseconds: 1500)).listen((_) {
+        Stream.value(1).delay(Duration(milliseconds: 300)).listen((_) {
       if (SpUtil.getBool(Common.keyGuide, defValue: true)) {
         SpUtil.putBool(Common.keyGuide, false);
         // TODO: Change to initial screen

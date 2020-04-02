@@ -11,12 +11,14 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 3
-      - uses: marceloprado/has-changed-path@master
-        id: changed-flutter
-        with:
-          paths: sentrei
+      - name: Detech change path
+        id: change-flutter
+        run: |
+          ./change.sh
+        env:
+          PATHS_TO_SEARCH: sentrei
       - name: Cache flutter
-        if: steps.changed-flutter.outputs.changed == 'true'
+        if: steps.change-flutter.outputs.changed == 'true'
         uses: actions/cache@v1
         with:
           path: /Users/runner/hostedtoolcache/flutter
@@ -24,7 +26,7 @@ jobs:
           restore-keys: |
             flutter-v1-
       - name: Cache pub
-        if: steps.changed-flutter.outputs.changed == 'true'
+        if: steps.change-flutter.outputs.changed == 'true'
         uses: actions/cache@v1
         with:
           path: ~/.pub-cache
@@ -32,19 +34,19 @@ jobs:
           restore-keys: |
             pub-v1-
       - name: Install flutter
-        if: steps.changed-flutter.outputs.changed == 'true'
+        if: steps.change-flutter.outputs.changed == 'true'
         uses: subosito/flutter-action@v1
         with:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
-      - if: steps.changed-flutter.outputs.changed == 'true'
+      - if: steps.change-flutter.outputs.changed == 'true'
         run: |
           cd sentrei
           flutter pub get
           flutter analyze
           flutter test --coverage
       - name: Upload coverage to Codecov
-        if: steps.changed-flutter.outputs.changed == 'true'
+        if: steps.change-flutter.outputs.changed == 'true'
         uses: codecov/codecov-action@v1
         with:
           file: sentrei/coverage/lcov.info

@@ -1,11 +1,3 @@
-.bundle
-.symlinks
-build
-vendor/bundle
-Flutter
-Pods
-Runner/GoogleService-Info.plist
-
 *.mode1v3
 *.mode2v3
 *.moved-aside

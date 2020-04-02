@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
   repository_dispatch:
     types: [test-cmd]
 env:
@@ -48,5 +50,7 @@ jobs:
           channel: ${{ env.flutter_channel }}
           flutter-version: ${{ env.flutter_version }}
       - name: Generate docs
+        if: steps.change.outputs.changed == 'true'
         run: |
+          flutter pub global activate dartdoc
           flutter pub global run dartdoc:dartdoc --exclude 'dart:async,dart:collection,dart:convert,dart:core,dart:developer,dart:io,dart:isolate,dart:math,dart:typed_data,dart:ui,dart:ffi,dart:html,dart:js,dart:js_util'

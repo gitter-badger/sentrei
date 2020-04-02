@@ -9,6 +9,13 @@
           "sentrei-docs"
         ]
       }
+    },
+    "sentrei-master": {
+      "hosting": {
+        "masterdocs": [
+          "sentrei-master-docs"
+        ]
+      }
     }
   }
 }

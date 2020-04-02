@@ -33,7 +33,7 @@ jobs:
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - name: Comment url
-        if: github.event.name == 'repository_dispatch'
+        if: github.event.client_payload.github.payload.pull_request == 'true'
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}

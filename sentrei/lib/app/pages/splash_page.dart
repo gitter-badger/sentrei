@@ -64,7 +64,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Material(
       color: ThemeUtils.getBackgroundColor(context),
-      child: Text('Splash'),
+      child: Text('Splash Page'),
     );
   }
 }

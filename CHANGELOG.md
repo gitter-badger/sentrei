@@ -1,3 +1,10 @@
+## [3.2.16](https://github.com/sentrei/sentrei/compare/v3.2.15...v3.2.16) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 doc ([2fe3b3a](https://github.com/sentrei/sentrei/commit/2fe3b3aa728179e4f528226f840992f72251d2d0))
+- 🐛 flutter order ([4e1632d](https://github.com/sentrei/sentrei/commit/4e1632d6c7d77337d987982bf90b3e77015db19a))
+
 ## [3.2.15](https://github.com/sentrei/sentrei/compare/v3.2.14...v3.2.15) (2020-04-02)
 
 ### Bug Fixes

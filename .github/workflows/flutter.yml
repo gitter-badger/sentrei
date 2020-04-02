@@ -14,9 +14,7 @@ jobs:
       - name: Detech change path
         id: change-flutter
         run: |
-          ./change.sh
-        env:
-          PATHS_TO_SEARCH: sentrei
+          ./change.sh sentrei
       - name: Cache flutter
         if: steps.change-flutter.outputs.changed == 'true'
         uses: actions/cache@v1

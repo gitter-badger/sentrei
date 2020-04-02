@@ -1,14 +1,28 @@
 {
-  "hosting": {
-    "site": "sentrei-docs",
-    "target": "docs",
-    "public": "doc/api",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  }
+  "hosting": [
+    {
+      "site": "sentrei-docs",
+      "target": "docs",
+      "public": "doc/api",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "site": "sentrei-master-docs",
+      "target": "masterdocs",
+      "public": "doc/api",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
 }

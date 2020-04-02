@@ -1,3 +1,9 @@
+## [3.2.12](https://github.com/sentrei/sentrei/compare/v3.2.11...v3.2.12) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 correct key path ([262b8bc](https://github.com/sentrei/sentrei/commit/262b8bc39fe925fff7f67ab9c1fad13016f9964a))
+
 ## [3.2.11](https://github.com/sentrei/sentrei/compare/v3.2.10...v3.2.11) (2020-04-02)
 
 ### Bug Fixes

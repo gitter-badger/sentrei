@@ -22,7 +22,7 @@ indent_style = unset
 [Makefile]
 indent_style = tab
 
-[/android/firebase/**]
+[sentrei/android/firebase/**]
 charset = none
 end_of_line = none
 insert_final_newline = none
@@ -30,7 +30,7 @@ trim_trailing_whitespace = none
 indent_style = none
 indent_size = none
 
-[/android/key/**]
+[sentrei/android/key/**]
 charset = none
 end_of_line = none
 insert_final_newline = none

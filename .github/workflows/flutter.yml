@@ -20,22 +20,6 @@ jobs:
           else
             echo ::set-output name=changed::true && exit 0
           fi
-      - name: Cache flutter
-        if: steps.change.outputs.changed == 'true'
-        uses: actions/cache@v1
-        with:
-          path: /opt/hostedtoolcache/flutter
-          key: flutter-v1-${{ runner.os }}-${{ env.flutter_version }}
-          restore-keys: |
-            flutter-v1-${{ runner.os }}-
-      - name: Cache pub
-        if: steps.change.outputs.changed == 'true'
-        uses: actions/cache@v1
-        with:
-          path: ~/.pub-cache
-          key: pub-v1-${{ hashFiles('**/pubspec.lock') }}
-          restore-keys: |
-            pub-v1-
       - name: Install flutter
         if: steps.change.outputs.changed == 'true'
         uses: subosito/flutter-action@v1

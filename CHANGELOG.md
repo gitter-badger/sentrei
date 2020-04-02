@@ -1,3 +1,9 @@
+# [3.3.0](https://github.com/sentrei/sentrei/compare/v3.2.18...v3.3.0) (2020-04-02)
+
+### Features
+
+- 🎸 add login provider ([e62e0e7](https://github.com/sentrei/sentrei/commit/e62e0e751c73aea1f54b0c7a7b5e459f9adc3599))
+
 ## [3.2.18](https://github.com/sentrei/sentrei/compare/v3.2.17...v3.2.18) (2020-04-02)
 
 ### Bug Fixes

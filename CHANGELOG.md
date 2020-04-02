@@ -1,3 +1,10 @@
+## [3.2.5](https://github.com/sentrei/sentrei/compare/v3.2.4...v3.2.5) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 add dio package ([998cdac](https://github.com/sentrei/sentrei/commit/998cdac8222f8a616239813f3cc840c3a3acf75d))
+- 🐛 exit as 0 ([46b82fd](https://github.com/sentrei/sentrei/commit/46b82fdd16a1babe29c7e270149b0b0d2d124b0f))
+
 ## [3.2.3](https://github.com/sentrei/sentrei/compare/v3.2.2...v3.2.3) (2020-04-02)
 
 ### Bug Fixes

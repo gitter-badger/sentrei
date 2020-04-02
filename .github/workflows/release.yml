@@ -137,14 +137,14 @@ jobs:
           cd sentrei/${{ matrix.platform }}/key
           ./key.sh
         env:
-          SENTREI_PASSPHRASE: ${{ secrets.SENTREI_PASSPHRASE }}
+          ANDROID_SIGN_PWD: ${{ secrets.ANDROID_SIGN_PWD }}
       - name: Decrypt fastlane
         if: matrix.platform == 'android'
         run: |
           cd sentrei/${{ matrix.platform }}/firebase
           ./firebase.sh
         env:
-          SENTREI_PASSPHRASE: ${{ secrets.SENTREI_PASSPHRASE }}
+          ANDROID_SIGN_PWD: ${{ secrets.ANDROID_SIGN_PWD }}
       - run: |
           cd sentrei
           flutter pub get

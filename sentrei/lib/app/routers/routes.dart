@@ -6,12 +6,10 @@ import 'package:flutter/material.dart';
 
 import 'package:fluro/fluro.dart';
 
+import 'package:sentrei/app/app.dart';
 import 'package:sentrei/home/home.dart';
+import 'package:sentrei/login/login.dart';
 import 'package:sentrei/widgets/widgets.dart';
-
-abstract class IRouterProvider {
-  void initRouter(Router router);
-}
 
 class Routes {
   static String home = '/home';
@@ -25,13 +23,17 @@ class Routes {
       return WidgetNotFound();
     });
 
-    router.define(home,
-        handler: Handler(
-            handlerFunc:
-                (BuildContext context, Map<String, List<String>> params) =>
-                    HomePage()));
+    router.define(
+      home,
+      handler: Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
+            HomePage(),
+      ),
+    );
 
     _listRouter.clear();
+
+    _listRouter.add(LoginRouter());
 
     _listRouter.forEach((routerProvider) {
       routerProvider.initRouter(router);

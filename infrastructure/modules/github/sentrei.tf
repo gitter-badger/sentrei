@@ -1,6 +1,7 @@
 resource "github_repository" "sentrei" {
   name         = "sentrei"
   description  = "Official sentrei app"
+  homepage_url = "https://docs.sentrei.com/"
   private      = false
   has_issues   = true
   has_projects = true

@@ -1,3 +1,9 @@
+## [3.2.15](https://github.com/sentrei/sentrei/compare/v3.2.14...v3.2.15) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 add dart docs ([18b62f2](https://github.com/sentrei/sentrei/commit/18b62f293aaafb952e82d78f4655b35af595bb8e))
+
 ## [3.2.14](https://github.com/sentrei/sentrei/compare/v3.2.13...v3.2.14) (2020-04-02)
 
 ### Bug Fixes

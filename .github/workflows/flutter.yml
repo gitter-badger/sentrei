@@ -11,10 +11,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 3
-      - name: Detech change path
-        id: change-flutter
-        run: |
-          ./change.sh sentrei
       - name: Cache flutter
         uses: actions/cache@v1
         with:

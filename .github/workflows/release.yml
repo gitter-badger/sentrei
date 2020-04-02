@@ -144,6 +144,8 @@ jobs:
         run: |
           cd sentrei/${{ matrix.platform }}
           ./key.sh
+        env:
+          ANDROID_SIGN_PWD: ${{ secrets.ANDROID_SIGN_PWD }}
       - run: |
           cd sentrei
           flutter pub get

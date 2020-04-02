@@ -16,6 +16,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: Install firebase
+        run: |
+          npm install -g firebase-tools
       - name: Extract PR number
         run: |
           echo ::set-env name=PR_NUMBER::$(echo "$GITHUB_REF" | awk -F / '{print $3}')
@@ -27,6 +33,11 @@ jobs:
           else
             echo ::set-output name=changed::true && exit 0
           fi
+      - if: steps.change.outputs.changed == 'true'
+        uses: subosito/flutter-action@v1
+        with:
+          channel: ${{ env.flutter_channel }}
+          flutter-version: ${{ env.flutter_version }}
       - name: Cache flutter
         if: steps.change.outputs.changed == 'true'
         uses: actions/cache@v1
@@ -43,15 +54,12 @@ jobs:
           key: pub-v1-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: |
             pub-v1-
-      - name: Install flutter
-        if: steps.change.outputs.changed == 'true'
-        uses: subosito/flutter-action@v1
-        with:
-          channel: ${{ env.flutter_channel }}
-          flutter-version: ${{ env.flutter_version }}
       - name: Generate docs
         if: steps.change.outputs.changed == 'true'
         working-directory: sentrei
         run: |
           flutter pub global activate dartdoc
           flutter pub global run dartdoc:dartdoc --exclude 'dart:async,dart:collection,dart:convert,dart:core,dart:developer,dart:io,dart:isolate,dart:math,dart:typed_data,dart:ui,dart:ffi,dart:html,dart:js,dart:js_util'
+          firebase deploy --token $FIREBASE_TOKEN
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

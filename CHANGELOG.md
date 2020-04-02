@@ -1,3 +1,9 @@
+## [3.2.11](https://github.com/sentrei/sentrei/compare/v3.2.10...v3.2.11) (2020-04-02)
+
+### Bug Fixes
+
+- 🐛 update android build ([8a257bc](https://github.com/sentrei/sentrei/commit/8a257bc82890f8acc073549b5b3578493dfedfeb))
+
 ## [3.2.10](https://github.com/sentrei/sentrei/compare/v3.2.9...v3.2.10) (2020-04-02)
 
 ### Bug Fixes

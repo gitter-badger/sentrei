@@ -1,3 +1,6 @@
+ios/.bundle
+ios/vendor
+
 # Miscellaneous
 *.class
 *.log

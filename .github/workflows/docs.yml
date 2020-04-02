@@ -32,3 +32,13 @@ jobs:
           firebase deploy --only hosting:${{ github.event.client_payload.pull_request.base.ref }}docs --token $FIREBASE_TOKEN
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Comment url
+        if: github.event.pull_request != null
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository: ${{ github.event.client_payload.github.payload.repository.full_name }}
+          comment-id: ${{ github.event.client_payload.github.payload.comment.id }}
+          reaction-type: hooray
+          body: |
+            Doc updated on https://${{ github.event.client_payload.pull_request.base.ref }}.docs.sentrei.com

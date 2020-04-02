@@ -86,7 +86,7 @@ jobs:
         id: bundler
         uses: actions/cache@v1
         with:
-          path: ${{ matrix.platform }}/vendor/bundle
+          path: sentrei/${{ matrix.platform }}/vendor/bundle
           key: gem-v1-${{ matrix.platform }}-${{ hashFiles('**/${{ matrix.platform }}/Gemfile.lock') }}
           restore-keys: |
             gem-v1-${{ matrix.platform }}-
@@ -134,21 +134,24 @@ jobs:
       - name: Decrypt secrets
         if: matrix.platform == 'android'
         run: |
-          cd ${{ matrix.platform }}/key
+          cd sentrei/${{ matrix.platform }}/key
           ./key.sh
         env:
           SENTREI_PASSPHRASE: ${{ secrets.SENTREI_PASSPHRASE }}
       - name: Decrypt fastlane
         if: matrix.platform == 'android'
         run: |
-          cd ${{ matrix.platform }}/firebase
+          cd sentrei/${{ matrix.platform }}/firebase
           ./firebase.sh
         env:
           SENTREI_PASSPHRASE: ${{ secrets.SENTREI_PASSPHRASE }}
-      - run: flutter pub get
+      - run: |
+          cd sentrei
+          flutter pub get
       - name: Run android apk
         if: matrix.platform == 'android'
         run: |
+          cd sentrei
           flutter build apk --flavor ${{ steps.branch.outputs.branch }}
           flutter build appbundle --flavor ${{ steps.branch.outputs.branch }}
         env:
@@ -159,16 +162,17 @@ jobs:
       - name: Run ios ipa
         if: matrix.platform == 'ios'
         run: |
+          cd sentrei
           flutter build ios --no-codesign --release --flavor ${{ steps.branch.outputs.branch }}
       - name: Install dependencies with bundler
         run: |
-          cd ${{ matrix.platform }}
+          cd sentrei/${{ matrix.platform }}
           bundle update --bundler
           bundle config path ./vendor/bundle
           bundle install --jobs 4 --retry 3
       - name: Run fastlane
         run: |
-          cd ${{ matrix.platform }}
+          cd sentrei/${{ matrix.platform }}
           bundle exec fastlane ${{ steps.branch.outputs.branch }}
         env:
           CI: true
@@ -186,7 +190,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.get_url.outputs.upload_url }}
-          asset_path: build/app/outputs/apk/${{ steps.branch.outputs.branch }}/release/app-${{ steps.branch.outputs.branch }}-release.apk
+          asset_path: sentrei/build/app/outputs/apk/${{ steps.branch.outputs.branch }}/release/app-${{ steps.branch.outputs.branch }}-release.apk
           asset_name: app-${{ steps.branch.outputs.branch }}-release.apk
           asset_content_type: application/vnd.android.package-archive
       - name: Upload ios asset
@@ -196,6 +200,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.get_url.outputs.upload_url }}
-          asset_path: ios/build/Runner/${{ steps.branch.outputs.branch }}.ipa
+          asset_path: sentrei/ios/build/Runner/${{ steps.branch.outputs.branch }}.ipa
           asset_name: ${{ steps.branch.outputs.branch }}.ipa
           asset_content_type: application/octet-stream

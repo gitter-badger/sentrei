@@ -7,11 +7,11 @@ github:
     master: true
     branches: true
     pullRequests: true
-    pullRequestsFromForks: true
+    pullRequestsFromForks: false
     addCheck: true
-    addComment: true
+    addComment: false
     addBadge: true
-    addLabel: true
+    addLabel: false
 vscode:
   extensions:
     - Dart-Code.dart-code@3.8.1:+5Rq24Mq46eJa5w39WY0bA==

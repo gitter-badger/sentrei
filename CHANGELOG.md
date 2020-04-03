@@ -1,3 +1,9 @@
+## [3.3.1](https://github.com/sentrei/sentrei/compare/v3.3.0...v3.3.1) (2020-04-03)
+
+### Bug Fixes
+
+- 🐛 fastlane commit notes ([814915b](https://github.com/sentrei/sentrei/commit/814915b7eea6bd8f527ddde33fe54a50f02e0318))
+
 # [3.3.0](https://github.com/sentrei/sentrei/compare/v3.2.18...v3.3.0) (2020-04-02)
 
 ### Features

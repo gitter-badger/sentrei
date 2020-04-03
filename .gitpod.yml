@@ -1,0 +1,18 @@
+tasks:
+  - init: cd sentrei && flutter --version && flutter pub get && pub global activate dartdoc && pub global activate dhttpd
+image:
+  file: .gitpod.Dockerfile
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addCheck: true
+    addComment: true
+    addBadge: true
+    addLabel: true
+vscode:
+  extensions:
+    - Dart-Code.dart-code@3.8.1:+5Rq24Mq46eJa5w39WY0bA==
+    - Dart-Code.flutter@3.8.1:cytqQi/+kpu802ZOaJwayw==

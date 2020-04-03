@@ -21,21 +21,11 @@ platform :android do
       glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
     )
     sh("cd ../.. && flutter build apk --flavor alpha")
-    analyze_commits(
-      match: "v*",
-      debug: true,
-    )
-    notes = conventional_changelog(
-      format: "plain",
-      title: ENV['GITHUB_RUN_NUMBER'],
-      display_author: true,
-      debug: true,
-    )
     firebase_app_distribution(
       groups: "alpha",
       app: "1:280671636932:android:69407d4e605d5e60cd6891",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
-      release_notes: notes,
+      release_notes: changelog_from_git_commits,
       apk_path: "../build/app/outputs/apk/alpha/release/app-alpha-release.apk"
     )
     firebase_test_lab_android(
@@ -60,21 +50,11 @@ platform :android do
       glob: "/app/src/main/res/mipmap-*/ic_launcher*.png",
     )
     sh("cd ../.. && flutter build apk --flavor beta")
-    analyze_commits(
-      match: "v*",
-      debug: true,
-    )
-    notes = conventional_changelog(
-      format: "plain",
-      title: ENV['GITHUB_RUN_NUMBER'],
-      display_author: true,
-      debug: true,
-    )
     firebase_app_distribution(
       groups: "beta",
       app: "1:258612152633:android:0344f8ed2ff95c50ff40e8",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
-      release_notes: notes,
+      release_notes: changelog_from_git_commits,
       apk_path: "../build/app/outputs/apk/beta/release/app-beta-release.apk"
     )
     firebase_test_lab_android(
@@ -95,21 +75,11 @@ platform :android do
   desc "Submit a new master build to firebase"
   lane :master do
     sh("cd ../.. && flutter build apk --flavor master")
-    analyze_commits(
-      match: "v*",
-      debug: true,
-    )
-    notes = conventional_changelog(
-      format: "plain",
-      title: ENV['GITHUB_RUN_NUMBER'],
-      display_author: true,
-      debug: true,
-    )
     firebase_app_distribution(
       groups: "master",
       app: "1:721847679884:android:1935b57831163cda5bb4a9",
       firebase_cli_token: ENV['FIREBASE_TOKEN'],
-      release_notes: notes,
+      release_notes: changelog_from_git_commits,
       apk_path: "../build/app/outputs/apk/master/release/app-master-release.apk",
     )
     firebase_test_lab_android(

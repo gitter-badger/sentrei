@@ -2,8 +2,7 @@
 #
 # Ensure this file is checked in to source control!
 
-gem 'fastlane-plugin-firebase_app_distribution'
-gem 'fastlane-plugin-badge'
 gem 'fastlane-plugin-appicon'
-gem 'fastlane-plugin-semantic_release'
+gem 'fastlane-plugin-badge'
+gem 'fastlane-plugin-firebase_app_distribution'
 gem 'fastlane-plugin-firebase_test_lab_android'

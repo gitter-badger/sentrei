@@ -1,4 +1,6 @@
 doc/.firebase
+android/.bundle
+android/vendor
 ios/.bundle
 ios/vendor
 

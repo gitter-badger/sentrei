@@ -44,4 +44,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 ## Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/sentrei/sentrei.svg)](https://starchart.cc/sentrei/sentrei)
+[![Stargazers over time](https://starchart.cc/sentrei/sentrei.svg)](https://starchart.cc/sentrei/sentrei) [![Join the chat at https://gitter.im/sentrei/sentrei](https://badges.gitter.im/sentrei/sentrei.svg)](https://gitter.im/sentrei/sentrei?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
